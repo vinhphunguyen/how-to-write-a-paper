@@ -1,0 +1,399 @@
+
+
+\documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
+
+% ------------------------
+%    Packages used
+% ------------------------
+
+% \usepackage[paper=a4paper,top=1.5cm,left=1.2cm,right=0.8cm,
+%     foot=1cm,bottom=1.5cm]{geometry}
+
+\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\usepackage[T1]{fontenc} 
+\usepackage{amsmath,amssymb, mathtools,mathrsfs,stmaryrd,titletoc}
+
+
+% bibtex 
+\usepackage{natbib}
+% biblatex
+% \usepackage[hyperref=true,natbib=true,backref=true,style=authoryear-comp,giveninits=true,maxbibnames=9,maxcitenames=2,uniquelist=false,sortcites=none,doi=false,url=false,eprint=false,uniquename=false,dashed=false]{biblatex}
+% \bibliography{mpm.bib,mpm_SS.bib}
+
+
+%\usepackage{bm}% bold math
+\usepackage[scaled=0.92]{helvet}  % set Helvetica as the sans-serif font
+\renewcommand{\rmdefault}{ptm}    % set Times as the default text font
+% need to install mtpro2
+\let\Bbbk\relax
+\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
+
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage[usenames]{color}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{psfrag}
+%\usepackage{scalerel} % for large angle brackets <>, does not work
+%\usepackage{cite}
+%\usepackage[authoryear,sort,nonamebreak,sectionbib]{natbib} 
+%\usepackage[authoryear,nonamebreak,sectionbib]{natbib} 
+\usepackage[font=small,labelfont=md]{caption,subfig}
+\usepackage{multirow}
+\usepackage[T1]{fontenc} % typing french
+%\usepackage{fancyhdr}
+%\usepackage[english,hyperpageref]{backref}                         
+\usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,citecolor=red,backref=page]{hyperref}
+\usepackage{makeidx}       % make index
+\usepackage{float}         % make new float environment such as boxes (captioned)
+\usepackage{listings}      % insert source code   
+%\usepackage{bm}
+\usepackage{algorithm}
+\usepackage{algorithmicx}
+\usepackage{algpseudocode}
+%\usepackage[ruled,vlined]{algorithm2e}
+%\sloppy
+%\usepackage{authblk}
+\usepackage{verbatim}
+\usepackage{numprint}
+
+
+% nomenclature and glossaries for XFEM, CDM
+\usepackage{nomencl}
+\usepackage[acronym]{glossaries}
+
+% the following packages just to improve the latex experience 
+%\usepackage{silence} %
+\usepackage{silence}
+\WarningsOff
+\usepackage{siunitx}
+\usepackage[norefs,nocites,ignoreunlbld]{refcheck} % warning for unreferred figs/tables/equas
+% search in the .log file for unused fig to detect figures not referred to in the text.
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+% activate={true,nocompatibility} - activate protrusion and expansion
+% final - enable microtype; use "draft" to disable
+% tracking=true, kerning=true, spacing=true - activate these techniques
+% factor=1100 - add 10% to the protrusion amount (default is 1000)
+% stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
+%\usepackage{varioref}
+\usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
+% clever ref: instead of Fig.~\ref{d}, use \cref{d} or \Cref{d}  capitalise -> Figure 1
+% \crefrange{eq1}{eq5}
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{nicefrac} % type inline fractions: \nicefrac{1}{2}
+\usepackage{setspace}
+\usepackage{lineno}  % write numbers for lines
+%\usepackage[mediumspace,mediumqspace,Grey,squaren]{SIunits}
+\usepackage{totcount} % to count the total number of references and other things
+\usepackage[figure,table]{totalcount}
+\usepackage{blkarray, bigstrut} % write complicated matrices with borders, see http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/blkarray/blkarray.pdf
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,decorations.pathreplacing,backgrounds,positioning,fit,matrix,math,shapes.misc}
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={1pt}}
+\usepackage{wasysym}
+\usepackage{gensymb} % for degree symbol
+
+\usepackage{pgfplots}
+ \pgfplotsset{compat=newest}
+ %% the following commands are needed for some matlab2tikz features
+ \usetikzlibrary{plotmarks}
+ \usetikzlibrary{arrows.meta}
+ \usepgfplotslibrary{patchplots}
+ \usepackage{grffile}
+
+%\usepackage{underscore}
+\usepackage[english]{babel}
+
+%\input{pre_commands.tex}
+
+ % write numbers for lines
+ % comment out for final pdf
+%\linenumbers
+
+% cleverref package
+\crefname{figure}{Fig.}{Figs.}
+\crefname{equation}{Equation}{Equations}
+
+% todonotes on the left margin
+\reversemarginpar
+%\setlength{\oddsidemargin}{3mm}
+%\setlength{\evensidemargin}{-3mm}
+%\setlength{\textwidth}{160mm}
+%\setlength{\textheight}{220mm}
+
+
+\renewcommand*{\backref}[1]{}
+\renewcommand*{\backrefalt}[4]{[{%
+    \ifcase #1 %
+          \or Cited on page~#2%
+          \else Cited on pages #2%
+    \fi%
+    }]}
+    
+% -------------------------
+%     Header and footer
+% -------------------------
+
+% \pagestyle{fancyplain}
+% %\addtolength{\headwidth}{\marginparsep}
+% %\addtolength{\headwidth}{\marginparwidth}
+% %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+% \renewcommand{\sectionmark}[1]{\markright{\ #1}}
+% \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries Sec. \thesection}}
+% \chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
+% \rhead[\fancyplain{}] {\fancyplain{}{\bfseries\thepage}} 
+% \cfoot{}
+
+%\floatstyle{ruled}
+%\newfloat{Fbox}{thp}{lop}[chapter]
+%\floatname{Fbox}{Box}
+%
+%\theoremstyle{remark}                                                                                                       
+%\newtheorem{thm}{Theorem}[chapter]                                                                                          
+%\newtheorem{rmk}[thm]{Remark}    
+
+
+%% code listing
+
+\lstloadlanguages{C++,Matlab,Python}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{darkgray}{rgb}{0.95,0.95,0.95}
+\lstset{backgroundcolor=\color{darkgray},
+  basicstyle=\color{red}\ttfamily,
+  keywordstyle=\color{blue}\bfseries
+}
+
+\lstdefinestyle{C++}
+{
+ basicstyle=\footnotesize, numbers=none, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ commentstyle=\color{mygreen}
+}
+
+
+\lstdefinestyle{python}
+{
+ basicstyle=\scriptsize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=Python, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen},
+ morekeywords={inner, Function, TrialFunction, TestFunction, solve, FunctionSpace,VectorFunctionSpace,grad,
+ LinearVariationalProblem, LinearVariationalSolver, dx,UnitSquareMesh, lhs, rhs, sym, method, region, dimension,run, solid, ulmpm, tlmpm,linear,cylinder,block,material,fix, group,set_dt,dump,run_time,NULL,initial_velocity_particles,sphere,damage_johnson_cook,shock,johnson_cook,velocity_nodes,x,y,z,T,vx,eos,strength,damage,s11}
+}
+
+
+
+\lstdefinestyle{commentstyle}{color=\color{green}}
+
+\newcommand{\bfsigma}{\boldsymbol{\sigma}}
+\newcommand{\bfepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\bfu}{\boldsymbol{u}}
+\newcommand{\bfx}{\boldsymbol{x}}
+\newcommand{\bfphi}{\boldsymbol{\phi}}
+\newcommand{\bftheta}{\boldsymbol{\theta}}
+\newcommand{\te}{\text{e}}
+\newcommand{\td}{\text{d}}
+\newcommand{\tp}{\text{p}}
+
+%-----------------------------------------------------------------------
+\newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
+\newcommand{\sym}[1]{\textnormal{\textit{#1}}}
+
+\lstloadlanguages{C++,Matlab,Python}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{darkgray}{rgb}{0.95,0.95,0.95}
+\lstset{backgroundcolor=\color{darkgray},
+  basicstyle=\color{red}\ttfamily,
+  keywordstyle=\color{blue}\bfseries
+}
+
+\lstdefinelanguage{Sage}{%
+    language     = Python,
+   morekeywords={var, latex,  view, show, diff, integral, simplify, simplify_full}
+}
+
+
+
+\lstdefinestyle{C++}
+{
+ basicstyle=\footnotesize, numbers=none, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ commentstyle=\color{mygreen}
+}
+
+\lstdefinestyle{C-numbered}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ commentstyle=\color{mygreen}
+}
+
+\lstdefinestyle{matlab}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=Matlab, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen},
+ morekeywords={cell, ones, repmat, intersect, unique}
+}
+
+\lstdefinestyle{latex}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen},
+ morekeywords={cell, ones, repmat, intersect, unique}
+}
+
+\lstnewenvironment{snippet}[1][]
+{
+ \lstset{style=python, xleftmargin=5mm, gobble=4, #1}
+}
+{}
+
+\lstnewenvironment{snippetlatex}[1][]
+{
+ \lstset{style=latex, xleftmargin=5mm, gobble=4, #1,tabsize=3}
+}
+{}
+
+\lstnewenvironment{code-sage}[1][]%
+{
+   \noindent
+   \minipage{\linewidth}
+   \vspace{0.5\baselineskip}
+  \lstset{style=Sage, xleftmargin=5mm, gobble=4, #1}
+}
+{\endminipage}
+
+%%
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=0.5\hsize}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X} 
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X} 
+
+\flushbottom
+
+\definecolor{Sun}{rgb}{0.164,0.126,0.322}
+\definecolor{Green}{rgb}{0,0.300,0.300}
+\definecolor{Red}{rgb}{0.4,0,0}
+\definecolor{Grey}{RGB}{105,105,105}
+\definecolor{White}{rgb}{1,1,1}
+
+%\newcommand\Algphase[1]{%
+%   \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}%\rule{\textwidth}{0.4pt}%
+%      \Statex\hspace*{-\algorithmicindent}\textbf{#1}%
+%      \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}%\rule{\textwidth}{0.4pt}%
+%}
+
+% for blocks in Algorithm
+\algblockdefx{Start}{End}[1]{\textbf{#1}}{\textbf{end}}
+
+%without this, xelatex would not work with fontspec
+\DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
+
+%%% vertical rules in cyan color
+%\makeatletter
+%\renewcommand{\algocf@Vline}[1]{%     no vskip in between boxes but a strut to separate them, 
+%  \strut\par\nointerlineskip% then interblock space stay the same whatever is inside it
+%  \algocf@push{\skiprule}%        move to the right before the vertical rule
+%  \hbox{\bgroup\color{cyan}\vrule\egroup%
+%    \vtop{\algocf@push{\skiptext}%move the right after the rule
+%      \vtop{\algocf@addskiptotal #1}\bgroup\color{cyan}\Hlne\egroup}}\vskip\skiphlne% inside the block
+%  \algocf@pop{\skiprule}%\algocf@subskiptotal% restore indentation
+%  \nointerlineskip}% no vskip after
+%
+\newcommand{\latex}{\LaTeX\xspace}
+\numberwithin{equation}{section}
+
+\graphicspath{{./figures/}} 
+
+\newcommand\Lang[1]{\textsc{#1}}
+
+%\theoremstyle{remark}
+%\newtheorem{thm}{Theorem}[section]
+%\newtheorem{rmk}[thm]{Remark}
+\newtheorem{rmk}{Remark}
+
+% total number of references
+%1. bibtex
+
+% total number of references
+\newtotcounter{citenum}
+\def\oldcite{}
+\let\oldcite=\bibcite
+\def\bibcite{\stepcounter{citenum}\oldcite}
+
+
+
+%\journal{Advances in Engineering Software}
+%\journal{International Journal for Numerical Method in Engineering}
+
+\begin{document}
+
+\begin{frontmatter}
+
+
+
+%\title{Modeling crack propagation of concrete gravity dams with the phase-field regularized cohesive zone model}
+\title{\textbf{ }}
+
+%\tnotetext[label1]{Dedicate to }
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{}
+% \address[label1]{}
+% \address[label2]{}
+
+\author[1]{Vinh Phu Nguyen\corref{cor1}}
+ \ead{phu.nguyen@monash.edu}
+
+
+\cortext[cor1]{Corresponding Author}
+
+\address[1]{Department of Civil Engineering, Monash University, Clayton 3800, VIC, Australia}
+
+
+%\pagestyle{fancyplain}
+%\pagenumbering{arabic}
+
+\begin{abstract}
+
+\end{abstract}
+
+% *********************************************************************************************************
+
+\begin{keyword}
+ %ductile fracture; material point method; damage.
+\end{keyword}
+
+
+\end{frontmatter}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction}
+\section{Methodology}
+\section{Examples}
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Acknowledgments}
+
+
+
+%\section*{References}
+
+
+% %%%%%%% BIB files (bibtex)
+%\bibliographystyle{plainnat}
+%\bibliographystyle{abbrvnat} % => just V. P. Nguyen, not Phu Nguyen, ...
+%\bibliographystyle{natbib}
+%\bibliography{mpm}
+
+% if biblatex is used
+%\printbibliography
+
+\end{document}
