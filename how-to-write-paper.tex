@@ -583,7 +583,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 \end{figure*}
 %---------------------------------------------------------------------------
 
-It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}. This \texttt{Matplotlib} based \texttt{Python} script, given in \cref{snippet_matplotlib}, produces a PDF image with font not exactly matching the text font. If you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf}, the script in \cref{snippet_matplotlib_pgf} can be used.
+It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}. This \texttt{Matplotlib} based \texttt{Python} script, given in \cref{snippet_matplotlib}, produces a PDF image with font not exactly matching the text font. If you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf} for such an example, the script in \cref{snippet_matplotlib_pgf} can be used.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -642,10 +642,18 @@ The first  author gratefully acknowledges the financial support of the Australia
 %=============================================================================
 \begin{appendix}
 %=============================================================================
-%
+%\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 \section{Python script for plotting data}
 
-\cref{snippet_matplotlib}.
+This appendix present some \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in LaTeX documents.
+
+The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the tex file:
+
+
+\begin{verbatim}
+\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. 
+\end{verbatim}
+Then you can search for `width of the pdf' in this lof file to find out the width of your paper.
 
 \begin{figure*}[!h]
   \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
