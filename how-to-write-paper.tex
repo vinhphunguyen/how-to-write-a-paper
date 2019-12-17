@@ -240,7 +240,7 @@
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength}
 }
 
 \lstnewenvironment{snippet}[1][]
@@ -567,6 +567,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
     \usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
 
+    \definecolor{darkgray}{rgb}{0.95,0.95,0.95} % color used in tables
     % cleverref package: just do \cref{label} for figures, tables, equations anything
     % the package will determine the correct prefix be it Fig. or Equation or Listing.
     \crefname{figure}{Fig.}{Figs.}  
@@ -616,6 +617,52 @@ It is not a requirement that the font used in figures match that of the text. Ye
 \end{figure}
 
 
+%---------------------------
+
+%---------------------------
+
+\begin{figure}[!h]
+  \centering
+\includegraphics[width=0.9\textwidth]{table}
+  \caption{A PGF figure of which the font matches the text font: 
+  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time.}
+  \label{fig:table}
+\end{figure}
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Commonly used \LaTeX\ packages.},label={snippet_latex_packages},framerule=1pt,tabsize=3]
+      \begin{table}[h!]
+      \centering
+      \caption{Material parameters and characteristics for all simulations.}
+      \setlength\fboxsep{0pt}
+      \vskip-\topsep%
+      \smallskip%
+      \renewcommand\arraystretch{1.4}
+      \colorbox{darkgray}{%
+      \begin{tabularx}{0.99\textwidth}{lllll}
+      \toprule
+      Parameter & \cref{ex:brittle} & \cref{ex:penny} & \cref{ex:dens} & \cref{ex:mixed} \\
+      \midrule
+        Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
+          Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
+          Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
+          Fracture energy [N/mm]    & 2.7 & 2.4 & 2.67  & 15  \\
+          Griffith's internal length [mm]     & 0.095 & 0.087 & 6.29  & 0.24 \\
+          \midrule 
+          Experimentally validated & n/a & n/a & yes & yes \\
+          Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
+          State & Plane strain & Plane strain & Plane strain & Plane stress \\
+       \bottomrule
+       \end{tabularx}%
+      }
+      \label{table:params}
+      \end{table}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
+
+%
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Submission}
@@ -653,7 +700,7 @@ The main idea is to get the correct figure size, and insert it in the paper with
 \begin{verbatim}
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. 
 \end{verbatim}
-Then you can search for `width of the pdf' in this lof file to find out the width of your paper.
+Then you can search for `width of the pdf' in this log file to find out the width of your paper.
 
 \begin{figure*}[!h]
   \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
