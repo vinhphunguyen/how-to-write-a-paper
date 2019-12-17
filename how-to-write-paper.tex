@@ -240,7 +240,7 @@
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input}
 }
 
 \lstnewenvironment{snippet}[1][]
@@ -583,14 +583,15 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 \end{figure*}
 %---------------------------------------------------------------------------
 
-It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}.
+It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}. This \texttt{Matplotlib} based \texttt{Python} script, given in \cref{snippet_matplotlib}, produces a PDF image with font not exactly matching the text font. If you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf}, the script in \cref{snippet_matplotlib_pgf} can be used.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={Input file for the plate penetration problem.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
     \begin{figure}[!ht]
       \centering
-      \includegraphics{cold-spray-plots}
+      \includegraphics{cold-spray-plots.pfd} # insert a PDF
+      \input{cold-spray-plots.pgf} # insert a PGF
       \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
       \label{fig:cold-spray-plot}
     \end{figure}
@@ -601,17 +602,17 @@ It is not a requirement that the font used in figures match that of the text. Ye
 \begin{figure}[!h]
   \centering
   \includegraphics{cold-spray-plots}
-  \caption{A figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature time $T=150$.}
+  \caption{A PDF figure of which the font nearly matches the text font: 
+  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time.}
   \label{fig:cold-spray-plot}
 \end{figure}
 
 \begin{figure}[!h]
   \centering
   \input{cold-spray-plots.pgf}
-  \caption{A figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature time $T=150$.}
-  \label{fig:cold-spray-plot}
+  \caption{A PGF figure of which the font matches the text font: 
+  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time.}
+  \label{fig:cold-spray-plot-pgf}
 \end{figure}
 
 
@@ -719,10 +720,7 @@ The first  author gratefully acknowledges the financial support of the Australia
 \end{figure*}
 
 \begin{figure*}[!h]
-  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
-    # Using seaborn's style
-    plt.style.use('seaborn-colorblind')  
-
+  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib_pgf},framerule=1pt,tabsize=3]   
     nice_fonts = {
             "text.usetex": True,
             "font.family": "serif",
@@ -746,8 +744,7 @@ The first  author gratefully acknowledges the financial support of the Australia
             "xtick.labelsize": 8,
             "ytick.labelsize": 8,
     }
-    plt.savefig('./water-break-plot.pdf', format='pdf')
-
+    plt.savefig('./cold-spray-plots.pgf', bbox_inches='tight') 
     if args.quiet == False:
         plt.show()
   \end{snippet}
