@@ -100,7 +100,7 @@
  \usetikzlibrary{arrows.meta}
  \usepgfplotslibrary{patchplots}
  \usepackage{grffile}
-
+\usepackage{pgf}
 %\usepackage{underscore}
 \usepackage[english]{babel}
 
@@ -193,7 +193,7 @@
 \newcommand{\te}{\text{e}}
 \newcommand{\td}{\text{d}}
 \newcommand{\tp}{\text{p}}
-
+\newcommand{\etc}{etc.\@\xspace}
 %-----------------------------------------------------------------------
 \newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
 \newcommand{\sym}[1]{\textnormal{\textit{#1}}}
@@ -302,7 +302,8 @@
 %      \vtop{\algocf@addskiptotal #1}\bgroup\color{cyan}\Hlne\egroup}}\vskip\skiphlne% inside the block
 %  \algocf@pop{\skiprule}%\algocf@subskiptotal% restore indentation
 %  \nointerlineskip}% no vskip after
-%
+
+
 \newcommand{\latex}{\LaTeX\xspace}
 \numberwithin{equation}{section}
 
@@ -347,11 +348,14 @@
 
 \author[1]{Vinh Phu Nguyen\corref{cor1}}
  \ead{phu.nguyen@monash.edu}
-
+\author[2]{Stephane Bordas}
 
 \cortext[cor1]{Corresponding Author}
 
 \address[1]{Department of Civil Engineering, Monash University, Clayton 3800, VIC, Australia}
+\address[2]{Institute of Computational Engineering, University of Luxembourg, Faculty of Sciences Communication and Technology, Luxembourg}
+
+%\maketitle
 
 
 %\pagestyle{fancyplain}
@@ -371,7 +375,7 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \end{frontmatter}
 
-
+\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -398,7 +402,7 @@ The flowchart is as follows. \LaTeX~ is used to typeset the paper. The reference
 
 For collaborative writings, \texttt{Git} and \texttt{Github} are very useful. This is because every co-author of the paper can work on the same paper simultaneously and they can use their own favorite \LaTeX\ editor (which is most often also their own coding editor). This is better than \texttt{Overleaf} at \url{https://www.overleaf.com}. And note that \texttt{Github} allows private repositories.
 
-\cref{snippet_penetration}.
+
 
 \begin{rmk}
 Note that \texttt{Bibdesk} is only available for mac OS. One can use \texttt{Zotero} or \texttt{Mendeley} for Windows and Linux computers. Alternatives to the quite pricey  \texttt{Adobe Illustrator} are \texttt{GIMP} or \texttt{Inkscape}.
@@ -428,14 +432,28 @@ Without going in to the debate which one is the best editor, we use \texttt{Subl
 %--------------------------------------
 \subsection{General guidelines}\label{sec:guidelines}
 
+The following general guidelines are nothing new but they are worthy repeated:
+
 \begin{enumerate}
 \item To inform not to impress;
 \item Aims for clarity and readability;
 \item Contributions must be clearly stated;
 \item Each paragraph conveys only a single idea or message;
-\item d 
+\item Avoid jargon;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
+\item Aims for reproducibility;
 \item Try to minimize the chances for reviewers to raise issues;
 \end{enumerate}
+
+The main contributions of the paper must be clearly stated after a brief review of the literature. How your work differs from the existing literature in such and such a way. Be precise, this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
+
+Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message.
+
+
+Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
+
+Reproducibility is a big issue in scientific research nowadays. However, we just confine to the situation where a published simulation result is genuinely correct but impossible to reproduce by people rather than the authors. The world would be a better place if all the authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
+
+You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice.
 
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
@@ -467,6 +485,23 @@ If you feel stuck at writing any parts of the paper, feel free to do something e
 
 While working on this paper, we read the literature (we always read it anyway). If we find a good paper relevant to our work, put it in \texttt{Bibdesk}, and cite it in the paper with some key sentences about it. Doing so saves us a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{How to structure your paper}\label{structure}
+
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead,   \cref{fig:section}
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{section}
+  \caption{A complex section should have a global paragraph between the heading of a section and the heading of its first subsection.}
+  \label{fig:section}
+\end{figure}
+
+
+Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc.
+
+% 
 %--------------------------------------
 \subsection{Some common mistakes}\label{sec:mistakes}
 
@@ -563,13 +598,36 @@ It is not a requirement that the font used in figures match that of the text. Ye
 \end{figure*}
 %---------------------------------------------------------------------------
 
-\begin{figure}[!ht]
+\begin{figure}[!h]
   \centering
   \includegraphics{cold-spray-plots}
   \caption{A figure of which the font matches the text font: 
   evolution of plastic strain $\varepsilon_p$ and temperature time $T=150$.}
   \label{fig:cold-spray-plot}
 \end{figure}
+
+\begin{figure}[!h]
+  \centering
+  \input{cold-spray-plots.pgf}
+  \caption{A figure of which the font matches the text font: 
+  evolution of plastic strain $\varepsilon_p$ and temperature time $T=150$.}
+  \label{fig:cold-spray-plot}
+\end{figure}
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Submission}
+
+With the pressure to “publish” (or perish), it is increasingly difficult for students to resist the temptation to submit a “large” number of papers during their PhD. Some supervisors will also push the students to publish “too many” papers. 
+
+Do not submit until you are really happy with the work, as it usually does not save time to submit a piece of work which we know ourselves could be improved: the reviewers will think likewise, or be even more critical than we are ourselves of our work. If on a final read of the paper you think: “Ah… I could have added this study, this argument is not completely convincing to me, this graph could be better plotted, I think I forgot some relevant literature, the notations are complex, perhaps the reader will have difficulties…” then, do not submit, improve your work, and submit it when it is ready. 
+
+It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
+It will value your peer as you think her/his opinion counts;
+It will give you insights on how understandable your paper is by someone who is connected to your field but did not do exactly the same piece of research;
+It will decrease the number of typos, which will enable your supervisor(s) to focus on the science as opposed to bumping over each spelling mistake, grammatical error, jargon.
+
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -584,90 +642,114 @@ The first  author gratefully acknowledges the financial support of the Australia
 \begin{appendix}
 %=============================================================================
 %
+\section{Python script for plotting data}
 
+\cref{snippet_matplotlib}.
 
 \begin{figure*}[!h]
-  \begin{snippet}[caption={Input file for the plate penetration problem.},label={snippet_penetration},framerule=1pt,tabsize=3]
-    #####################################################
-    #               UNITS: GPa, mm, ms                  #
-    #####################################################
-    # material properties for the steel plate
-    E   = 22.4
-    nu  = 0.42
-    rho = 11.35e-06
-    K   = E/(3*(1-2*nu))
-    G   = E/(2*(1+nu))
-    # Johnson-Cook flow parameters
-    sigmay = 12e-3
-    B      = 125e-3
-    C      = 0
-    epsdot0= 1.0
-    n      = 1.0
-    m      = 1.0
-    # Johnson-Cook damage parameters
-    d1 = 0.636
-    d2 = 1.936
-    d3 = -2.969
-    d4 = 0
-    # problem dimensions
-    L, H, W, R, t, d (skip to save space)
-    # material props for the projectile 
-    m = 20e-3 # kg
-    Vol = (4/3)*PI*R*R*R
-    density = m/Vol
-    Ep = 100
-    nup =0
-    Gp = Ep/(2*(1+nup))
-    Kp = E/(3*(1-2*nup))
+  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
 
-    FLIP=0.99
-    method(ulmpm, FLIP, linear, FLIP)
-    N = 50
-    cellsize = L/N
-    dimension(3,-2*R-d,2*L,-H,H,-W,W,cellsize)
-    # -----------REGIONS ----------------#
-    xc = -R-d
-    yc = 0 
-    zc = 0 
-    region(ball,  sphere, xc, yc, zc, R)
-    region(plate, block, 0, t, -H, H, -H, H)
-    # -----------MATERIALS ----------------#
-    eos(eosl, linear, density, Kp)
-    eos(eoss, shock,  rho, K, c0, S, Gamma, cv, Tr)
-    strength(strengthl,  linear, Gp)
-    strength(strengthjc, johnson_cook, G, sigmay, B, n, epsdot0, C, m)
-    temperature(tpw, plastic_work, chi, rho, cp)
-    damage(damagejc, damage_johnson_cook, d1, d2, d3, d4, epsdot0)
-    # Now as EOS, strength, damage and temperature done, build materials
-    material(mat1, eosl, strengthl)
-    material(mat4, eoss, strengthjc, damagejc, tpw)
-    # -----------SOLIDS ----------------#
-    ppc1d = 2
-    solid(ball,  region, ball,  1,     mat1, cellsize, Tr)
-    solid(plate, region, plate, ppc1d, mat4, cellsize, Tr)
-    # ----------------- NODE GROUPS --------------------------
-    region(region1, block, INF, INF, INF, cellsize/4, INF, INF)
-    region(region2, block, INF, INF, H-cellsize/4, INF, INF, INF)
+    def set_size(width, fraction=1, subplot=[1, 1]):
+        if width == 'elsevier':
+            width_pt = 468.
+        elif width == 'beamer':
+            width_pt = 307.28987
+        else:
+            width_pt = width
+        fig_width_pt = width_pt * fraction      # Width of figure
+        inches_per_pt = 1 / 72.27               # Convert from pt to inches
+        golden_ratio = 0.75                     # (5**.5 - 1) / 2
+        fig_width_in = fig_width_pt * inches_per_pt  # Figure width in inches
+        fig_height_in = fig_width_in * golden_ratio * (subplot[0] / subplot[1])
+        fig_dim = (fig_width_in, fig_height_in)
+        return fig_dim
 
-    group(groupn1, nodes, region, region1, solid, plate)
-    group(groupn2, nodes, region, region2, solid, plate)
+    parser = argparse.ArgumentParser(description='Plot the evolution of variables.',
+                                     add_help=False,
+                                     formatter_class=argparse.RawDescriptionHelpFormatter)
 
-    fix(BC_bot,  velocity_nodes, groupn1, NULL, NULL, NULL)
-    fix(BC_top,  velocity_nodes, groupn2, NULL, NULL, NULL)
 
-    #---------- IMPOSE INITIAL CONDITIONS --------------#
-    group(gProjectile, particles, region, ball, solid, ball)
-    v = 6.58e+3
-    fix(v0Ball1, initial_velocity_particles, gProjectile, v, NULL, NULL)
+    parser.add_argument('--quiet', '-q', action='store_const', const=True, default=False,
+                        help='do not show plot.')
+    args = parser.parse_args()
 
-    N_dump = 10
-    dump(dump1, all, particle, N_dump, dump_p.*.LAMMPS, x, y, z, damage, s11, vx, T)
-    dump(dump2, all, grid, N_dump, dump_g.*.LAMMPS, x, y, z, vx)
+    # Using seaborn's style
+    plt.style.use('seaborn-colorblind')  
 
-    dt_factor(0.5)
-    N_log = 10
-    set_output(N_log)
-    run(150000)
+    nice_fonts = {
+            "text.usetex": True,
+            "font.family": "serif",
+            "axes.labelsize": 10,
+            "font.size": 10,
+            "legend.fontsize": 8,
+            "xtick.labelsize": 8,
+            "ytick.labelsize": 8,
+    }
+
+    mpl.rcParams.update(nice_fonts)
+
+    # Dimer 5: Read Data
+    fnames = ['log.mpm', 'dam-break-Sun.csv', 'water-break-experiment.csv']
+    dat    = [pylab.genfromtxt(f,skip_header=1) for f in fnames]
+
+    fig, ax = plt.subplots(1, 1, figsize=set_size('elsevier', fraction=0.6))
+    # fig, (ax1,ax2) = plt.subplots(1, 2, figsize=set_size(width, subplot=[1, 2]))
+
+    for i, f in enumerate(fnames):   
+        x = dat[i][:,3]
+        y = dat[i][:,4]
+        ax.plot(x, y, color='black', label='MPM',linewidth=1.5, linestyle='dotted')
+       
+        xmax = max(xmax, np.max(x))
+        ymax = max(ymax, np.max(y))
+         
+    ax.set_xlabel(r'$T$')
+    ax.set_ylabel(r'$L(T)$')
+    ax.set_ylim(1.0, 2.8)
+    ax.set_xlim(0, 1.6)
+    ax.legend(loc=0)
+    plt.tight_layout()
+    plt.savefig('./water-break-plot.pdf', format='pdf', bbox_inches='tight')
+
+    if args.quiet == False:
+        plt.show()
+  \end{snippet}
+\end{figure*}
+
+\begin{figure*}[!h]
+  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
+    # Using seaborn's style
+    plt.style.use('seaborn-colorblind')  
+
+    nice_fonts = {
+            "text.usetex": True,
+            "font.family": "serif",
+            "pgf.texsystem": "pdflatex",
+            "font.family": "serif",
+            "font.serif": [],
+            "font.sans-serif": [],
+            "font.monospace": [],
+            "pgf.preamble": [
+            # put LaTeX preamble declarations here
+            r"\usepackage[utf8x]{inputenc}",
+            r"\usepackage[T1]{fontenc}",
+            # macros defined here will be available in plots, e.g.:
+            r"\newcommand{\vect}[1]{#1}",
+            # You can use dummy implementations, since you LaTeX document
+            # will render these properly, anyway.
+            ],
+            "axes.labelsize": 10,
+            "font.size": 10,
+            "legend.fontsize": 8,
+            "xtick.labelsize": 8,
+            "ytick.labelsize": 8,
+    }
+    plt.savefig('./water-break-plot.pdf', format='pdf')
+
+    if args.quiet == False:
+        plt.show()
   \end{snippet}
 \end{figure*}
 
@@ -676,7 +758,7 @@ The first  author gratefully acknowledges the financial support of the Australia
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-\section*{References}
+%\section*{References}
 
 
 % %%%%%%% BIB files (bibtex)
