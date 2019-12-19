@@ -462,11 +462,67 @@ The main contributions of the paper must be clearly stated after a brief review 
 Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message.
 
 
-Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
+Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
+The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
 
 Reproducibility is a big issue in scientific research nowadays. However, we just confine to the situation where a published simulation result is genuinely correct but impossible to reproduce by people rather than the authors. The world would be a better place if all the authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
 
 You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{How to structure your paper}\label{structure}
+
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection, what the conclusion section should include.  
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.9\textwidth]{section}
+  \caption{A complex section should have a global paragraph between the heading of a section and the heading of its first subsection.}
+  \label{fig:section}
+\end{figure}
+
+For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
+
+Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
+
+There are two misunderstandings about the Conclusion section. First, the Conclusion section is usually made long under the false belief that a longer Conclusion will seem more impressive. Second, it is most often just a replication of the Abstract and/or part of the Introduction in a present perfect tense. If the reader has to read your Conclusion to know what your paper is all about, then your Abstract and Introduction were not well written.
+
+Appendix and 
+
+footnotes.
+
+% 
+%--------------------------------------
+\subsection{Some common mistakes}\label{sec:mistakes}
+
+\cref{tab:mistakes}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.85\textwidth}{ll}
+   \toprule
+   Don't & Do  \\
+  \midrule
+  The Table/Figure 2 & Table/Figure 2 \\
+  The Equation (2.2) & Equation (2.2) \\
+  The Young's modulus &  Young's modulus, or the Young modulus\\
+  Start a section with a table/figure/equation & Start a section with text\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Some common mistakes.}
+ \label{tab:mistakes}
+\end{table}
 
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
@@ -498,52 +554,6 @@ If you feel stuck at writing any parts of the paper, feel free to do something e
 
 While working on this paper, we read the literature (we always read it anyway). If we find a good paper relevant to our work, put it in \texttt{Bibdesk}, and cite it in the paper with some key sentences about it. Doing so saves us a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{How to structure your paper}\label{structure}
-
-An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection, what the conclusion section should include.  
-
-\begin{figure}[!h]
-  \centering
-  \includegraphics[width=0.9\textwidth]{section}
-  \caption{A complex section should have a global paragraph between the heading of a section and the heading of its first subsection.}
-  \label{fig:section}
-\end{figure}
-
-For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
-
-Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc.
-
-There are two misunderstandings about the Conclusion section. First, the Conclusion section is made long under the false belief that a longer Conclusion will seem more impressive.
-
-% 
-%--------------------------------------
-\subsection{Some common mistakes}\label{sec:mistakes}
-
-\cref{tab:mistakes}.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
-   \centering
-     \setlength\fboxsep{0pt}
-\vskip-\topsep%
-\smallskip%
-%\renewcommand\arraystretch{1.3}
-\colorbox{darkgray}{%
-   \begin{tabularx}{0.7\textwidth}{ll}
-   \toprule
-   Don't & Do  \\
-  \midrule
-  The Table/Figure 2 & Table/Figure 2 \\
-  The Equation (2.2) & Equation (2.2) \\
-  \bottomrule
- \end{tabularx}%
- }
-\caption{Some common mistakes.}
- \label{tab:mistakes}
-\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -601,7 +611,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %---------------------------------------------------------------------------
 
 In what follows, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs}. \cref{sec:equation}
+\cref{sec:tabs}. \cref{sec:equation} discusses notations and equations.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
@@ -610,11 +620,11 @@ It is not a requirement that the font used in figures match that of the text. Ye
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Input file for the plate penetration problem.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF image or a PGF one. The crucial point here is not to scale the inserted image.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
     \begin{figure}[!ht]
       \centering
-      \includegraphics{cold-spray-plots.pfd} # insert a PDF
-      \input{cold-spray-plots.pgf} # insert a PGF
+      \includegraphics{cold-spray-plots.pfd} % insert a PDF
+      \input{cold-spray-plots.pgf}           % insert a PGF
       \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
       \label{fig:cold-spray-plot}
     \end{figure}
@@ -626,7 +636,7 @@ It is not a requirement that the font used in figures match that of the text. Ye
   \centering
   \includegraphics{cold-spray-plots}
   \caption{A PDF figure of which the font nearly matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time.}
+  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.}
   \label{fig:cold-spray-plot}
 \end{figure}
 
@@ -641,14 +651,15 @@ It is not a requirement that the font used in figures match that of the text. Ye
 
 %---------------------------
 
-If you want to stack multiple pictures together with sub-captions using \LaTeX\ the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one. The \LaTeX\ code is given in \cref{snippet_sub_figures}.
+If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one. The \LaTeX\ code is given in \cref{snippet_sub_figures}.
+
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions.
 
 
 \begin{figure}[!h]
   \centering
 \includegraphics[width=0.9\textwidth]{figures1}
-  \caption{A PGF figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time.}
+  \caption{Stacking multiple pictures together with sub-captions using the package \texttt{subfig}.}
   \label{fig:figures1}
 \end{figure}
 
@@ -668,6 +679,12 @@ If you want to stack multiple pictures together with sub-captions using \LaTeX\ 
 \end{figure*}
 %---------------------------------------------------------------------------
 
+\begin{figure}[!h]
+  \centering
+\includegraphics{Taylor-bar-setup}
+  \caption{Using \texttt{Illustrator} and \texttt{LaTeXiT} to produce vector images with \LaTeX\ symbols. The font in the figure is slightly different from the one in the text ($\nabla\cdot\boldsymbol{\sigma} = \boldsymbol{\mathit{0}}$).}
+  \label{fig:figures11}
+\end{figure}
 
 \subsection{Tables}\label{sec:tabs}
 
@@ -689,8 +706,6 @@ Tables in scientific papers should be clear and focus on the data. We have found
         Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
           Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
           Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
-          Fracture energy [N/mm]    & 2.7 & 2.4 & 2.67  & 15  \\
-          Griffith's internal length [mm]     & 0.095 & 0.087 & 6.29  & 0.24 \\
           \midrule 
           Experimentally validated & n/a & n/a & yes & yes \\
           Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
@@ -720,8 +735,6 @@ Tables in scientific papers should be clear and focus on the data. We have found
         Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
           Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
           Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
-          Fracture energy [N/mm]    & 2.7 & 2.4 & 2.67  & 15  \\
-          Griffith's internal length [mm]     & 0.095 & 0.087 & 6.29  & 0.24 \\
           \midrule 
           Experimentally validated & n/a & n/a & yes & yes \\
           Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
@@ -738,7 +751,30 @@ Tables in scientific papers should be clear and focus on the data. We have found
 
 \subsection{Notations and equations}\label{sec:equation}
 
-Avoid overly complex notations. Try to introduce a nomenclature in the paper, to ease things with the reviewers and readers.  Sometimes, a table such as the one \cref{tab:notations} does a good job to introduce main notations. 
+Avoid overly complex notations. \cref{tab:complex-notation} gives some examples. Try to introduce a nomenclature in the paper, to ease things with the reviewers and readers.  Sometimes, a table such as the one \cref{tab:notations} does a good job to introduce main notations. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.5\textwidth}{ll}
+   \toprule
+   Don't & Do  \\
+  \midrule
+   $\varkappa$ & $\kappa$  \\
+   $\hbar$ & $\bar{h}$  \\
+   $\underline{\underline{A}}$ & $\boldsymbol{A}$ or $A_{ij}$\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Avoid overly complex notations.}
+ \label{tab:complex-notation}
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\fboxsep}{0pt}
@@ -768,28 +804,10 @@ Avoid overly complex notations. Try to introduce a nomenclature in the paper, to
 \end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
-   \centering
-     \setlength\fboxsep{0pt}
-\vskip-\topsep%
-\smallskip%
-%\renewcommand\arraystretch{1.3}
-\colorbox{darkgray}{%
-   \begin{tabularx}{0.7\textwidth}{ll}
-   \toprule
-   Don't & Do  \\
-  \midrule
-   $\varkappa$ & $\kappa$  \\
-   $\hbar$ & $\bar{h}$  \\
-   $\underline{\underline{A}}$ & $\boldsymbol{A}$ or $A_{ij}$\\
-  \bottomrule
- \end{tabularx}%
- }
-\caption{Avoid overly complex notations.}
- \label{tab:complex-notation}
-\end{table}
+Ideally, the impact of scientific work should be determined by its scientific merit, rather than by presentational style. Unfortunately, \cite{Fawcett11735,Higginson_2016} showed that scientifically strong papers may have reduced impact if not presented in an accessible manner. 
+The density of equations in an article in ecology and evolutionary biology has a significant negative impact on citation rates, with papers receiving 28\% fewer citations overall for each additional equation per page in the main text \citep{Fawcett11735}. For papers in physics, the number is 6\% fewer citations for each additional equation per page \citep{Higginson_2016}.
+
+The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. If needed, some equations can be put in appendices.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -932,6 +950,12 @@ Then you can search for `width of the pdf' in this log file to find out the widt
         plt.show()
   \end{snippet}
 \end{figure*}
+
+\begin{rmk}
+If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for converting \texttt{Matlab} figures into native TikZ/Pgfplots figures. The script can be found at
+\url{https://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz}.
+\end{rmk}
+
 
 
 \end{appendix}
