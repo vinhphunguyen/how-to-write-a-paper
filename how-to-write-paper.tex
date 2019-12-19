@@ -198,6 +198,7 @@
 \newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
 \newcommand{\sym}[1]{\textnormal{\textit{#1}}}
 
+
 \lstloadlanguages{C++,Matlab,Python}
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{darkgray}{rgb}{0.95,0.95,0.95}
@@ -240,7 +241,7 @@
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width}
 }
 
 \lstnewenvironment{snippet}[1][]
@@ -332,6 +333,8 @@
 
 \begin{document}
 
+%\newcommand\barbelow[1]{\stackunder[1.2pt]{$#1$}{\rule{.8ex}{.075ex}}}
+
 \begin{frontmatter}
 
 
@@ -349,13 +352,20 @@
 \author[1]{Vinh Phu Nguyen\corref{cor1}}
  \ead{phu.nguyen@monash.edu}
 \author[2]{Stephane Bordas}
+\author[3]{Alban de Vaucorbeil}
 
 \cortext[cor1]{Corresponding Author}
 
 \address[1]{Department of Civil Engineering, Monash University, Clayton 3800, VIC, Australia}
 \address[2]{Institute of Computational Engineering, University of Luxembourg, Faculty of Sciences Communication and Technology, Luxembourg}
-
+\address[3]{Institute for Frontier Materials, Deakin University, Geelong, VIC, 3216, Australia}
 %\maketitle
+
+
+
+
+
+
 
 
 %\pagestyle{fancyplain}
@@ -392,15 +402,16 @@ It is obvious that using a right tool for any task is half way to success. And w
 \begin{itemize}
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents;
 \item \texttt{BibDesk}:  is an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
+\item \texttt{Skim}: is an open-source PDF reader for mac OS.
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
 \item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
 \item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development. 
 \end{itemize}
 
-The flowchart is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a bib file managed by \texttt{BibDesk}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus of very high quality.
+The flowchart is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus of very high quality, see \cref{sec:figs}.
 
-For collaborative writings, \texttt{Git} and \texttt{Github} are very useful. This is because every co-author of the paper can work on the same paper simultaneously and they can use their own favorite \LaTeX\ editor (which is most often also their own coding editor). This is better than \texttt{Overleaf} at \url{https://www.overleaf.com}. And note that \texttt{Github} allows private repositories.
+For collaborative writings, \texttt{Git} and \texttt{Github} are very useful. This is because every co-author of the paper can work on the same paper simultaneously and they can use their own favorite \LaTeX\ editor (which is most often also their own coding editor). This is better than \texttt{Overleaf} at \url{https://www.overleaf.com}. And \texttt{Github} allows private repositories.
 
 
 
@@ -410,7 +421,7 @@ Note that \texttt{Bibdesk} is only available for mac OS. One can use \texttt{Zot
 
 \begin{rmk}
 Without going in to the debate which one is the best editor, we use \texttt{Sublime Text}. This is
- because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. The ability to 
+ because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. For Windows, use \texttt{Sumatra PDF} and \texttt{evince} for Linux.
 
 \begin{figure}[h!]
   \centering 
@@ -426,6 +437,8 @@ Without going in to the debate which one is the best editor, we use \texttt{Subl
 
 \cref{sec:guidelines}
 \cref{sec:writing-process}
+\cref{structure}
+\cref{sec:mistakes}
 
 \url{https://www.youtube.com/watch?v=VK51E3gHENc}.
 
@@ -489,7 +502,7 @@ While working on this paper, we read the literature (we always read it anyway). 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to structure your paper}\label{structure}
 
-An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead,   \cref{fig:section}
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection, what the conclusion section should include.  
 
 \begin{figure}[!h]
   \centering
@@ -498,8 +511,11 @@ An excellent article on how to structure a scientific paper can be found at \url
   \label{fig:section}
 \end{figure}
 
+For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
 
 Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc.
+
+There are two misunderstandings about the Conclusion section. First, the Conclusion section is made long under the false belief that a longer Conclusion will seem more impressive.
 
 % 
 %--------------------------------------
@@ -584,6 +600,12 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 \end{figure*}
 %---------------------------------------------------------------------------
 
+In what follows, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
+\cref{sec:tabs}. \cref{sec:equation}
+
+%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Figures}\label{sec:figs}
+
 It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}. This \texttt{Matplotlib} based \texttt{Python} script, given in \cref{snippet_matplotlib}, produces a PDF image with font not exactly matching the text font. If you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf} for such an example, the script in \cref{snippet_matplotlib_pgf} can be used.
 
 %---------------------------------------------------------------------------
@@ -619,19 +641,70 @@ It is not a requirement that the font used in figures match that of the text. Ye
 
 %---------------------------
 
-%---------------------------
+If you want to stack multiple pictures together with sub-captions using \LaTeX\ the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one. The \LaTeX\ code is given in \cref{snippet_sub_figures}.
+
 
 \begin{figure}[!h]
   \centering
-\includegraphics[width=0.9\textwidth]{table}
+\includegraphics[width=0.9\textwidth]{figures1}
   \caption{A PGF figure of which the font matches the text font: 
   evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time.}
-  \label{fig:table}
+  \label{fig:figures1}
 \end{figure}
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Commonly used \LaTeX\ packages.},label={snippet_latex_packages},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={Stacking multiple images using \LaTeX\ package \texttt{subfig}.},label={snippet_sub_figures},framerule=1pt,tabsize=3]
+    \begin{figure}[h!] \centering
+    \subfloat[CMOD=0.008 inch]{\includegraphics[width=0.18\textwidth]{t14} \label{fig:a}}\;
+    \subfloat[CMOD=0.010 inch]{\includegraphics[width=0.18\textwidth]{t16} \label{fig:b}}\;
+    \subfloat[CMOD=0.012 inch]{\includegraphics[width=0.18\textwidth]{t20} \label{fig:c}}\;
+    \subfloat[CMOD=0.016 inch]{\includegraphics[width=0.18\textwidth]{t28} \label{fig:d}}\;
+    \subfloat[CMOD=0.018 inch]{\includegraphics[width=0.18\textwidth]{t30} \label{fig:e}}\;
+    \caption{Asymmetric notched beam under three-point bending: crack evolution.}
+    \label{fig:bittencourt-evolution}
+    \end{figure}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
+
+
+\subsection{Tables}\label{sec:tabs}
+
+Tables in scientific papers should be clear and focus on the data. We have found tables similar to \cref{table:params} satisfy all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}.
+
+
+ \begin{table}[h!]
+      \centering
+      \caption{Material parameters and characteristics for all simulations.}
+      \setlength\fboxsep{0pt}
+      \vskip-\topsep%
+      \smallskip%
+      \renewcommand\arraystretch{1.4}
+      \colorbox{darkgray}{%
+      \begin{tabularx}{0.99\textwidth}{lllll}
+      \toprule
+      Parameter & Section 5.1 & Section 5.2 & Section 5.3 & Section 5.4 \\
+      \midrule
+        Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
+          Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
+          Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
+          Fracture energy [N/mm]    & 2.7 & 2.4 & 2.67  & 15  \\
+          Griffith's internal length [mm]     & 0.095 & 0.087 & 6.29  & 0.24 \\
+          \midrule 
+          Experimentally validated & n/a & n/a & yes & yes \\
+          Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
+          State & Plane strain & Plane strain & Plane strain & Plane stress \\
+       \bottomrule
+       \end{tabularx}%
+      }
+      \label{table:params}
+      \end{table}
+
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX.},label={snippet_latex_table},framerule=1pt,tabsize=3]
       \begin{table}[h!]
       \centering
       \caption{Material parameters and characteristics for all simulations.}
@@ -662,8 +735,63 @@ It is not a requirement that the font used in figures match that of the text. Ye
 \end{figure*}
 %---------------------------------------------------------------------------
 
-%
-%
+
+\subsection{Notations and equations}\label{sec:equation}
+
+Avoid overly complex notations. Try to introduce a nomenclature in the paper, to ease things with the reviewers and readers.  Sometimes, a table such as the one \cref{tab:notations} does a good job to introduce main notations. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.6\textwidth}{llX}
+   \toprule
+   Variable & Type  & Meaning\\
+  \midrule
+  $\mathbf{x}_p$ & Vector & Particle position (time-dependent)\\
+  $\mathbf{X}_p$ & Vector & Particle initial position\\
+  $m_p$ & Scalar & Particle mass\\
+  $V_p$ & Scalar & Particle volume\\
+  $\rho_p$ & Scalar & Particle density\\
+  $T_p$ & Scalar & Particle temperature\\
+  $\mathbf{P}_p$ & Tensor/Matrix & Particle 1$^\text{st}$ Piola-Kirchoff stress\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Major notations can be put in a table.}
+ \label{tab:notations}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.7\textwidth}{ll}
+   \toprule
+   Don't & Do  \\
+  \midrule
+   $\varkappa$ & $\kappa$  \\
+   $\hbar$ & $\bar{h}$  \\
+   $\underline{\underline{A}}$ & $\boldsymbol{A}$ or $A_{ij}$\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Avoid overly complex notations.}
+ \label{tab:complex-notation}
+\end{table}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Submission}
 
