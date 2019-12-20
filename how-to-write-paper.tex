@@ -392,7 +392,14 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-This brief paper gives guidance in writing a paper about your research. Most of the advice applies equally to writing a thesis. Due to our background in .... I have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour.
+Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. However, technical and language barriers may prevent many enthusiasts from ever publishing. To ease the writing process, books and articles on how to write scientific papers have been written \citep{day1998write,ashby2000write}.
+
+Building on the advices found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Most of the advice applies equally to writing a thesis. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
+
+Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process (see \cref{sec:tools}). These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
+As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the communication and publication of scientific documents, some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables are provided (see \cref{sec:latex}).
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
@@ -808,6 +815,34 @@ Ideally, the impact of scientific work should be determined by its scientific me
 The density of equations in an article in ecology and evolutionary biology has a significant negative impact on citation rates, with papers receiving 28\% fewer citations overall for each additional equation per page in the main text \citep{Fawcett11735}. For papers in physics, the number is 6\% fewer citations for each additional equation per page \citep{Higginson_2016}.
 
 The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. If needed, some equations can be put in appendices.
+
+%--------------------------------
+\subsection{Two-column format}
+
+Preparing two-column papers is harder than one-column papers. \cref{snippet_two_cols} presents \LaTeX\ snippets for long figures, tables and equations that span the whole width of the paper. That all \LaTeX\ can do for you. For equations that are just a bit longer than one column, you have to manually modify them to make them fit.
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Writing two-column papers using \LaTeX.},label={snippet_two_cols},framerule=1pt,tabsize=3]
+    \usepackage{mathtools, cuted} % 2 colum format, long equation
+
+     % big figure span the whole page
+    \begin{figure*}[!h]
+    \end{figure*}
+
+    % big table span the whole page
+    \begin{table*}[!h]
+    \end{table*}
+   
+     % using strip for long equations
+    \begin{strip}
+     % put your long equation here
+    \end{strip}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
