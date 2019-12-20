@@ -26,7 +26,7 @@
 %\renewcommand{\rmdefault}{ptm}    % set Times as the default text font
 % need to install mtpro2
 \let\Bbbk\relax
-%\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
+\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
 
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage[usenames]{color}
@@ -50,11 +50,12 @@
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
+\usepackage{tcolorbox}
+\usepackage{mathtools}
 %\usepackage[ruled,vlined]{algorithm2e}
 %\sloppy
 %\usepackage{authblk}
-\usepackage{verbatim}
-\usepackage{numprint}
+
 
 
 % nomenclature and glossaries for XFEM, CDM
@@ -181,6 +182,10 @@
 }
 
 
+\newtcolorbox[auto counter,crefname={Box}{Boxes}]{MyBox}[2][]{%
+  colback=gray!5!white,colframe=red!75!black,fonttitle=\bfseries,before skip=20pt plus
+  2pt,after skip=20pt,
+  title=Box~\thetcbcounter: #2, #1}
 
 \lstdefinestyle{commentstyle}{color=\color{green}}
 
@@ -362,12 +367,6 @@
 %\maketitle
 
 
-
-
-
-
-
-
 %\pagestyle{fancyplain}
 %\pagenumbering{arabic}
 
@@ -524,10 +523,46 @@ in that order.
 Writing an introductory section that simultaneously (i) includes all the above items, (ii) covers all relevant works, (iii) is easy to follow and (iv) is short is not an easy task.
 
 What we commonly see is introductory sections of about 2 to 3 pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in introduction section significantly improves the readability.
+See \cref{algo-static-FEM} for an example, taken from \cite{Mandal:EFM2019}.
+
+%---------------------------------------------------------------------------------------
+\begin{MyBox}[label={algo-static-FEM}]
+{Equations and tables can improve the introduction section.}
+According to second-order PFMs for quasi-static fracture of solids under the infinitesimal strain regime, the displacement field $\bfu$ and damage field $d$ are minimisers of the following total energy functional of the solid 
+\begin{equation*}
+  \mathscr{E} (\bfu, d) 
+    = \int_{\varOmega_{0}} \left[\omega(d)\psi_{0}^+(\bfepsilon (\bfu)) + \psi_{0}^-(\bfepsilon (\bfu)) \right]\td V
+    + \int_{\varOmega_{0}}  \frac{G_\text{f}}{c_\alpha} \left[ \frac{1}{b} \alpha(d)
+    + b \left( \nabla d \cdot \nabla d \right) \right] \td V
+    - \mathscr{P} (\bfu)
+\label{eq:3}
+\end{equation*}
+where the first integral is the stored strain energy, the second one denotes the fracture energy \`a la Griffith, $\omega(d)$ is the stress/energetic degradation function 
+and  $\alpha(d)$ represents the crack geometric function. The positive and negative parts of the strain energy density are denoted by $\psi_{0}^+(\bfepsilon (\bfu))$ and $\psi_{0}^-(\bfepsilon (\bfu))$, respectively.\\
+
+ \begin{tabularx}{\textwidth}{lllllll}
+   \toprule
+ model & $\alpha(d)$ &  $\omega(d)$    & fracture type & length-scale & sup.  & Parameters\\
+   \midrule     
+  \texttt{AT2} & $d^2$  & $(1 - d)^{2}$  & brittle  & $b=\dfrac{27}{256} l_{\text{ch}}$ & $\infty$ & $E_0,\nu_0,G_\text{f},b$ \\
+  \texttt{AT1} & $d$    & $(1 - d)^{2}$ &  brittle  & $b=\dfrac{3}{8} l_{\text{ch}}$ & $4b$  & $E_0,\nu_0,G_\text{f},b$\\
+  \texttt{PF-CZM} & $2d-d^2$ & $\dfrac{(1 - d)^p}{(1 - d)^p + Q(d)}$ &  brittle/cohesive  & numerical param. & $\pi b$  & $E_0,\nu_0,G_\text{f},f_t$\\
+   \bottomrule
+ \end{tabularx}%
+\end{MyBox}
 
 \subsubsection{Conclusion section}\label{sec:conclusion-part}
 
 There are two misunderstandings about the Conclusion section. First, the Conclusion section is usually made long under the false belief that a longer Conclusion will seem more impressive. Second, it is most often just a replication of the Abstract and/or part of the Introduction in a present perfect tense. If the reader has to read your Conclusion to know what your paper is all about, then your Abstract and Introduction were not well written.
+
+Some papers with well written sections even do not have a conclusion section. We are not a fan of that and believe having a conclusion is a good thing to do. Following the Nature paper introduced at the beginning of this section, a well written conclusion section should include the following items:
+
+\begin{itemize}
+\item One or two sentences summarizing what the paper has been about;
+\item Summarizing the key findings of the paper;
+\item What could be improved;
+\item What could be improved;
+\end{itemize}
 
 \subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
 
@@ -701,7 +736,7 @@ Finally inserting the figure is done according to \cref{snippet_pdf_tex}. \cref{
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={\LaTeX\ commands to insert a PDF image with embedded \LaTeX text (matching font)},label={snippet_pdf_tex},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert a PDF image with embedded \LaTeX\ text (matching font)},label={snippet_pdf_tex},framerule=1pt,tabsize=3]
     \begin{figure}
       \centering
       \input{output.pdf_tex}
@@ -908,6 +943,13 @@ It will value your peer as you think her/his opinion counts;
 It will give you insights on how understandable your paper is by someone who is connected to your field but did not do exactly the same piece of research;
 It will decrease the number of typos, which will enable your supervisor(s) to focus on the science as opposed to bumping over each spelling mistake, grammatical error, jargon.
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conclusions}
+
+Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  advices that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
+
+As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author.
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
