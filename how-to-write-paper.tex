@@ -392,45 +392,48 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. However, technical and language barriers may prevent many enthusiasts from ever publishing. To ease the writing process, books and articles on how to write scientific papers have been written \citep{day1998write,ashby2000write}.
+Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write}.
 
-Building on the advices found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Most of the advice applies equally to writing a thesis. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
+Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Note that most of the advice applies equally to writing a thesis. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
 
-Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process (see \cref{sec:tools}). These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
+In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
 As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the communication and publication of scientific documents, some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}).
 
-It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea, this paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
+It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
 
 The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare good images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
 
-It is obvious that using a right tool for any task is half way to success. And writing is no exception. Our tools are the following
+It is obvious that using a right tool for any task is half way to success. And writing is no exception. Our favorite tools for writting papers are the following:
 
 \begin{itemize}
-\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents;
-\item \texttt{BibDesk}:  is an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
+\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
+\item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
+\item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to BibDesk. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bib entries automatically when given a DOI;
 \item \texttt{Skim}: is an open-source PDF reader for mac OS.
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
+\item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, MacOs, and Windows;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
 \item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
-\item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development. 
+\item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development.
+\item \texttt{GitHub} or \texttt{Gitlab}: online platforms that offer hosting for software development version control using Git. They offer both public and private (preferred for research papers) repositories. When using Git, they make access from multiple devices and parallel collaboration easy.
 \end{itemize}
 
-The flowchart is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus of very high quality, see \cref{sec:figs}.
+The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of your document.
 
-For collaborative writings, \texttt{Git} and \texttt{Github} are very useful. This is because every co-author of the paper can work on the same paper simultaneously and they can use their own favorite \LaTeX\ editor (which is most often also their own coding editor). This is better than \texttt{Overleaf} at \url{https://www.overleaf.com}. And \texttt{Github} allows private repositories.
+To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. This is because every co-author of the paper can work on the same paper simultaneously. They can also use their own favorite \LaTeX\ editor (which is most often also their own coding editor). We find this is better than \texttt{Overleaf} at \url{https://www.overleaf.com}.
 
 
+
+% \begin{rmk}
+% Note that \texttt{Bibdesk} is only available for mac OS. One can use \texttt{Zotero} or \texttt{Mendeley} for Windows and Linux computers. Alternatives to the quite pricey  \texttt{Adobe Illustrator} are \texttt{GIMP} or \texttt{Inkscape}.
+% \end{rmk}
 
 \begin{rmk}
-Note that \texttt{Bibdesk} is only available for mac OS. One can use \texttt{Zotero} or \texttt{Mendeley} for Windows and Linux computers. Alternatives to the quite pricey  \texttt{Adobe Illustrator} are \texttt{GIMP} or \texttt{Inkscape}.
-\end{rmk}
-
-\begin{rmk}
-Without going in to the debate which one is the best editor, we use \texttt{Sublime Text}. This is
- because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. For Windows, use \texttt{Sumatra PDF} and \texttt{evince} for Linux.
+Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. For viewing the results, we like to use \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux.
 
 \begin{figure}[h!]
   \centering 
@@ -454,29 +457,28 @@ Without going in to the debate which one is the best editor, we use \texttt{Subl
 %--------------------------------------
 \subsection{General guidelines}\label{sec:guidelines}
 
-The following general guidelines are nothing new but they are worthy repeated:
+The following general guidelines are nothing new but they are worthy being repeated:
 
 \begin{enumerate}
 \item To inform not to impress;
-\item Aims for clarity and readability;
+\item Aim for clarity and readability;
 \item Contributions must be clearly stated;
-\item Each paragraph conveys only a single idea or message;
+\item Each paragraph conveys a single idea or message only;
 \item Avoid jargon;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
-\item Aims for reproducibility;
-\item Try to minimize the chances for reviewers to raise issues;
+\item Aim for reproducibility;
+\item Minimize chances for reviewers to raise issues;
 \end{enumerate}
 
-The main contributions of the paper must be clearly stated after a brief review of the literature. How your work differs from the existing literature in such and such a way. Be precise, this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
+The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
 Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message.
-
 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
 
-Reproducibility is a big issue in scientific research nowadays. However, we just confine to the situation where a published simulation result is genuinely correct but impossible to reproduce by people rather than the authors. The world would be a better place if all the authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
+Reproducibility is a big issue in scientific research nowadays. However, we just confine yourselves here to the situation where a published simulation result is genuinely correct but impossible to reproduce by people other than the authors. The world would be a better place if all authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
 
-You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice.
+You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. If reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections.
 
 
 
@@ -484,12 +486,14 @@ You can save time for both you -- the authors -- and the reviewers by not making
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to structure your paper}\label{structure}
 
+
 An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
 what the conclusion section (\cref{sec:conclusion-part}) should include.  
 
 \subsubsection{Global paragraph for long sections}\label{sec:global-para}
 
 For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
+
 
 \begin{figure}[!h]
   \centering
@@ -499,7 +503,10 @@ For paragraphs that are quite complex it is a good idea to write a global paragr
 \end{figure}
 
 
-Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
+For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. Remember to prepare your readers for what is coming ahead, at all levels. 
+
+
+Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used, etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
 
 \subsubsection{Introduction section}\label{sec:introduction-part}
 
@@ -558,10 +565,11 @@ Some common mistakes are given in \cref{tab:mistakes}.
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
 
-The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here by you we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be filling Section \textit{Acknowledgments}. Having updated your paper definitely makes us feel good. And that is very important. 
+The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. 
 
 
 After a research idea has been developed, one should start writing the paper. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
+For the sake of presentation, let's assume that one needs to develop a formulation, implement it in a code, and carry out simulations using this code. One first works on the formulation. Then, when there is some progresses, one can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, one moves to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, one starts with a very simple problem to test the code (and the idea). If this example works, one is confident about the idea, he/she can write something on Section \textit{Introduction} while the second simulation is under way. If this example is important, she can write about it in Section \textit{Examples}. If she is lucky, the result of this second simulation is very good. She can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={Input file for the plate penetration problem.},label={snippet_template},framerule=1pt,tabsize=3]
@@ -579,18 +587,17 @@ After a research idea has been developed, one should start writing the paper. Ob
 \end{figure*}
 %---------------------------------------------------------------------------
 
-For the sake of presentation, let's assume that one needs to develop a formulation, implement it in a code, and carry out simulations using this code. Then, one first works on the formulation. When there is some progresses, one can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation has been complete, one moves to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, one starts with a very simple problem to test the code (and the idea). If this example works, one is confident about the idea, he/she can write something on Section \textit{Introduction} while the second simulation is under way. If this example is important, she can write about it in Section \textit{Examples}. If she is lucky, the result of this second simulation is very good. She can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 
-If you feel stuck at writing any parts of the paper, feel free to do something else because keep focusing on the writing does not always help. Most often ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
+If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
-While working on this paper, we read the literature (we always read it anyway). If we find a good paper relevant to our work, put it in \texttt{Bibdesk}, and cite it in the paper with some key sentences about it. Doing so saves us a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
+While working on this paper, we read the literature (we always read it anyway). If we find a good paper relevant to our work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves us a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\LaTeX\ tips}\label{sec:latex}
 
-To improve the writing experience, once in while one should update their \LaTeX\ skills. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
+To improve the writing experience, once in a while one should update their \LaTeX\ skills. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
 By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references. 
 
 Using standard cross-referencing in \LaTeX\ only produces the label number, a name describing the label such as figure, chapter or equation has to be added manually. The cleveref package overcomes this limitation by automatically producing the label name and number:
@@ -647,7 +654,8 @@ In what follows, we discuss how to prepare high quality plots in \cref{sec:figs}
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
 
-It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is such a figure. And the \LaTeX\ code is shown in \cref{snippet_latex_figure}. This \texttt{Matplotlib} based \texttt{Python} script, given in \cref{snippet_matplotlib}, produces a PDF image with font not exactly matching the text font. If you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf} for such an example, the script in \cref{snippet_matplotlib_pgf} can be used.
+It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is an example of a figure with non-matching text. The \LaTeX\ code used to include it in this paper is shown in \cref{snippet_latex_figure}. And the \texttt{Matplotlib} based \texttt{Python} script used to produce the PDF image with non-matching font is given in \cref{snippet_matplotlib}.
+However, if you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf} for such an example, the script in \cref{snippet_matplotlib_pgf} can be used.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -682,9 +690,27 @@ It is not a requirement that the font used in figures match that of the text. Ye
 
 %---------------------------
 
-If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one. The \LaTeX\ code is given in \cref{snippet_sub_figures}.
+If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one of them. The corresponding \LaTeX\ code is given in \cref{snippet_sub_figures}.
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions.
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. With \texttt{Inkscape}, it is also possible to generate figures with matching fonts. This is done by writing all text or formula using \LaTeX syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX by doing Save~As $\rightarrow$ Portable Document Format $\rightarrow$  Save and checking ``Omit text in PDF and creating LaTeX file'' in the following dialogue. This could also be done using the following command:
+\begin{verbatim}
+inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
+\end{verbatim}
+Finally inserting the figure is done according to \cref{snippet_pdf_tex}. \cref{fig:figures11b} presents an example.
+
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert a PDF image with embedded \LaTeX text (matching font)},label={snippet_pdf_tex},framerule=1pt,tabsize=3]
+    \begin{figure}
+      \centering
+      \input{output.pdf_tex}
+      \caption{This is the caption for you nice drawing exported into pdf_tex.}
+      \label{fig:pdf_tex}
+    \end{figure}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
 
 
 \begin{figure}[!h]
@@ -712,8 +738,9 @@ If you use \texttt{Illustrator} for some drawings and need to include mathematic
 
 \begin{figure}[!h]
   \centering
-\includegraphics{Taylor-bar-setup}
-  \caption{Using \texttt{Illustrator} and \texttt{LaTeXiT} to produce vector images with \LaTeX\ symbols. The font in the figure is slightly different from the one in the text ($\nabla\cdot\boldsymbol{\sigma} = \boldsymbol{\mathit{0}}$).}
+  \subfloat[\texttt{Illustrator} and \texttt{LaTeXiT}]{\includegraphics{Taylor-bar-setup}\label{fig:figures11a}}
+  \subfloat[\texttt{Inkscape} and PDF\_TEX]{\input{Taylor-bar-setup_pdf_tex.pdf_tex}\label{fig:figures11b}}
+  \caption{Using \texttt{Illustrator} and \texttt{Inskcape} to produce vector images with \LaTeX\ symbols. The font in figure (a) is slightly different from the one in the text ($\nabla\cdot\boldsymbol{\sigma} = \boldsymbol{\mathit{0}}$), while it matches perfectly in figure (b).}
   \label{fig:figures11}
 \end{figure}
 
@@ -782,7 +809,7 @@ Tables in scientific papers should be clear and focus on the data. We have found
 
 \subsection{Notations and equations}\label{sec:equation}
 
-Avoid overly complex notations. \cref{tab:complex-notation} gives some examples. Try to introduce a nomenclature in the paper, to ease things with the reviewers and readers.  Sometimes, a table such as the one \cref{tab:notations} does a good job to introduce main notations. 
+Avoid overly complex notations, see \cref{tab:complex-notation} for some examples. Try to introduce a nomenclature in the paper, to ease things for the reviewers and readers.  Sometimes, a table such as \cref{tab:notations} does a good job to introduce main notations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\fboxsep}{0pt}
@@ -843,7 +870,7 @@ The lesson to learn from the above relation between the density of equations in 
 %--------------------------------
 \subsection{Two-column format}
 
-Preparing two-column papers is harder than one-column papers. \cref{snippet_two_cols} presents \LaTeX\ snippets for long figures, tables and equations that span the whole width of the paper. That all \LaTeX\ can do for you. For equations that are just a bit longer than one column, you have to manually modify them to make them fit.
+Preparing two-column papers is harder than one-column papers. \cref{snippet_two_cols} presents \LaTeX\ snippets for long figures, tables and equations that span the whole width of the paper. That's all \LaTeX\ can do for you. For equations that are just a bit longer than one column, you have to manually modify them to make them fit.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -874,9 +901,9 @@ Preparing two-column papers is harder than one-column papers. \cref{snippet_two_
 
 With the pressure to “publish” (or perish), it is increasingly difficult for students to resist the temptation to submit a “large” number of papers during their PhD. Some supervisors will also push the students to publish “too many” papers. 
 
-Do not submit until you are really happy with the work, as it usually does not save time to submit a piece of work which we know ourselves could be improved: the reviewers will think likewise, or be even more critical than we are ourselves of our work. If on a final read of the paper you think: “Ah… I could have added this study, this argument is not completely convincing to me, this graph could be better plotted, I think I forgot some relevant literature, the notations are complex, perhaps the reader will have difficulties…” then, do not submit, improve your work, and submit it when it is ready. 
+Do not submit until you are really happy with the work, as it usually does not save time to submit a piece of work which we know ourselves could be improved: the reviewers will think likewise, or be even more critical than we are ourselves of our work. If on a final read of the paper you think: “Ah… I could have added this study. This argument is not completely convincing to me. This graph could be better plotted. I think I forgot some relevant literature. The notations are complex, perhaps the reader will have difficulties…” Then, do not submit immediately, improve your work, and submit it when it is ready. 
 
-It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
+It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (\textit{i.e.} if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
 It will value your peer as you think her/his opinion counts;
 It will give you insights on how understandable your paper is by someone who is connected to your field but did not do exactly the same piece of research;
 It will decrease the number of typos, which will enable your supervisor(s) to focus on the science as opposed to bumping over each spelling mistake, grammatical error, jargon.
