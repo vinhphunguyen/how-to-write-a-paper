@@ -391,12 +391,16 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write}.
+Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
+However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. The value of writing well should not be underestimated: writing well leverages your work.
 
 Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Note that most of the advice applies equally to writing a thesis. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
 As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the communication and publication of scientific documents, some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}).
+
+
+We have an admission: there is no single, correct way to write.  Our goal was not to convince you that we have found the one true way, but instead simply to get people thinking, talking and sharing about writing. 
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
 
@@ -430,7 +434,7 @@ To keep track of the changes in the code, figures, and even research data, \text
 % Note that \texttt{Bibdesk} is only available for mac OS. One can use \texttt{Zotero} or \texttt{Mendeley} for Windows and Linux computers. Alternatives to the quite pricey  \texttt{Adobe Illustrator} are \texttt{GIMP} or \texttt{Inkscape}.
 % \end{rmk}
 
-\begin{rmk}
+\begin{rmk}\label{rm:a}
 Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
 because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. For viewing the results, we like to use \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux.
 
@@ -470,7 +474,7 @@ The following general guidelines are nothing new but they are worthy being repea
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
-Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message.
+Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message. Use simple sentences. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that'.
 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
@@ -566,12 +570,20 @@ Some papers with well written sections even do not have a conclusion section. We
 
 \subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
 
+It is appropriate to include appendices when
+the incorporation of material in the body of the paper would make it poorly structured or it would be too long and detailed and to ensure inclusion of supporting material that would otherwise clutter or break up the narrative flow of the paper.
+As discussed later in \cref{sec:equation}, it is better to move some equations to an appendix.
+
+There are opposite ideas about footnotes. Some authors use them scarcely and some use them extensively. The argument of the former is that footnotes \textit{break the flow of thoughts and send your eyes darting back and forth while your hands are turning pages or clicking on links} according to Pulitzer prizewinner novelist Cormac McCarthy (see \url{https://www.nature.com/articles/d41586-019-02918-5}). The argument of the latter is probably to reduce the paper length. But, there is one thing wrong about footnotes: too lengthy footnotes. Some papers contain footnotes that are half page and with a smaller font, which are not readable.
+
+We use footnotes sparingly and they are most often short. If you find a footnote long, consider using a remark as we have done in \cref{rm:a}.
+
 % 
 %--------------------------------------
 \subsection{Some common mistakes}\label{sec:mistakes}
 
 
-Some common mistakes are given in \cref{tab:mistakes}.
+Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mistakes by studying the writing style of your favorite author. Don't worry too much about grammatically perfect sentences. It is more important to be understood. \\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\fboxsep}{0pt}
@@ -582,14 +594,25 @@ Some common mistakes are given in \cref{tab:mistakes}.
 \smallskip%
 %\renewcommand\arraystretch{1.3}
 \colorbox{darkgray}{%
-   \begin{tabularx}{0.85\textwidth}{ll}
+   \begin{tabularx}{0.95\textwidth}{ll}
    \toprule
-   Don't & Do  \\
+   Don't/Avoid & Do  \\
   \midrule
-  The Table/Figure 2 & Table/Figure 2 \\
-  The Equation (2.2) & Equation (2.2) \\
-  The Young's modulus &  Young's modulus, or the Young modulus\\
+  \textbf{The} Table/Figure 2 & Table/Figure 2 \\
+  \textbf{The} Equation (2.2) & Equation (2.2) \\
+  \textbf{The} Young's modulus &  Young's modulus, or the Young modulus\\
   Start a section with a table/figure/equation & Start a section with text\\
+  This topic has interested researchers for a \textbf{long} time & ... for more than 20 years\\
+  A \textbf{bad} result & A poor/negative result\\
+  This section \textbf{serves} to explain & This section explains\\
+  It is \textbf{obvious/clear} ... & \\
+  \textbf{Due to the fact that} ... & Because ...\\
+  \textbf{It should be noted that} there are 5 samples in this study& This study consisted of 5 ...\\
+  The difference was \textbf{found to be} significant & The difference was significant \\
+  We plotted the data \textbf{by} using ... & We plotted the data using ...\\
+  Using adjectives such as `very', `always', `never' & \\
+  Using 'Above-mentioned' or 'aforementioned' & \\
+  Passive voice & Active voice \\
   \bottomrule
  \end{tabularx}%
  }
@@ -607,7 +630,7 @@ After a research idea has been developed, one should start writing the paper. Ob
 For the sake of presentation, let's assume that one needs to develop a formulation, implement it in a code, and carry out simulations using this code. One first works on the formulation. Then, when there is some progresses, one can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, one moves to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, one starts with a very simple problem to test the code (and the idea). If this example works, one is confident about the idea, he/she can write something on Section \textit{Introduction} while the second simulation is under way. If this example is important, she can write about it in Section \textit{Examples}. If she is lucky, the result of this second simulation is very good. She can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Input file for the plate penetration problem.},label={snippet_template},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={An empty paper using \LaTeX.},label={snippet_template},framerule=1pt,tabsize=3]
     \documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
     \title{\textbf{}}
     \begin{abstract}
@@ -616,8 +639,8 @@ For the sake of presentation, let's assume that one needs to develop a formulati
     \section{Methodology}
     \section{Examples}
     \section*{Acknowledgments}
-    \bibliographystyle{abbrvnat} % => just V. P. Nguyen, not Phu Nguyen, ...
-    \bibliography{mpm}
+    \bibliographystyle{abbrvnat} % bib style
+    \bibliography{mpm}           % bib file
   \end{snippetlatex}
 \end{figure*}
 %---------------------------------------------------------------------------
@@ -727,7 +750,7 @@ However, if you really want the font in your plots exactly match that in the tex
 
 If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one of them. The corresponding \LaTeX\ code is given in \cref{snippet_sub_figures}.
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. With \texttt{Inkscape}, it is also possible to generate figures with matching fonts. This is done by writing all text or formula using \LaTeX syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX by doing Save~As $\rightarrow$ Portable Document Format $\rightarrow$  Save and checking ``Omit text in PDF and creating LaTeX file'' in the following dialogue. This could also be done using the following command:
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is done by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX using the following command:
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
@@ -779,6 +802,9 @@ Finally inserting the figure is done according to \cref{snippet_pdf_tex}. \cref{
   \label{fig:figures11}
 \end{figure}
 
+ Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions.
+
+%--------------------------------------
 \subsection{Tables}\label{sec:tabs}
 
 Tables in scientific papers should be clear and focus on the data. We have found tables similar to \cref{table:params} satisfy all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}.
@@ -855,7 +881,7 @@ Avoid overly complex notations, see \cref{tab:complex-notation} for some example
 \smallskip%
 %\renewcommand\arraystretch{1.3}
 \colorbox{darkgray}{%
-   \begin{tabularx}{0.5\textwidth}{ll}
+   \begin{tabularx}{0.3\textwidth}{ll}
    \toprule
    Don't & Do  \\
   \midrule
@@ -948,6 +974,7 @@ It will decrease the number of typos, which will enable your supervisor(s) to fo
 \section{Conclusions}
 
 Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  advices that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
+
 
 As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author.
 
@@ -1089,7 +1116,7 @@ If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%
-%\section*{References}
+\section*{References}
 
 
 % %%%%%%% BIB files (bibtex)
