@@ -484,7 +484,12 @@ You can save time for both you -- the authors -- and the reviewers by not making
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to structure your paper}\label{structure}
 
-An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection, what the conclusion section should include.  
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
+what the conclusion section (\cref{sec:conclusion-part}) should include.  
+
+\subsubsection{Global paragraph for long sections}\label{sec:global-para}
+
+For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
 
 \begin{figure}[!h]
   \centering
@@ -493,21 +498,38 @@ An excellent article on how to structure a scientific paper can be found at \url
   \label{fig:section}
 \end{figure}
 
-For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
 
 Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
 
+\subsubsection{Introduction section}\label{sec:introduction-part}
+
+Everyone would agree that the introductory section of a paper should contain the following items:
+
+\begin{itemize}
+\item What the problem that the paper is solving;
+\item Demonstration the importance of that problem;
+\item What are the current approaches to solving this problem and what is wrong about them;
+\item What are the contributions of the paper; 
+\item Planning  the readers for reading the subsequent sections.
+\end{itemize}
+in that order.
+
+Writing an introductory section that simultaneously (i) includes all the above items, (ii) covers all relevant works, (iii) is easy to follow and (iv) is short is not an easy task.
+
+What we commonly see is introductory sections of about 2 to 3 pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in introduction section significantly improves the readability.
+
+\subsubsection{Conclusion section}\label{sec:conclusion-part}
+
 There are two misunderstandings about the Conclusion section. First, the Conclusion section is usually made long under the false belief that a longer Conclusion will seem more impressive. Second, it is most often just a replication of the Abstract and/or part of the Introduction in a present perfect tense. If the reader has to read your Conclusion to know what your paper is all about, then your Abstract and Introduction were not well written.
 
-Appendix and 
-
-footnotes.
+\subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
 
 % 
 %--------------------------------------
 \subsection{Some common mistakes}\label{sec:mistakes}
 
-\cref{tab:mistakes}.
+
+Some common mistakes are given in \cref{tab:mistakes}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \setlength{\fboxsep}{0pt}
@@ -816,7 +838,7 @@ Avoid overly complex notations. \cref{tab:complex-notation} gives some examples.
 Ideally, the impact of scientific work should be determined by its scientific merit, rather than by presentational style. Unfortunately, \cite{Fawcett11735,Higginson_2016} showed that scientifically strong papers may have reduced impact if not presented in an accessible manner. 
 The density of equations in an article in ecology and evolutionary biology has a significant negative impact on citation rates, with papers receiving 28\% fewer citations overall for each additional equation per page in the main text \citep{Fawcett11735}. For papers in physics, the number is 6\% fewer citations for each additional equation per page \citep{Higginson_2016}.
 
-The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. If needed, some equations can be put in appendices.
+The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
 
 %--------------------------------
 \subsection{Two-column format}
