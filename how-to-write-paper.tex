@@ -32,7 +32,7 @@
 \usepackage[usenames]{color}
 \usepackage{tabularx}
 \usepackage{booktabs}
-\usepackage{psfrag}
+%\usepackage{psfrag}
 %\usepackage{scalerel} % for large angle brackets <>, does not work
 %\usepackage{cite}
 %\usepackage[authoryear,sort,nonamebreak,sectionbib]{natbib} 
@@ -391,13 +391,38 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-Publishing original research in a peer-reviewed and indexed journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
+Publishing original research in a peer-reviewed  journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
 However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. The value of writing well should not be underestimated: writing well leverages your work.
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Note that most of the advice applies equally to writing a thesis. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
+Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
-As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the communication and publication of scientific documents, some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}).
+As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
+
+\begin{table}[h!]
+      \centering
+      \caption{Summary statistics of the use of \LaTeX\ in science disciplines (\% of submitted papers) taken from \url{https://www.the-scientist.com/uncategorized/dont-format-manuscripts-44040}.}
+      \setlength\fboxsep{0pt}
+      \vskip-\topsep%
+      \smallskip%
+      \renewcommand\arraystretch{1.4}
+      \colorbox{darkgray}{%
+      \begin{tabularx}{0.5\textwidth}{ll}
+      \toprule
+       Disciplines & \LaTeX\ rate \\
+      \midrule
+       Mathematics & 96.9\% \\
+       Statistic and Probability & 89.1\% \\
+       Physics & 74.0\%\\
+       Computer Sciences & 45.8\%\\
+       Engineering & 1.0\%\\
+       \bottomrule
+       \end{tabularx}%
+      }
+      \label{table:latex}
+      \end{table}
+
+With the pressure to “publish” (or perish), it is increasingly difficult for students to resist the temptation to submit a “large” number of papers during their PhD. Some of these might not be ready for submission yet. \cref{sec:submission} presents some considerations regarding this issue.
 
 
 We have an admission: there is no single, correct way to write.  Our goal was not to convince you that we have found the one true way, but instead simply to get people thinking, talking and sharing about writing. 
@@ -415,9 +440,9 @@ It is obvious that using a right tool for any task is half way to success. And w
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
 \item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
 \item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to BibDesk. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bib entries automatically when given a DOI;
-\item \texttt{Skim}: is an open-source PDF reader for mac OS.
+\item \texttt{Skim}: is an open-source PDF reader for macOS.
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
-\item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, MacOs, and Windows;
+\item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
 \item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
 \item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development.
@@ -495,7 +520,7 @@ what the conclusion section (\cref{sec:conclusion-part}) should include.
 
 \subsubsection{Global paragraph for long sections}\label{sec:global-para}
 
-For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. remember to prepare your readers for the structure ahead at all levels. 
+For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. Remember to prepare your readers for the structure ahead at all levels. See \cref{fig:section} for an example. 
 
 
 \begin{figure}[!h]
@@ -504,9 +529,6 @@ For paragraphs that are quite complex it is a good idea to write a global paragr
   \caption{A complex section should have a global paragraph between the heading of a section and the heading of its first subsection.}
   \label{fig:section}
 \end{figure}
-
-
-For paragraphs that are quite complex it is a good idea to write a global paragraph between the heading of a section and the heading of its first subsection. See \cref{fig:section} for an example. Remember to prepare your readers for what is coming ahead, at all levels. 
 
 
 Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used, etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
@@ -526,7 +548,7 @@ in that order.
 
 Writing an introductory section that simultaneously (i) includes all the above items, (ii) covers all relevant works, (iii) is easy to follow and (iv) is short is not an easy task.
 
-What we commonly see is introductory sections of about 2 to 3 pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in introduction section significantly improves the readability.
+What we commonly see is introductory sections of about 2 to 3 pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in the introduction section significantly improves the readability.
 See \cref{algo-static-FEM} for an example, taken from \cite{Mandal:EFM2019}.
 
 %---------------------------------------------------------------------------------------
@@ -541,19 +563,45 @@ According to second-order PFMs for quasi-static fracture of solids under the inf
     - \mathscr{P} (\bfu)
 \label{eq:3}
 \end{equation*}
-where the first integral is the stored strain energy, the second one denotes the fracture energy \`a la Griffith, $\omega(d)$ is the stress/energetic degradation function 
-and  $\alpha(d)$ represents the crack geometric function. The positive and negative parts of the strain energy density are denoted by $\psi_{0}^+(\bfepsilon (\bfu))$ and $\psi_{0}^-(\bfepsilon (\bfu))$, respectively.\\
+where the first integral is the stored strain energy, the second one denotes the fracture energy \`a la Griffith. The positive and negative parts of the strain energy density are denoted by $\psi_{0}^+(\bfepsilon (\bfu))$ and $\psi_{0}^-(\bfepsilon (\bfu))$, respectively.\\
 
  \begin{tabularx}{\textwidth}{lllllll}
    \toprule
  model & $\alpha(d)$ &  $\omega(d)$    & fracture type & length-scale & sup.  & Parameters\\
    \midrule     
-  \texttt{AT2} & $d^2$  & $(1 - d)^{2}$  & brittle  & $b=\dfrac{27}{256} l_{\text{ch}}$ & $\infty$ & $E_0,\nu_0,G_\text{f},b$ \\
-  \texttt{AT1} & $d$    & $(1 - d)^{2}$ &  brittle  & $b=\dfrac{3}{8} l_{\text{ch}}$ & $4b$  & $E_0,\nu_0,G_\text{f},b$\\
+  \texttt{AT2} & $d^2$  & $(1 - d)^{2}$  & brittle  & $b=(27/256) l_{\text{ch}}$ & $\infty$ & $E_0,\nu_0,G_\text{f},b$ \\
+  \texttt{AT1} & $d$    & $(1 - d)^{2}$ &  brittle  & $b=(3/8) l_{\text{ch}}$ & $4b$  & $E_0,\nu_0,G_\text{f},b$\\
   \texttt{PF-CZM} & $2d-d^2$ & $\dfrac{(1 - d)^p}{(1 - d)^p + Q(d)}$ &  brittle/cohesive  & numerical param. & $\pi b$  & $E_0,\nu_0,G_\text{f},f_t$\\
    \bottomrule
  \end{tabularx}%
 \end{MyBox}
+
+One way to visually demonstrate the contributions of your paper is to use a table in which a comparison with existing models is given. We borrowed this idea from the computer graphics, see e.g. \cite{Stomakhin:TG2013a}. Such a table is \cref{tab:summary} where we compared different variants of the material point method (MPM).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace*{3mm}
+\begin{table*}[h!]
+\centering
+  \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+ \begin{tabularx}{0.99\textwidth}{lllllll}
+   \toprule
+ MPM variant & Efficiency & Quad. error & Cell crossing  & Num. fracture & Grid type & Contacts \\
+   \midrule     
+  MPM   & \smiley{} \smiley{}  \smiley{}  & \frownie{} \frownie{} \frownie{} & yes & yes & Cartesian/unstructured & \smiley{} \\
+  GIMP  & \smiley{} \smiley{}  & \frownie{} \frownie{}   & no & yes  & Cartesian & \smiley{}  \\
+  CPDI  & \smiley{} \smiley{}  & \frownie{}   & no  & no  & Cartesian&  \smiley{}  \\
+  TLMPM & \smiley{} \smiley{} \smiley{} \smiley{}  & \frownie{}    & no & no  & Cartesian/unstructured&  \frownie{}   \\
+  iMPM  & \smiley{}  & \frownie{}   & no & n/a & n/a & n/a \\
+   \bottomrule
+ \end{tabularx}%
+}
+ \caption{Overall characteristics of common MPM variants. The smileys and frownies are typeset using the package \texttt{wasysym}. }  
+ \label{tab:summary}
+\end{table*}
 
 \subsubsection{Conclusion section}\label{sec:conclusion-part}
 
@@ -564,8 +612,7 @@ Some papers with well written sections even do not have a conclusion section. We
 \begin{itemize}
 \item One or two sentences summarizing what the paper has been about;
 \item Summarizing the key findings of the paper;
-\item What could be improved;
-\item What could be improved;
+\item What could be improved.
 \end{itemize}
 
 \subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
@@ -612,13 +659,19 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   We plotted the data \textbf{by} using ... & We plotted the data using ...\\
   Using adjectives such as `very', `always', `never' & \\
   Using 'Above-mentioned' or 'aforementioned' & \\
-  Passive voice & Active voice \\
+   & Use a spellchecker to get rid of all spell errors\\
+  %Passive voice & Active voice \\
   \bottomrule
  \end{tabularx}%
  }
 \caption{Some common mistakes.}
  \label{tab:mistakes}
 \end{table}
+
+Sentences can be described as active or passive. Using the passive voice is a way of writing sentences so that the subject has the action done to it. A common belief is that the passive voice can be useful for making writing sound more formal and objective. However, using it extensively results in papers which are boring with hard to understand lengthy sentences.
+
+On the other hand, using a personal tone can help to engage a reader. And the sentences are shorter and thus easier to understand.
+
 
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
@@ -658,7 +711,7 @@ While working on this paper, we read the literature (we always read it anyway). 
 To improve the writing experience, once in a while one should update their \LaTeX\ skills. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
 By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references. 
 
-Using standard cross-referencing in \LaTeX\ only produces the label number, a name describing the label such as figure, chapter or equation has to be added manually. The cleveref package overcomes this limitation by automatically producing the label name and number:
+Using standard cross-referencing in \LaTeX\ only produces the label number, a name describing the label such as figure, chapter or equation has to be added manually. The \texttt{cleveref} package overcomes this limitation by automatically producing the label name and number:
 
 \begin{verbatim}
 \cref{fig:figure1}, instead of Fig.~\ref{fig:figure1}
@@ -675,20 +728,21 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     \usepackage[retainorgcmds]{IEEEtrantools}
     \usepackage[usenames]{color}
     \usepackage{tabularx}
-    \usepackage{booktabs}    
+    \usepackage{booktabs}    % better tables
     \usepackage[font=small,labelfont=md]{caption,subfig}
     \usepackage{multirow}
     \usepackage[T1]{fontenc} % typing french                        
     \usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,backref=page]{hyperref}
     \usepackage{float}         % make new float environment such as boxes (captioned)
-    \usepackage{listings}      % insert source code   
+    \usepackage{listings}      % insert source code, used herein to insert LaTeX and Python codes 
     \usepackage{algorithm}
     \usepackage{algorithmicx}
     \usepackage{algpseudocode}
-    \usepackage[activate={true,nocompatibility},final,tracking=true,
-    kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+    \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,
+    spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+    \usepackage{nicefrac}             % type inline fractions: \nicefrac{1}{2}
+    \usepackage{numprint}             % \numprint{10000} => 10 000 not 10000
     \usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
-
     \definecolor{darkgray}{rgb}{0.95,0.95,0.95} % color used in tables
     % cleverref package: just do \cref{label} for figures, tables, equations anything
     % the package will determine the correct prefix be it Fig. or Equation or Listing.
@@ -707,7 +761,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %---------------------------------------------------------------------------
 
 In what follows, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs}. \cref{sec:equation} discusses notations and equations.
+\cref{sec:tabs}. \cref{sec:equation} discusses notations and equations. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
@@ -756,6 +810,7 @@ inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
 Finally inserting the figure is done according to \cref{snippet_pdf_tex}. \cref{fig:figures11b} presents an example.
 
+Some people even go to the extreme of not using a graphics software with an user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a TeX package for creating graphics programmatically. It has a steep learning curve but the results are outstanding.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -928,8 +983,10 @@ The density of equations in an article in ecology and evolutionary biology has a
 
 The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
 
+%$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
+
 %--------------------------------
-\subsection{Two-column format}
+\subsection{Two-column format}\label{sec:two-col}
 
 Preparing two-column papers is harder than one-column papers. \cref{snippet_two_cols} presents \LaTeX\ snippets for long figures, tables and equations that span the whole width of the paper. That's all \LaTeX\ can do for you. For equations that are just a bit longer than one column, you have to manually modify them to make them fit.
 
@@ -958,7 +1015,7 @@ Preparing two-column papers is harder than one-column papers. \cref{snippet_two_
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Submission}
+\section{Submission}\label{sec:submission}
 
 With the pressure to “publish” (or perish), it is increasingly difficult for students to resist the temptation to submit a “large” number of papers during their PhD. Some supervisors will also push the students to publish “too many” papers. 
 
