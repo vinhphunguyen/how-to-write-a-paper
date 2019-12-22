@@ -394,7 +394,7 @@ Starting with a working good research idea, this paper outlines a process that h
 Publishing original research in a peer-reviewed  journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
 However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. The value of writing well should not be underestimated: writing well leverages your work.
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical Materials project: one combining experiment with modeling and computation to explain some aspect of material behaviour. 
+Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
 As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
@@ -430,6 +430,8 @@ We have an admission: there is no single, correct way to write.  Our goal was no
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
 
 The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare good images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
@@ -515,7 +517,9 @@ You can save time for both you -- the authors -- and the reviewers by not making
 \subsection{How to structure your paper}\label{structure}
 
 
-An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. However, they are just general guidelines. A good strategy for getting started is to study how others have structured their papers. Select a couple of papers that you enjoy and understand and study how they are organized. You will learn a lot from copying these papers.
+
+ We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
 what the conclusion section (\cref{sec:conclusion-part}) should include.  
 
 \subsubsection{Global paragraph for long sections}\label{sec:global-para}
@@ -625,6 +629,7 @@ There are opposite ideas about footnotes. Some authors use them scarcely and som
 
 We use footnotes sparingly and they are most often short. If you find a footnote long, consider using a remark as we have done in \cref{rm:a}.
 
+
 % 
 %--------------------------------------
 \subsection{Some common mistakes}\label{sec:mistakes}
@@ -643,7 +648,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
 \colorbox{darkgray}{%
    \begin{tabularx}{0.95\textwidth}{ll}
    \toprule
-   Don't/Avoid & Do  \\
+   Don't/Avoid & Do/Use  \\
   \midrule
   \textbf{The} Table/Figure 2 & Table/Figure 2 \\
   \textbf{The} Equation (2.2) & Equation (2.2) \\
@@ -655,10 +660,15 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   It is \textbf{obvious/clear} ... & \\
   \textbf{Due to the fact that} ... & Because ...\\
   \textbf{It should be noted that} there are 5 samples in this study& This study consisted of 5 ...\\
+  \textbf{In order to} include ... & To include ...\\
   The difference was \textbf{found to be} significant & The difference was significant \\
   We plotted the data \textbf{by} using ... & We plotted the data using ...\\
+  Utilize or usage & Use \\
+  We \textbf{think/believe/feel} that the results are good & The results are good \\
   Using adjectives such as `very', `always', `never' & \\
+  Using words like `ground-breaking', `paradigm shift' & \\ 
   Using 'Above-mentioned' or 'aforementioned' & \\
+  Use long titles & Use short titles  \citep{paiva2012articles}\\
    & Use a spellchecker to get rid of all spell errors\\
   %Passive voice & Active voice \\
   \bottomrule
@@ -676,11 +686,11 @@ On the other hand, using a personal tone can help to engage a reader. And the se
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
 
-The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. 
+The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be as easy as filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. 
 
 
-After a research idea has been developed, one should start writing the paper. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
-For the sake of presentation, let's assume that one needs to develop a formulation, implement it in a code, and carry out simulations using this code. One first works on the formulation. Then, when there is some progresses, one can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, one moves to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, one starts with a very simple problem to test the code (and the idea). If this example works, one is confident about the idea, he/she can write something on Section \textit{Introduction} while the second simulation is under way. If this example is important, she can write about it in Section \textit{Examples}. If she is lucky, the result of this second simulation is very good. She can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
+After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
+For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you are confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={An empty paper using \LaTeX.},label={snippet_template},framerule=1pt,tabsize=3]
@@ -701,7 +711,7 @@ For the sake of presentation, let's assume that one needs to develop a formulati
 
 If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
-While working on this paper, we read the literature (we always read it anyway). If we find a good paper relevant to our work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves us a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
+While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
 
 
 
@@ -738,6 +748,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     \usepackage{algorithm}
     \usepackage{algorithmicx}
     \usepackage{algpseudocode}
+    %microtype: for Micro-Typographic Improvements
     \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,
     spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
     \usepackage{nicefrac}             % type inline fractions: \nicefrac{1}{2}
@@ -771,11 +782,13 @@ However, if you really want the font in your plots exactly match that in the tex
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF image or a PGF one. The crucial point here is not to scale the inserted image.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF, or PGF or PDF\_TEX image. The crucial point here is not to scale the inserted image. Otherwise, the font size will be affected.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
     \begin{figure}[!ht]
       \centering
-      \includegraphics{cold-spray-plots.pfd} % insert a PDF
+      % only one of the following three
+      \includegraphics{cold-spray-plots.pdf} % insert a PDF
       \input{cold-spray-plots.pgf}           % insert a PGF
+      \input{output.pdf_tex}                 % insert a pdf_tex
       \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
       \label{fig:cold-spray-plot}
     \end{figure}
@@ -808,22 +821,11 @@ If you use \texttt{Illustrator} for some drawings and need to include mathematic
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
-Finally inserting the figure is done according to \cref{snippet_pdf_tex}. \cref{fig:figures11b} presents an example.
+Finally inserting the figure is done according to \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example.
 
 Some people even go to the extreme of not using a graphics software with an user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a TeX package for creating graphics programmatically. It has a steep learning curve but the results are outstanding.
 
-%---------------------------------------------------------------------------
-\begin{figure*}[!h]
-  \begin{snippetlatex}[caption={\LaTeX\ commands to insert a PDF image with embedded \LaTeX\ text (matching font)},label={snippet_pdf_tex},framerule=1pt,tabsize=3]
-    \begin{figure}
-      \centering
-      \input{output.pdf_tex}
-      \caption{This is the caption for you nice drawing exported into pdf_tex.}
-      \label{fig:pdf_tex}
-    \end{figure}
-  \end{snippetlatex}
-\end{figure*}
-%---------------------------------------------------------------------------
+
 
 
 \begin{figure}[!h]
@@ -862,7 +864,8 @@ Some people even go to the extreme of not using a graphics software with an user
 %--------------------------------------
 \subsection{Tables}\label{sec:tabs}
 
-Tables in scientific papers should be clear and focus on the data. We have found tables similar to \cref{table:params} satisfy all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}.
+Tables in scientific papers should be clear and focus on the data. Here are some suggestions for making good tables: avoid vertical lines, avoid double horizontal lines, avoid boxing up cells and leave enough space between rows. 
+\cref{table:params} satisfies all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}.
 
 
  \begin{table}[h!]
@@ -873,17 +876,17 @@ Tables in scientific papers should be clear and focus on the data. We have found
       \smallskip%
       \renewcommand\arraystretch{1.4}
       \colorbox{darkgray}{%
-      \begin{tabularx}{0.99\textwidth}{lllll}
+      \begin{tabularx}{0.7\textwidth}{lll}
       \toprule
-      Parameter & Section 5.1 & Section 5.2 & Section 5.3 & Section 5.4 \\
+      Parameter                & Section 5.1     & Section 5.2     \\
       \midrule
-        Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
-          Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
-          Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
+      Young's modulus [MPa]    & $210\times10^3$ & 145            \\
+      Poisson's ratio [-]      & 0.3             & 0.45            \\
+      Tensile strength [MPa]   & 2445            & 20              \\
           \midrule 
-          Experimentally validated & n/a & n/a & yes & yes \\
-          Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
-          State & Plane strain & Plane strain & Plane strain & Plane stress \\
+      Experimentally validated & n/a             & n/a            \\
+      Solver                   & multi-step AM   & single-step AM implicit-explicit \\
+      State                    & Plane strain    & Plane strain    \\
        \bottomrule
        \end{tabularx}%
       }
@@ -893,7 +896,7 @@ Tables in scientific papers should be clear and focus on the data. We have found
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX.},label={snippet_latex_table},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} plugin.},label={snippet_latex_table},framerule=1pt,tabsize=3]
       \begin{table}[h!]
       \centering
       \caption{Material parameters and characteristics for all simulations.}
@@ -901,18 +904,18 @@ Tables in scientific papers should be clear and focus on the data. We have found
       \vskip-\topsep%
       \smallskip%
       \renewcommand\arraystretch{1.4}
-      \colorbox{darkgray}{%
-      \begin{tabularx}{0.99\textwidth}{lllll}
+      \colorbox{darkgray}{%      
+      \begin{tabularx}{0.7\textwidth}{lll}
       \toprule
-      Parameter & \cref{ex:brittle} & \cref{ex:penny} & \cref{ex:dens} & \cref{ex:mixed} \\
+      Parameter                & Section 5.1     & Section 5.2     \\
       \midrule
-        Young's modulus [MPa]     & $210\times10^3$ & 145 & 0.5887  & 6.5 \\
-          Poisson's ratio [-]     & 0.3 & 0.45  & 0.45  & 0.45  \\
-          Tensile strength [MPa]          & 2445  & 20  & 0.58 & 20  \\
+      Young's modulus [MPa]    & $210\times10^3$ & 145            \\
+      Poisson's ratio [-]      & 0.3             & 0.45            \\
+      Tensile strength [MPa]   & 2445            & 20              \\
           \midrule 
-          Experimentally validated & n/a & n/a & yes & yes \\
-          Solver & multi-step AM & single-step AM & implicit-explicit & implicit-explicit \\
-          State & Plane strain & Plane strain & Plane strain & Plane stress \\
+      Experimentally validated & n/a             & n/a            \\
+      Solver                   & multi-step AM   & single-step AM implicit-explicit \\
+      State                    & Plane strain    & Plane strain    \\
        \bottomrule
        \end{tabularx}%
       }
@@ -921,6 +924,8 @@ Tables in scientific papers should be clear and focus on the data. We have found
   \end{snippetlatex}
 \end{figure*}
 %---------------------------------------------------------------------------
+
+%The angle was \ang{12.3} The brightness was \SI{.23e7}{\candela} \SI{20}{MPa} \SI{10}{N.m.m^{-2}}
 
 
 \subsection{Notations and equations}\label{sec:equation}
