@@ -501,7 +501,7 @@ The following general guidelines are nothing new but they are worthy being repea
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
-Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message. Use simple sentences. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that'.
+Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message. Use simple sentences. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that' (see \cref{tab:mistakes}).
 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
@@ -580,7 +580,7 @@ where the first integral is the stored strain energy, the second one denotes the
  \end{tabularx}%
 \end{MyBox}
 
-One way to visually demonstrate the contributions of your paper is to use a table in which a comparison with existing models is given. We borrowed this idea from the computer graphics, see e.g. \cite{Stomakhin:TG2013a}. Such a table is \cref{tab:summary} where we compared different variants of the material point method (MPM).
+One way to visually demonstrate the contributions of your paper is to use a table in which a comparison with existing models is given. We borrowed this idea from the computer graphics community, see e.g. \cite{Stomakhin:TG2013a}. Such a table is \cref{tab:summary} where we compared different variants of the material point method (MPM).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \vspace*{3mm}
@@ -686,7 +686,7 @@ On the other hand, using a personal tone can help to engage a reader. And the se
 %--------------------------------------
 \subsection{Writing process: an iterative process}\label{sec:writing-process}
 
-The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be as easy as filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. 
+The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be as easy as filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. The third idea is that writing is intertwined with all other activities (formulation, coding and running simulations) as illustrated in \cref{fig:writing}.
 
 
 After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
@@ -701,6 +701,7 @@ For the sake of presentation, let's assume that you need to develop a formulatio
     \section{Introduction}
     \section{Methodology}
     \section{Examples}
+    \section{Conclusions}
     \section*{Acknowledgments}
     \bibliographystyle{abbrvnat} % bib style
     \bibliography{mpm}           % bib file
@@ -708,12 +709,19 @@ For the sake of presentation, let's assume that you need to develop a formulatio
 \end{figure*}
 %---------------------------------------------------------------------------
 
+ \begin{figure}[!ht]
+      \centering
+      \input{writing.pdf_tex}                 % insert a pdf_tex
+      \caption{Writing is intertwined with other activities of the project.}
+      \label{fig:writing}
+    \end{figure}
 
 If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
 While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
 
-
+Continuing this process, by the time the final simulation has been finished, you already have a nearly complete paper. Note that you have already revised your paper many times when your simulations were running (which usually take a long time).
+You just need to write the conclusions. And voila, you have a complete paper. Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\LaTeX\ tips}\label{sec:latex}
@@ -739,7 +747,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     \usepackage[usenames]{color}
     \usepackage{tabularx}
     \usepackage{booktabs}    % better tables
-    \usepackage[font=small,labelfont=md]{caption,subfig}
+    \usepackage[font=small,labelfont=md]{caption,subfig} % sub-figures (see Fig. 6)
     \usepackage{multirow}
     \usepackage[T1]{fontenc} % typing french                        
     \usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,backref=page]{hyperref}
@@ -800,7 +808,7 @@ However, if you really want the font in your plots exactly match that in the tex
   \centering
   \includegraphics{cold-spray-plots}
   \caption{A PDF figure of which the font nearly matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.}
+  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.  Be thourghful about colour blindness that affects around 8\% of men, particularly an inability to distinguish red and green. \texttt{matplotlib} can be colour-blind appropriate,  see line 29 of \cref{snippet_matplotlib}.}
   \label{fig:cold-spray-plot}
 \end{figure}
 
@@ -896,7 +904,7 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} plugin.},label={snippet_latex_table},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some softwares that can generate \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). },label={snippet_latex_table},framerule=1pt,tabsize=3]
       \begin{table}[h!]
       \centering
       \caption{Material parameters and characteristics for all simulations.}
