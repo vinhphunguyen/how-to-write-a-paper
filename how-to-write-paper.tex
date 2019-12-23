@@ -517,7 +517,7 @@ You can save time for both you -- the authors -- and the reviewers by not making
 \subsection{How to structure your paper}\label{structure}
 
 
-An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. However, they are just general guidelines. A good strategy for getting started is to study how others have structured their papers. Select a couple of papers that you enjoy and understand and study how they are organized. You will learn a lot from copying these papers.
+An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. However, they are just general guidelines. A good strategy for getting started is to study how others have structured their papers. Select a couple of papers that you enjoy and understand and study how they are organized. You will learn a lot from copying these papers. Our favorite author is Ted Belytschko.
 
  We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
 what the conclusion section (\cref{sec:conclusion-part}) should include.  
@@ -680,7 +680,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
 
 Sentences can be described as active or passive. Using the passive voice is a way of writing sentences so that the subject has the action done to it. A common belief is that the passive voice can be useful for making writing sound more formal and objective. However, using it extensively results in papers which are boring with hard to understand lengthy sentences.
 
-On the other hand, using a personal tone can help to engage a reader. And the sentences are shorter and thus easier to understand.
+On the other hand, using a personal tone can help to engage a reader. And the sentences are shorter and thus easier to understand. 
 
 
 %--------------------------------------
@@ -693,7 +693,7 @@ After a research idea has been developed, you should start writing the paper \ci
 For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you are confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={An empty paper using \LaTeX.},label={snippet_template},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={A starting TEX file.},label={snippet_template},framerule=1pt,tabsize=3]
     \documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
     \title{\textbf{}}
     \begin{abstract}
@@ -718,7 +718,7 @@ For the sake of presentation, let's assume that you need to develop a formulatio
 
 If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
-While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a bib file. 
+While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a \texttt{.bib} file. 
 
 Continuing this process, by the time the final simulation has been finished, you already have a nearly complete paper. Note that you have already revised your paper many times when your simulations were running (which usually take a long time).
 You just need to write the conclusions. And voila, you have a complete paper. Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
@@ -866,6 +866,8 @@ Some people even go to the extreme of not using a graphics software with an user
   \caption{Using \texttt{Illustrator} and \texttt{Inskcape} to produce vector images with \LaTeX\ symbols. The font in figure (a) is slightly different from the one in the text ($\nabla\cdot\boldsymbol{\sigma} = \boldsymbol{\mathit{0}}$), while it matches perfectly in figure (b).}
   \label{fig:figures11}
 \end{figure}
+
+Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files and include them in the TEX document in the same manner as PDF images.
 
  Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions.
 
@@ -1047,6 +1049,8 @@ Does this paper really need a conclusion section? Not really, but we are a bit c
 
 
 As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author.
+
+As with anything in this world, rules are there to be bent. Feel free to be creative as long as you write to inform not to impress. And happy writing.
 
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
