@@ -829,7 +829,7 @@ If you use \texttt{Illustrator} for some drawings and need to include mathematic
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
-Finally inserting the figure is done according to \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example.
+Finally inserting the figure is done according to \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example. The original source is \cite{inkscape}.
 
 Some people even go to the extreme of not using a graphics software with an user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a TeX package for creating graphics programmatically. It has a steep learning curve but the results are outstanding.
 
@@ -1066,7 +1066,7 @@ As with anything in this world, rules are there to be bent. Feel free to be crea
 %\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 \section{Python script for plotting data}
 
-This appendix present some \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in LaTeX documents.
+This appendix present some \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in LaTeX documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
 
 The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the tex file:
 
