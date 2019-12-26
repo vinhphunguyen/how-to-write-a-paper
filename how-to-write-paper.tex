@@ -404,7 +404,8 @@ Starting with a working good research idea, this paper outlines a process that h
 Publishing original research in a peer-reviewed  journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
 However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. The value of writing well should not be underestimated: writing well leverages your work and 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs; and about 40\% pertain to the quality of the scientific work \citep{iles1997guidebook}.
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing a paper about your research. Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
+Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality papers about your research. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
+Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
 As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
@@ -452,7 +453,7 @@ It is obvious that using a right tool for any task is half way to success. And w
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
 \item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
 \item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to BibDesk. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bib entries automatically when given a DOI;
-\item \texttt{Skim}: is an open-source PDF reader for macOS.
+\item \texttt{Skim}: is an open-source PDF reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
 \item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
@@ -474,7 +475,7 @@ They can also use their own favorite \LaTeX\ editor (which is most often also th
 
 \begin{rmk}\label{rm:a}
 Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
-because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. For viewing the results, we like to use \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux.
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. 
 
 \begin{figure}[h!]
   \centering 
@@ -484,6 +485,12 @@ because it can be used for both writing \LaTeX\ documents and coding. Furthermor
 \end{figure}
 \end{rmk}
 
+\begin{rmk}\label{rm:a}
+There are many alternatives to \texttt{matplotlib} such as \texttt{gnuplot} and \texttt{Matlab}. We used  \texttt{Matlab} and recently switched to \texttt{Python}. There are many reasons of which two are noteworthy. First, it is fun and beneficial to the brain to learn something new. Second, \texttt{Python} is now everywhere: it is used as a scripting language for many finite element packages (e.g. \texttt{Abaqus}) and scientific visualization programs (\texttt{Paraview} and \texttt{Ovito} for example).
+\end{rmk}
+
+
+The tools described in this section help you to write papers effectively, only when you have an idea how a paper should look like. The next section is devoted to just that. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Writing tips}\label{sec:writing-tips}
@@ -702,7 +709,7 @@ For the sake of presentation, let's assume that you need to develop a formulatio
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={A starting \TeX\ file. This is for papers to be submitted to Elsevier journals. Change the template (documentclass) accordingly for other publishers. Introducing a table of content helps to see
-  the overall structure of the paper. },label={snippet_template},framerule=1pt,tabsize=3]
+  the overall structure of the paper. For brevity, packages used were skipped, see \cref{snippet_latex_packages}. },label={snippet_template},framerule=1pt,tabsize=3]
     \documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
     \title{\textbf{}}
     \begin{abstract}
@@ -735,10 +742,12 @@ You just need to write the conclusions. And voila, you have a complete paper. Be
 
 Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later for instance in your books), save it as another TEX file and remove unnecessary parts.
 
+Now you know how a good quality scientific paper looks like and you are ready to compile such one. Next section presents some suggestions on how to do this electronically using \LaTeX. 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\LaTeX\ tips}\label{sec:latex}
 
-In what follows, \cref{sec:packages} we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
+We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
 \cref{sec:tabs}. \cref{sec:equation} discusses notations and equations. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
 
 %%%%%%%%%%%%%%%%%%%%%%
@@ -816,7 +825,7 @@ However, if you really want the font in your plots exactly match that in the tex
       \input{cold-spray-plots.pgf}           % insert a PGF
       \input{output.pdf_tex}                 % insert a pdf_tex
       \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
-      \label{fig:cold-spray-plot}
+      \label{fig:cold-spray}
     \end{figure}
   \end{snippetlatex}
 \end{figure*}
@@ -1056,7 +1065,7 @@ Preparing two-column papers is harder than one-column papers. \cref{snippet_two_
 \end{figure*}
 %---------------------------------------------------------------------------
 
-
+At this stage you know how to use \LaTeX to write a high quality technical paper. And you have just completed one such paper. Is it ready for submission? Next section provides some steps taken to answer this question. 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
