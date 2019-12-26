@@ -12,4 +12,10 @@ macOS machines:
 
 1. Install macTeX: http://www.tug.org/mactex/ 
 2. It comes with TexShop--a LaTeX editor, so you can start using LaTeX immediately.
-3. 
+3. To get the pdf of the mentioned-above paper, open TexShop (in folder /Applications/TeX/), press Command T, and you're done. Press Enter when you see the progress in the console stops (this is because we inserted the command \showthe\textwidth to get the document width).
+
+That's it.
+
+
+LinuX machines:
+
