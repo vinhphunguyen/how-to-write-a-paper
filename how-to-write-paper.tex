@@ -119,7 +119,7 @@
 %-----------------------------------------------------------------------
 \newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
 \newcommand{\sym}[1]{\textnormal{\textit{#1}}}
-\newcommand{\eg}{\textit{e.g.},\xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
 \newcommand{\ie}{\textit{i.e.},\xspace}
 \newcommand{\etc}{etc.\@\xspace}
 
@@ -410,7 +410,7 @@ Building on the advice found in the literature and our total 20 years of experie
 Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
-As we use \LaTeX, a high-quality free typesetting system which is the de facto standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
+As we use \LaTeX, a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
 
 \begin{table}[h!]
       \centering
@@ -453,8 +453,8 @@ It is obvious that using a right tool for any task is half way to success. And w
 
 \begin{itemize}
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
-\item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX;
-\item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to BibDesk. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bib entries automatically when given a DOI;
+\item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX\ (see \cref{sec:bibdesk});
+\item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to \texttt{BibDesk}. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bibliography entries automatically when given a DOI;
 \item \texttt{Skim}: is an open-source PDF reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
 \item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
@@ -477,7 +477,7 @@ They can also use their own favorite \LaTeX\ editor (which is most often also th
 
 \begin{rmk}\label{rm:a}
 Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
-because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
 
 \begin{figure}[h!]
   \centering 
@@ -517,7 +517,8 @@ The following general guidelines are nothing new but they are worthy being repea
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
-Do not be afraid of writing short paragraphs, even two-sentence ones. Each paragraph conveys only a single idea or message. Use simple sentences. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that' (see \cref{tab:mistakes}).
+Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
+Use simple sentences that are linked together so that your writing is coherent. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that' (see \cref{tab:mistakes}).
 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
@@ -535,8 +536,8 @@ You can save time for both you -- the authors -- and the reviewers by not making
 
 An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. However, they are just general guidelines. A good strategy for getting started is to study how others have structured their papers. Select a couple of papers that you enjoy and understand and study how they are organized. You will learn a lot from copying these papers. Our favorite author is Ted Belytschko.
 
- We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), (\cref{sec:introduction-part}), and 
-what the conclusion section (\cref{sec:conclusion-part}) should include.  
+ We will not repeat that herein. Instead, we elaborate some of the arguments such as a complex section should have a global paragraph before going into its subsection (\cref{sec:global-para}), how to write a compelling introduction section (\cref{sec:introduction-part}), and 
+what the conclusion section  should include (\cref{sec:conclusion-part}).  Appendices and footnotes are discussed in \cref{sec:appendix-footnotes} and references in \cref{sec:references}.
 
 \subsubsection{Global paragraph for long sections}\label{sec:global-para}
 
@@ -654,6 +655,15 @@ There are opposite ideas about footnotes. Some authors use them scarcely and som
 
 We use footnotes sparingly and they are most often short. If you find a footnote long, consider using a remark as we have done in \cref{rm:a}.
 
+\subsubsection{References}\label{sec:references}
+
+You should pick one reference style and stick to it so that the references are consistent. Regarding how relevant work should be cited, below are some suggestions:
+
+\begin{itemize}
+\item Cite originals not derivatives;
+\item Avoid citing a list of two many papers \eg `See [1-20] for some relevant work'. This helps neither the readers to find anything, nor the authors of [1-20] to get credit;
+\item If a author-year reference format is used \eg 'Walker (1996) studied ...', all references in a single citation should be ordered in chronological order. For instance, `To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}.'
+\end{itemize}
 
 % 
 %--------------------------------------
@@ -1277,7 +1287,14 @@ Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:par
       \label{table:params-foot}
       \end{table}
 
+%-------------------------------
+\section{Reference management with \texttt{BibDesk}}\label{sec:bibdesk}
+ 
 
+This section presents some ideas on how we manage our library (bibliography entries plus the associated PDFs) using \texttt{BibDesk}. The original source is \url{https://atchieu.wordpress.com} (search for \texttt{BibDesk}). 
+
+We have a single \texttt{.bib} file for our library. This file is stored in a \texttt{Dropbox} folder so that it syncs to all devices. \texttt{BibDesk} is configured such that whenever a PDF is added to a 
+bibliography entry, the PDF will be automatically renamed and stored in a specified location (in \texttt{Dropbox}) with a specified file naming convention. You do not  care where they go: just go to \texttt{BibDesk} and search for the article and the PDF is there.
 
 \end{appendices}
 
