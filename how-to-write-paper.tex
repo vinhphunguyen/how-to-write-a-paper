@@ -86,7 +86,6 @@
 \usepackage{totcount} % to count the total number of references and other things
 \usepackage[figure,table]{totalcount}
 \usepackage{blkarray, bigstrut} % write complicated matrices with borders, see http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/blkarray/blkarray.pdf
-\usepackage{setspace}
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,decorations.pathreplacing,backgrounds,positioning,fit,matrix,math,shapes.misc}
 \tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={1pt}}
@@ -105,7 +104,24 @@
 \usepackage[english]{babel}
 \usepackage[title,titletoc,toc]{appendix}
 \usepackage[referable]{threeparttablex}
+\usepackage{xspace}
 %\usepackage[breakwithin,symbol]{parnotes} % foonote in tables, but not good looking
+
+\newcommand{\bfsigma}{\boldsymbol{\sigma}}
+\newcommand{\bfepsilon}{\boldsymbol{\epsilon}}
+\newcommand{\bfu}{\boldsymbol{u}}
+\newcommand{\bfx}{\boldsymbol{x}}
+\newcommand{\bfphi}{\boldsymbol{\phi}}
+\newcommand{\bftheta}{\boldsymbol{\theta}}
+\newcommand{\te}{\text{e}}
+\newcommand{\td}{\text{d}}
+\newcommand{\tp}{\text{p}}
+%-----------------------------------------------------------------------
+\newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
+\newcommand{\sym}[1]{\textnormal{\textit{#1}}}
+\newcommand{\eg}{\textit{e.g.},\xspace}
+\newcommand{\ie}{\textit{i.e.},\xspace}
+\newcommand{\etc}{etc.\@\xspace}
 
 \renewlist{tablenotes}{enumerate}{1}
 \makeatletter
@@ -198,21 +214,7 @@
 
 \lstdefinestyle{commentstyle}{color=\color{green}}
 
-\newcommand{\bfsigma}{\boldsymbol{\sigma}}
-\newcommand{\bfepsilon}{\boldsymbol{\epsilon}}
-\newcommand{\bfu}{\boldsymbol{u}}
-\newcommand{\bfx}{\boldsymbol{x}}
-\newcommand{\bfphi}{\boldsymbol{\phi}}
-\newcommand{\bftheta}{\boldsymbol{\theta}}
-\newcommand{\te}{\text{e}}
-\newcommand{\td}{\text{d}}
-\newcommand{\tp}{\text{p}}
-%-----------------------------------------------------------------------
-\newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
-\newcommand{\sym}[1]{\textnormal{\textit{#1}}}
-\newcommand{\eg}{e.g.,\xspace}
-\newcommand{\ie}{i.e.,\xspace}
-\newcommand{\etc}{etc.\@\xspace}
+
 
 \lstloadlanguages{C++,Matlab,Python}
 \definecolor{mygreen}{rgb}{0,0.6,0}
@@ -475,7 +477,7 @@ They can also use their own favorite \LaTeX\ editor (which is most often also th
 
 \begin{rmk}\label{rm:a}
 Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
-because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. 
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
 
 \begin{figure}[h!]
   \centering 
@@ -621,6 +623,15 @@ One way to visually demonstrate the contributions of your paper is to use a tabl
  \label{tab:summary}
 \end{table*}
 
+Another way to intrigue readers is to summarize all the impressive simulations that the model presented in your paper can do in a figure (see \cref{fig:all-results}). In this way, you increase the chance that your paper gets read to the end.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics[width=0.4\textwidth]{mpm-all-results}
+  \caption{A figure with all good results that the model in your paper can deliver can help to intrigue readers so that they will read your paper to the end. Taken from \cite{Vaucorbeil:AAM2019}.}
+  \label{fig:all-results}
+\end{figure}
+
 \subsubsection{Conclusion section}\label{sec:conclusion-part}
 
 There are two misunderstandings about the Conclusion section. First, the Conclusion section is usually made long under the false belief that a longer Conclusion will seem more impressive. Second, it is most often just a replication of the Abstract and/or part of the Introduction in a present perfect tense. If the reader has to read your Conclusion to know what your paper is all about, then your Abstract and Introduction were not well written.
@@ -684,7 +695,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   Using words like `ground-breaking', `paradigm shift' & \\ 
   Using 'Above-mentioned' or 'aforementioned' & \\
   Use long titles & Use short titles  \citep{paiva2012articles}\\
-   & Use a spellchecker to get rid of all spell errors\\
+   & Use a spell checker to get rid of all spell errors\\
   %Passive voice & Active voice \\
   \bottomrule
  \end{tabularx}%
@@ -704,7 +715,7 @@ On the other hand, using a personal tone can help to engage a reader. And the se
 The first idea is when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it is just polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be as easy as filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. The third idea is that writing is intertwined with all other activities (formulation, coding and running simulations) as illustrated in \cref{fig:writing}.
 
 
-After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
+After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \TeX\ file for an empty paper.
 For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you are confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -894,9 +905,9 @@ Some people even go to the extreme of not using a graphics software with an user
   \label{fig:figures11}
 \end{figure}
 
-Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
+Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
 
- Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions i.e. without going back and forth between the figure and the text sections.
+ Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections.
 
 %--------------------------------------
 \subsection{Tables}\label{sec:tabs}
@@ -1075,7 +1086,7 @@ With the pressure to “publish” (or perish), it is increasingly difficult for
 
 Do not submit until you are really happy with the work, as it usually does not save time to submit a piece of work which we know ourselves could be improved: the reviewers will think likewise, or be even more critical than we are ourselves of our work. If on a final read of the paper you think: “Ah… I could have added this study. This argument is not completely convincing to me. This graph could be better plotted. I think I forgot some relevant literature. The notations are complex, perhaps the reader will have difficulties…” Then, do not submit immediately, improve your work, and submit it when it is ready. 
 
-It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (\textit{i.e.} if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
+It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (\ie if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
 It will value your peer as you think her/his opinion counts;
 It will give you insights on how understandable your paper is by someone who is connected to your field but did not do exactly the same piece of research;
 It will decrease the number of typos, which will enable your supervisor(s) to focus on the science as opposed to bumping over each spelling mistake, grammatical error, jargon. 
