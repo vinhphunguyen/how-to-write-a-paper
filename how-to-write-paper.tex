@@ -31,7 +31,7 @@
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage[usenames]{color}
 \usepackage{tabularx}
-\usepackage{enumitem,booktabs}
+\usepackage{booktabs}
 %\usepackage{scalerel} % for large angle brackets <>, does not work
 %\usepackage{cite}
 %\usepackage[authoryear,sort,nonamebreak,sectionbib]{natbib} 
@@ -103,7 +103,8 @@
 %\usepackage{underscore}
 \usepackage[english]{babel}
 \usepackage[title,titletoc,toc]{appendix}
-\usepackage[referable]{threeparttablex}
+%\usepackage[referable]{threeparttablex}
+\usepackage{threeparttable}
 \usepackage{xspace}
 %\usepackage[breakwithin,symbol]{parnotes} % foonote in tables, but not good looking
 
@@ -123,10 +124,10 @@
 \newcommand{\ie}{\textit{i.e.},\xspace}
 \newcommand{\etc}{etc.\@\xspace}
 
-\renewlist{tablenotes}{enumerate}{1}
-\makeatletter
-\setlist[tablenotes]{label=\tnote{\alph*},ref=\alph*,itemsep=\z@,topsep=\z@skip,partopsep=\z@skip,parsep=\z@,itemindent=\z@,labelindent=\tabcolsep,labelsep=.2em,leftmargin=*,align=left,before={\footnotesize}}
-\makeatother
+% \renewlist{tablenotes}{enumerate}{1}
+% \makeatletter
+% \setlist[tablenotes]{label=\tnote{\alph*},ref=\alph*,itemsep=\z@,topsep=\z@skip,partopsep=\z@skip,parsep=\z@,itemindent=\z@,labelindent=\tabcolsep,labelsep=.2em,leftmargin=*,align=left,before={\footnotesize}}
+% \makeatother
 
 \crefname{appsec}{Appendix}{Appendices}
 
@@ -455,7 +456,7 @@ It is obvious that using a right tool for any task is half way to success. And w
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
 \item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX\ (see \cref{sec:bibdesk});
 \item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to \texttt{BibDesk}. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bibliography entries automatically when given a DOI;
-\item \texttt{Skim}: is an open-source PDF reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
+\item \texttt{Skim}: is an open-source PDF (Portable Document Format) reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
 \item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
 \item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
@@ -503,15 +504,14 @@ This section presents  writing tips. We start with a presentation of general gui
 %--------------------------------------
 \subsection{General guidelines}\label{sec:guidelines}
 
-The following general guidelines are nothing new but they are worthy being repeated:
+The following general guidelines for a high quality scientific paper are nothing new but they are worthy being repeated as there are so many poorly written papers:
 
 \begin{enumerate}
 \item To inform not to impress;
-\item Aim for clarity and readability;
+\item Aim for clarity and readability and  reproducibility;
 \item Contributions must be clearly stated;
 \item Each paragraph conveys a single idea or message only;
 \item Avoid jargon;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
-\item Aim for reproducibility;
 \item Minimize chances for reviewers to raise issues;
 \end{enumerate}
 
@@ -681,7 +681,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
 \smallskip%
 %\renewcommand\arraystretch{1.3}
 \colorbox{darkgray}{%
-   \begin{tabularx}{0.95\textwidth}{ll}
+   \begin{tabularx}{\textwidth}{ll}
    \toprule
    Don't/Avoid & Do/Use  \\
   \midrule
@@ -704,6 +704,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   Using adjectives such as `very', `always', `never' & \\
   Using words like `ground-breaking', `paradigm shift' & \\ 
   Using 'Above-mentioned' or 'aforementioned' & \\
+  & Always spell out an acronym the first time it is used \\
   Use long titles & Use short titles  \citep{paiva2012articles}\\
    & Use a spell checker to get rid of all spell errors\\
   %Passive voice & Active voice \\
@@ -726,7 +727,7 @@ The first idea is when you have finished your last simulation, the first draft o
 
 
 After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \TeX\ file for an empty paper.
-For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a pdf can help you to spot errors. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you are confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
+For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a PDF can help you to spot errors and to crystallize your thinking. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you are confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={A starting \TeX\ file. This is for papers to be submitted to Elsevier journals. Change the template (documentclass) accordingly for other publishers. Introducing a table of content helps to see
@@ -833,8 +834,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
 
-It is not a requirement that the font used in figures match that of the text. Yet, it would be better if they match. \cref{fig:cold-spray-plot} is an example of a figure with non-matching text. The \LaTeX\ code used to include it in this paper is shown in \cref{snippet_latex_figure}. And the \texttt{Matplotlib} based \texttt{Python} script used to produce the PDF image with non-matching font is given in \cref{snippet_matplotlib} (\cref{sec:scripts}).
-However, if you really want the font in your plots exactly match that in the text, see \cref{fig:cold-spray-plot-pgf} for such an example, the script in \cref{snippet_matplotlib_pgf} (\cref{sec:scripts}) can be used.
+It is not a requirement that the font used in $x\text{-}y$ scatterplots  match that of the text. Yet, it would be better if they match. Using  \texttt{Matplotlib}, one can generate $x\text{-}y$ scatterplots which either are PDFs with font nearly matching the text font  (see \cref{fig:cold-spray-plot}) or PGFs (Portal Graphic Format) with matching font (see \cref{fig:cold-spray-plot-pgf}).  The \LaTeX\ code used to include this type of plot  is shown in \cref{snippet_latex_figure}. We refer to \cref{snippet_matplotlib,snippet_matplotlib_pgf} in \cref{sec:scripts} for the \texttt{Python} source codes that generate these PDFs and PGFs from a data file.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -856,7 +856,7 @@ However, if you really want the font in your plots exactly match that in the tex
   \centering
   \includegraphics{cold-spray-plots}
   \caption{A PDF figure of which the font nearly matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.  Be thourghful about colour blindness that affects around 8\% of men, particularly an inability to distinguish red and green. \texttt{matplotlib} can be colour-blind appropriate,  see line 29 of \cref{snippet_matplotlib}.}
+  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.  Be thourghful about colour blindness that affects around 8\% of men, particularly an inability to distinguish red and green. \texttt{matplotlib} can be colour-blind appropriate,  see line 29 of \cref{snippet_matplotlib}. Also, graphs should not have a title. Put the title in the figure caption.}
   \label{fig:cold-spray-plot}
 \end{figure}
 
@@ -864,7 +864,7 @@ However, if you really want the font in your plots exactly match that in the tex
   \centering
   \input{cold-spray-plots.pgf}
   \caption{A PGF figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time.}
+  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time. PGF pictures are embedded as raw commands in \LaTeX\ documents and thus can slow down the compilation process.}
   \label{fig:cold-spray-plot-pgf}
 \end{figure}
 
@@ -1133,9 +1133,9 @@ Our guidelines are rules not principles. Unlike principles, however, rules break
 
 \section{Python scripts for plotting data}\label{sec:scripts}
 
-This appendix present two \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in LaTeX documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
+This appendix present two \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in \LaTeX\ documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
 
-The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the tex file:
+The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the \TeX\ file:
 
 
 \begin{verbatim}
@@ -1254,24 +1254,26 @@ If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for 
 %-------------------------------
 \section{Tables with footnotes}\label{sec:tab-foonote}
 
-Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:params-foot} is one example and we refer to the source to see how it was made. It is probably not an elegant solution but it is the best solution we have found.
+Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:params-foot} is one example and we refer to the source (at our github account) to see how it was made. It is probably not an elegant solution but it is the best solution we have found.
 
 \begin{table}
       \centering
-      \caption{A table with footnotes generated using packages \texttt{enumitem,threeparttablex}.}
+      \caption{A table with footnotes generated using package \texttt{threeparttable}.}
+      \label{table:params-foot}
       \setlength\fboxsep{0pt}
       \vskip-\topsep%
       \smallskip%
       \renewcommand\arraystretch{1.4}
       \begin{threeparttable}
+      \centering
       \colorbox{darkgray}{%
-      \begin{tabularx}{\textwidth}{lll}
+      \begin{tabularx}{0.9\textwidth}{lll}
       \toprule
       Parameter                & Section 5.1     & Section 5.2     \\
       \midrule
-      Young's modulus [MPa]    & $210\times10^3$ & 145\tnotex{tnote:robots-r1}            \\
+      Young's modulus [MPa]    & $210\times10^3$ & 145\tnote{\textdagger}            \\
       Poisson's ratio [-]      & 0.3             & 0.45            \\
-      Tensile strength [MPa]   & 2445            & 20\tnotex{tnote:robots-r2}              \\
+      Tensile strength [MPa]   & 2445            & 20\tnote{\ddag}              \\
           \midrule 
       Experimentally validated & n/a             & n/a            \\
       Solver                   & multi-step AM   & single-step AM implicit-explicit \\
@@ -1279,13 +1281,15 @@ Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:par
        \bottomrule
        \end{tabularx}%
       }
-      \begin{tablenotes}
-      \item\label{tnote:robots-r1}footnote1.
-      \item\label{tnote:robots-r2}Taken from \cite{Mandal:EFM2019}.
-    \end{tablenotes}
+      \parbox{\linewidth}{
+      \begin{tablenotes}[flushleft]
+      \footnotesize
+      \item[\textdagger] Footnote1
+      \item[\ddag]Taken from \cite{Mandal:EFM2019}.
+    \end{tablenotes}}
     \end{threeparttable}
-      \label{table:params-foot}
       \end{table}
+
 
 %-------------------------------
 \section{Reference management with \texttt{BibDesk}}\label{sec:bibdesk}
