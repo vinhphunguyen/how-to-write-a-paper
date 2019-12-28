@@ -49,7 +49,7 @@
 \usepackage{algorithm}
 \usepackage{algorithmicx}
 \usepackage{algpseudocode}
-\usepackage{tcolorbox}
+\usepackage[most]{tcolorbox}
 \usepackage{mathtools}
 %\usepackage[ruled,vlined]{algorithm2e}
 %\sloppy
@@ -326,7 +326,7 @@
 \newcommand{\latex}{\LaTeX\xspace}
 \numberwithin{equation}{section}
 
-\graphicspath{{./figures/}} 
+%\graphicspath{{./figures/}} 
 
 \newcommand\Lang[1]{\textsc{#1}}
 
@@ -391,7 +391,7 @@ Starting with a working good research idea, this paper outlines a process that h
 % *********************************************************************************************************
 
 \begin{keyword}
- \LaTeX; scientific writing; .
+ scientific writing; \LaTeX; scientific publication; high quality writing.
 \end{keyword}
 
 
@@ -518,7 +518,21 @@ The following general guidelines for a high quality scientific paper are nothing
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
 Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
-Use simple sentences that are linked together so that your writing is coherent. Try to revise your writing to keep only those words that are necessary. For example, `because' is enough instead of the wordy `due to the fact that' (see \cref{tab:mistakes}).
+Use simple sentences that are linked together so that your writing is coherent. 
+See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information.
+
+Try to revise your writing to keep only those words/figures/tables that are necessary. For example, `because' is enough instead of the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
+
+\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version1}]
+{Version 1.}
+{\tcbfontsize{0.8}
+In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{Existing phase-field models generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly or an ad hoc hybrid formulation at the loss of variational consistency}. \textbf{To address this issue}, this work presents a variationally consistent phase-field anisotropic damage model.}
+\end{MyBox}\hfill
+\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version2}]
+{Version 2.}
+{\tcbfontsize{0.8}
+In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{To capture this asymmetric behavior}, previous phase-field models  generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly ... This work presents a phase-field anisotropic model that is able to capture \textbf{the asymmetric behavior}, \textbf{variationally consistent} and satisfy \textbf{crack boundary conditions}.}
+\end{MyBox}
 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
@@ -764,7 +778,11 @@ You just need to write the conclusions. And voila, you have a complete paper. Be
 
 Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later for instance in your books), save it as another TEX file and remove unnecessary parts.
 
-Now you know how a good quality scientific paper looks like and you are ready to compile such one. Next section presents some suggestions on how to do this electronically using \LaTeX. 
+Now you know how a good quality scientific paper looks like and you are ready to compile such one. Next section presents some suggestions on how to do this electronically using \LaTeX. \\
+
+%---------------------------------------------------------------------------------------
+% 
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{\LaTeX\ tips}\label{sec:latex}
