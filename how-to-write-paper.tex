@@ -404,10 +404,10 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-Publishing original research in a peer-reviewed  journal is an important milestone for a scientist. It is an important parameter to assess academic achievements. 
-However, technical and language barriers may prevent many enthusiasts from ever publishing. To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. The value of writing well should not be underestimated: writing well leverages your work and 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs; and about 40\% pertain to the quality of the scientific work \citep{iles1997guidebook}.
+Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings are significant but also it should be well written so that the findings can be transmitted throughout the scientific community. The value of writing well should not be underestimated: writing well leverages your work and 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs; and about 40\% pertain to the quality of the scientific work \citep{iles1997guidebook}.
+However, writing a high quality paper is not an easy task due to technical and language barriers. To remove those barriers, books and articles giving advices on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. 
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality papers about your research. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
+Building on the advices found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality papers about your research. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
 Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 In \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
@@ -443,7 +443,7 @@ There is no single, correct way to write.  Our goal was not to convince you that
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
 
-The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare good images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
+The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare high quality images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
 
 
 
@@ -852,7 +852,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
 
-Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, all the axes are clearly defined, those sorts of things. 
+Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, all the axes are clearly defined, those sorts of things. 
 This section discusses how to generate high quality figures be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}). It also discusses on how figures/tables should be referred to in the paper (\cref{sec:citing-figs}).
 
 \subsubsection{Graphs}\label{sec:graphs}
@@ -887,7 +887,7 @@ It is not a requirement that the font used in  graphs (\eg bar charts, error cha
   \centering
   \input{cold-spray-plots.pgf}
   \caption{A PGF figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time. PGF pictures are embedded as raw commands in \LaTeX\ documents and thus can slow down the compilation process.}
+  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time. PGF pictures are embedded as raw commands in \LaTeX\ documents and thus can slow down the compilation process (\ie the process from a \TeX\ file to the final PDF).}
   \label{fig:cold-spray-plot-pgf}
 \end{figure}
 
