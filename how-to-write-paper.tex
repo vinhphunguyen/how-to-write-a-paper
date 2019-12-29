@@ -439,7 +439,7 @@ As we use \LaTeX, a high-quality free typesetting system which is the \textit{de
 With the pressure to “publish” (or perish), it is increasingly difficult for students to resist the temptation to submit a “large” number of papers during their PhD. Some of these might not be ready for submission yet. \cref{sec:submission} presents some considerations regarding this issue.
 
 
-We have an admission: there is no single, correct way to write.  Our goal was not to convince you that we have found the one true way, but instead simply to get people thinking, talking and sharing about writing. 
+There is no single, correct way to write.  Our goal was not to convince you that what described in this paper is the one true way, but instead to get people thinking, talking and sharing about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. What they do not know (or do not care?) is that there are probably many readers struggling to grasp their papers.
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  
 
@@ -852,7 +852,12 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
 
-It is not a requirement that the font used in $x\text{-}y$ scatterplots  match that of the text. Yet, it would be better if they match. Using  \texttt{Matplotlib}, one can generate $x\text{-}y$ scatterplots which either are PDFs with font nearly matching the text font  (see \cref{fig:cold-spray-plot}) or PGFs (Portal Graphic Format) with matching font (see \cref{fig:cold-spray-plot-pgf}).  The \LaTeX\ code used to include this type of plot  is shown in \cref{snippet_latex_figure}. We refer to \cref{snippet_matplotlib,snippet_matplotlib_pgf} in \cref{sec:scripts} for the \texttt{Python} source codes that generate these PDFs and PGFs from a data file.
+Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, all the axes are clearly defined, those sorts of things. 
+This section discusses how to generate high quality figures be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}). It also discusses on how figures/tables should be referred to in the paper (\cref{sec:citing-figs}).
+
+\subsubsection{Graphs}\label{sec:graphs}
+
+It is not a requirement that the font used in  graphs (\eg bar charts, error chats, $x\text{-}y$ scatter plots \etc)  match that of the text. Yet, it would be better if they match. Using  \texttt{Matplotlib}, one can generate graphs scatterplots which either are PDFs with font nearly matching the text font  (see \cref{fig:cold-spray-plot}) or PGFs (Portal Graphic Format) with matching font (see \cref{fig:cold-spray-plot-pgf}).  The \LaTeX\ code used to include this type of plot  is shown in \cref{snippet_latex_figure}. We refer to \cref{snippet_matplotlib,snippet_matplotlib_pgf} in \cref{sec:scripts} for the \texttt{Python} source codes that generate these PDFs and PGFs from a data file.
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
@@ -890,6 +895,8 @@ It is not a requirement that the font used in $x\text{-}y$ scatterplots  match t
 %---------------------------
 
 If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one of them. The corresponding \LaTeX\ code is given in \cref{snippet_sub_figures}.
+
+\subsubsection{Sketches}\label{sec:sketches}
 
 If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is done by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX using the following command:
 \begin{verbatim}
@@ -933,9 +940,27 @@ Some people even go to the extreme of not using a graphics software with an user
   \label{fig:figures11}
 \end{figure}
 
+\subsubsection{Contour plots}\label{sec:contours}
+
 Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
 
  Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections.
+
+ \subsubsection{Citing figures}\label{sec:citing-figs}
+
+ The number one practice about citing figures is remember to cite all the figures. Even though there are some \LaTeX\ packages \eg \texttt{Refcheck} that help to find out unused figures and tables, our practice is when you insert a figure in your document, cite it immediately.
+
+ We did not pay enough attention to how figures (and tables) should be referred to in the text. That is why we usually wrote the following sentences
+
+ \begin{verbatim}
+  Fig. 10 depicts the global responses. As can be seen, the global responses are 
+  insensitive to the incorporated length scale.
+ \end{verbatim}
+The first sentence is unnecessary as it only directs the reader to the figure (Fig. 10), no information is provided. A better version of the above is:
+
+ \begin{verbatim}
+  The global responses are insensitive to the incorporated length scale (Fig. 10).
+ \end{verbatim}
 
 %--------------------------------------
 \subsection{Tables}\label{sec:tabs}
@@ -1064,7 +1089,7 @@ The density of equations in an article in ecology and evolutionary biology has a
 
 The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
 
-Equations are typically written as follows
+To make this paper a complete scientific article\footnote{So that beginners to \LaTeX\ can learn how to write a complete paper.}, we introduce the following arbitrary equation
 
 \begin{equation}
   \mathscr{E} (\bfu, d) 
@@ -1074,7 +1099,7 @@ Equations are typically written as follows
     - \mathscr{P} (\bfu)
 \label{eq:3}
 \end{equation}
-where the first integral is the stored strain energy, the second one denotes the fracture energy \`a la Griffith. The positive and negative parts of the strain energy density are denoted by $\psi_{0}^+(\bfepsilon (\bfu))$ and $\psi_{0}^-(\bfepsilon (\bfu))$, respectively.
+For details on how to typeset formulae in \LaTeX\, see chapter 3 of \cite{latex}.
 
 %$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
 
