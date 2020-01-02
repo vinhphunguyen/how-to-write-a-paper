@@ -47,7 +47,7 @@
 \usepackage{listings}      % insert source code   
 %\usepackage{bm}
 \usepackage{algorithm}
-\usepackage{algorithmicx}
+%\usepackage{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage[most]{tcolorbox}
 \usepackage{mathtools}
@@ -102,12 +102,58 @@
 \usepackage{pgf}
 %\usepackage{underscore}
 \usepackage[english]{babel}
-\usepackage[title,titletoc,toc]{appendix}
+\usepackage[title,titletoc,toc]{appendix} 
 %\usepackage[referable]{threeparttablex}
 \usepackage{threeparttable}
 \usepackage{xspace}
 %\usepackage[breakwithin,symbol]{parnotes} % foonote in tables, but not good looking
 
+%%%% these patches ensure that the backrefs point to the actual occurrences of the citations in the text, not just the page or section in which they appeared
+%%%% https://tex.stackexchange.com/questions/54541/precise-back-reference-target-with-hyperref-and-backref
+%%%% BEGIN BACKREF DIRECT PATCH, apply these AFTER loading hyperref package with appropriate backref option
+% The following options are provided for the patch, currently with a poor interface!
+% * If there are multiple cites on the same (page|section) (depending on backref mode),
+%   should we show only the first one or should we show them all?
+\newif\ifbackrefshowonlyfirst
+\backrefshowonlyfirstfalse
+%\backrefshowonlyfirsttrue
+%%%% end of options
+%
+% hyperref is essential for this patch to make any sense, so it is not unreasonable to request it be loaded before applying the patch
+\makeatletter
+% 1. insert a phantomsection before every cite, so hyperref has something to target
+%    * in case natbib is loaded. hyperref provides an appropriate hook so this should be safe, and we don't even need to check if natbib is loaded!
+\let\BR@direct@old@hyper@natlinkstart\hyper@natlinkstart
+\renewcommand*{\hyper@natlinkstart}{\phantomsection\BR@direct@old@hyper@natlinkstart}% note that the anchor will appear after any brackets at the start of the citation, but that's not really a big issue?
+%    * if natbib isn't used, backref lets \@citex to \BR@citex during \AtBeginDocument
+%      so just patch \BR@citex
+\let\BR@direct@oldBR@citex\BR@citex
+\renewcommand*{\BR@citex}{\phantomsection\BR@direct@oldBR@citex}%
+
+% 2. if using page numbers, show the page number but still hyperlink to the phantomsection instead of just the page!
+\long\def\hyper@page@BR@direct@ref#1#2#3{\hyperlink{#3}{#1}}
+
+% check which package option the user loaded (pages (hyperpageref) or sections (hyperref)?)
+\ifx\backrefxxx\hyper@page@backref
+    % they wanted pages! make sure they get our re-definition
+    \let\backrefxxx\hyper@page@BR@direct@ref
+    \ifbackrefshowonlyfirst
+        %\let\backrefxxxdupe\hyper@page@backref% test only the page number
+        \newcommand*{\backrefxxxdupe}[3]{#1}% test only the page number
+    \fi
+\else
+    \ifbackrefshowonlyfirst
+        \newcommand*{\backrefxxxdupe}[3]{#2}% test only the section name
+    \fi
+\fi
+
+% 3. now make sure that even if there is no numbered section, the hyperref's still work instead of going to the start of the document!
+\RequirePackage{etoolbox}
+\patchcmd{\Hy@backout}{Doc-Start}{\@currentHref}{}{\errmessage{I can't seem to patch backref}}
+\makeatother
+%%%% END BACKREF PATCHES
+
+% user-defined macros to save time
 \newcommand{\bfsigma}{\boldsymbol{\sigma}}
 \newcommand{\bfepsilon}{\boldsymbol{\epsilon}}
 \newcommand{\bfu}{\boldsymbol{u}}
@@ -122,8 +168,10 @@
 \newcommand{\sym}[1]{\textnormal{\textit{#1}}}
 \newcommand{\eg}{\textit{e.g.}\xspace}
 \newcommand{\ie}{\textit{i.e.},\xspace}
-\newcommand{\etc}{etc.\@\xspace}
-
+\newcommand{\etc}{\textit{etc.}\@\xspace}
+\newcommand{\vm}[1]{\mathbf{#1}}
+\newcommand{\trans}{^\mathrm{T}}
+\newcommand{\bsym}[1]{\boldsymbol{#1}}
 % \renewlist{tablenotes}{enumerate}{1}
 % \makeatletter
 % \setlist[tablenotes]{label=\tnote{\alph*},ref=\alph*,itemsep=\z@,topsep=\z@skip,partopsep=\z@skip,parsep=\z@,itemindent=\z@,labelindent=\tabcolsep,labelsep=.2em,leftmargin=*,align=left,before={\footnotesize}}
@@ -344,7 +392,12 @@
 \let\oldcite=\bibcite
 \def\bibcite{\stepcounter{citenum}\oldcite}
 
-
+% new command for colorbox gray
+\newcommand{\graybox}[1]{%
+  \begingroup\setlength{\fboxsep}{1pt}%
+  \colorbox{darkgray}{\texttt{\hspace*{2pt}\vphantom{Ay}#1\hspace*{2pt}}}%
+  \endgroup
+}
 
 %\journal{Advances in Engineering Software}
 %\journal{International Journal for Numerical Method in Engineering}
@@ -404,7 +457,7 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
-Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings are significant but also it should be well written so that the findings can be transmitted throughout the scientific community. The value of writing well should not be underestimated: writing well leverages your work and 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs; and about 40\% pertain to the quality of the scientific work \citep{iles1997guidebook}.
+Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get a paper published, not only its findings must be significant but also it should be well written so that the findings can be transmitted throughout the scientific community. The value of writing well should not be underestimated: writing well leverages your work and it saves you time as 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs; and about 40\% pertain to the quality of the scientific work \citep{iles1997guidebook}.
 However, writing a high quality paper is not an easy task due to technical and language barriers. To remove those barriers, books and articles giving advices on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. 
 
 Building on the advices found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality papers about your research. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
@@ -467,8 +520,8 @@ It is obvious that using a right tool for any task is half way to success. And w
 
 The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of your document.
 
-To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. This is because every co-author of the paper can work on the same paper simultaneously. This paper was written that way. 
-They can also use their own favorite \LaTeX\ editor (which is most often also their own coding editor). We find this is better than \texttt{Overleaf} at \url{https://www.overleaf.com}.
+To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. This is because every co-author of the paper can work on the same paper simultaneously. 
+They can also use their own favorite \LaTeX\ editor (which is most often also their own coding editor). We find this is better than \texttt{Overleaf} at \url{https://www.overleaf.com}. This paper was written that way. 
 
 
 
@@ -478,7 +531,7 @@ They can also use their own favorite \LaTeX\ editor (which is most often also th
 
 \begin{rmk}\label{rm:a}
 Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
-because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. Two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. And the two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
 
 \begin{figure}[h!]
   \centering 
@@ -537,7 +590,7 @@ In the phase-field modeling of fracture in brittle and quasi-brittle solids, it 
 Avoid jargon.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 The advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. However, it is not easy to do so as knowing the name of something doesn’t mean you understand it, according to Richard Feynman -- the well known American theoretical physicist.
 
-Reproducibility is a big issue in scientific research nowadays. However, we just confine yourselves here to the situation where a published simulation result is genuinely correct but impossible to reproduce by people other than the authors. The world would be a better place if all authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
+Reproducibility is a big issue in scientific research nowadays. However, we just confine here to the situation where a published simulation result is genuinely correct but impossible to be reproduced by people other than the authors. The world would be a better place if all authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
 
 You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. If reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections.
 
@@ -764,19 +817,19 @@ For the sake of presentation, let's assume that you need to develop a formulatio
 
  \begin{figure}[!ht]
       \centering
-      \input{writing.pdf_tex}                 % insert a pdf_tex
+      \includegraphics{writing.pdf}
       \caption{Writing is intertwined with other activities of the project.}
       \label{fig:writing}
     \end{figure}
 
 If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
-While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a pdf to a paper. Therefore, we can have a library of papers on top of a \texttt{.bib} file. 
+While working on this paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} can link a PDF to a paper. Therefore, we can have a library of papers on top of a \texttt{.bib} file. 
 
 Continuing this process, by the time the final simulation has been finished, you already have a nearly complete paper. Note that you have already revised your paper many times when your simulations were running (which usually take a long time).
 You just need to write the conclusions. And voila, you have a complete paper. Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
 
-Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later for instance in your books), save it as another TEX file and remove unnecessary parts.
+Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later, for instance, in your books), save it as another \TeX\ file and remove unnecessary parts.
 
 Now you know how a good quality scientific paper looks like and you are ready to compile such one. Next section presents some suggestions on how to do this electronically using \LaTeX. \\
 
@@ -788,13 +841,14 @@ Now you know how a good quality scientific paper looks like and you are ready to
 \section{\LaTeX\ tips}\label{sec:latex}
 
 We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs}. \cref{sec:equation} discusses notations and equations. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
+\cref{sec:tabs},  notations and equations in \cref{sec:equation} and algorithms in \cref{sec:algorithm}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Packages}\label{sec:packages}
 
 To improve the writing experience, once in a while one should update their \LaTeX\ skills. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
-By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references. 
+We do not plan to discuss all the packages. Instead, we want to discuss two packages: \texttt{hyperref} and \texttt{cleveref} which are useful.
+By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references which are back-references  to the page(s)  in which a given reference was cited.
 
 Using standard cross-referencing in \LaTeX\ only produces the label number, a name describing the label such as figure, chapter or equation has to be added manually. The \texttt{cleveref} package overcomes this limitation by automatically producing the label name and number:
 
@@ -812,17 +866,16 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     \renewcommand{\rmdefault}{ptm}    % set Times as the default text font
     \usepackage[retainorgcmds]{IEEEtrantools}
     \usepackage[usenames]{color}
-    \usepackage{tabularx}
+    \usepackage{tabularx}    % tables
     \usepackage{booktabs}    % better tables
+    \usepackage{multirow}    % multi-row tables
     \usepackage[font=small,labelfont=md]{caption,subfig} % sub-figures (see Fig. 6)
-    \usepackage{multirow}
     \usepackage[T1]{fontenc} % typing french                        
     \usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,backref=page]{hyperref}
     \usepackage{float}         % make new float environment such as boxes (captioned)
     \usepackage{listings}      % insert source code, used herein to insert LaTeX and Python codes 
-    \usepackage{algorithm}
-    \usepackage{algorithmicx}
-    \usepackage{algpseudocode}
+    \usepackage{algorithm}     % flow wrapper for algorithm,similar to block commands table/figure
+    \usepackage{algpseudocode} % second algorithm typesetting environment (actual pseudocode)
     %microtype: for Micro-Typographic Improvements
     \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,
     spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
@@ -852,7 +905,7 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Figures}\label{sec:figs}
 
-Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, all the axes are clearly defined, those sorts of things. 
+Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, color-blindness aware, all the axes are clearly defined, those sorts of things. 
 This section discusses how to generate high quality figures be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}). It also discusses on how figures/tables should be referred to in the paper (\cref{sec:citing-figs}).
 
 \subsubsection{Graphs}\label{sec:graphs}
@@ -956,7 +1009,7 @@ Another type of images in scientific papers is contour plots (see \cref{fig:figu
   Fig. 10 depicts the global responses. As can be seen, the global responses are 
   insensitive to the incorporated length scale.
  \end{verbatim}
-The first sentence is unnecessary as it only directs the reader to the figure (Fig. 10), no information is provided. A better version of the above is:
+The first sentence is unnecessary as it only directs the reader to the figure (Fig. 10), and thus it provides no information. We have found similar sentences in the literature. A better version of the above is:
 
  \begin{verbatim}
   The global responses are insensitive to the incorporated length scale (Fig. 10).
@@ -1102,6 +1155,43 @@ To make this paper a complete scientific article\footnote{So that beginners to \
 For details on how to typeset formulae in \LaTeX\, see chapter 3 of \cite{latex}.
 
 %$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
+
+
+\subsection{Algorithm}\label{sec:algorithm}
+
+The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset algorithms. See  \cref{alg:alg10-a} for an example. These algorithms written as pseudo codes are easier to understand than flowcharts. Yet, they are also easier to generate, directly with \LaTeX. We refer to our github repository for the source.\\
+
+\begin{center}
+\setlength\fboxsep{0pt}
+\vskip-\lastskip%
+%\smallskip%
+\colorbox{darkgray}{%
+%\graybox{
+\begin{minipage}{\linewidth}
+\vspace{-12pt}
+      \begin{algorithm}[H]
+        %\small
+        \caption{Stress update algorithm.} % give the algorithm a caption
+        \label{alg:alg10-a} 
+        \begin{algorithmic}[1] % enter the algorithmic environment
+          \State Inputs: $\varepsilon_p^t$ (equivalent plastic strain), $\bsym{\sigma}^{\prime~d}_{t}$ (un-rotated deviatoric stress), $\vm{d}^d$, damage $D^t$
+          \State Outputs: $\varepsilon_p^{t+\Delta t}$ (equivalent plastic strain), $\bsym{\sigma}^{\prime~d}_{t+\Delta t}$
+          \State Compute $G'=(1-D^t)G$
+          \State $\bsym{\sigma}^{\prime~d}_\text{trial} = \bsym{\sigma}^{\prime~d}_{t} + 2G'\Delta t \vm{d}^d$\Comment{purely elastic stress deviator update}
+          \State $\sigma^{\prime~\text{eq}}_\text{trial} = \sqrt{\frac{3}{2} \bsym{\sigma}^{\prime~d}_\text{trial}:\bsym{\sigma}^{\prime~d}_\text{trial}}$\Comment{equivalent von Mises trial stress}
+          \State $\sigma_f = \left[A+B\left(\varepsilon_p^t\right)^n\right]\left[1+C\ln\dot{\varepsilon}_p^*\right] \left[ 1 - (T^\ast)^m \right]  (1-D^t)$\Comment{JC flow stress}
+          \If{$\sigma_\text{trial}^{\prime~\text{eq}} < \sigma_f$} \Comment{yielding did not occur, purely elastic step}
+          \State $\bsym{\sigma}^{\prime~d}_{n+1} = \bsym{\sigma}^{\prime~d}_\text{trial}$ \Comment{keep trial deviatoric stress}
+          \Else \Comment{yielding has occurred}
+          \State $\Delta \varepsilon_{p} = (\sigma^{\prime~\text{eq}}_\text{trial} - \sigma_{f})/ (3G')$ \Comment{compute the equivalent plastic strain increment}
+          \State $\varepsilon^{t+\Delta t}_p = \varepsilon^{t}_p + \Delta \varepsilon_{p}$\Comment{update the undamaged matrix plastic strain}
+          \State $\bsym{\sigma}^{\prime~d}_{t+\Delta t} = \frac{\sigma_{f}}{\sigma^{\prime~\text{eq}}_\text{trial}} \bsym{\sigma}^{\prime~d}_\text{trial}$ \Comment{scale deviatoric stress back to yield surface}
+          \EndIf
+        \end{algorithmic}
+      \end{algorithm}
+      \end{minipage}%
+      }
+\end{center}
 
 %--------------------------------
 \subsection{Two-column format}\label{sec:two-col}
