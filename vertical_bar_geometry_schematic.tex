@@ -1,0 +1,43 @@
+\begin{tikzpicture}[darkstyle/.style={circle,draw,fill=gray!40,minimum size=20}]
+  \tikzmath{
+    \L = 3;
+    \h = \L / 30;
+    }
+
+    \draw [thick] (-\L/2,-\L/2) rectangle (\L/2,\L/2);
+    \draw [thick] (\L/2, -\L/2) -- (\L/2+\L/5, -\L/2+\L/5);
+    \draw [thick] (\L/2+\L/5, -\L/2+\L/5) -- (\L/2+\L/5, \L/2+\L/5);
+    \draw [thick] (\L/2, \L/2) -- (\L/2+\L/5, \L/2+\L/5);
+    \draw [thick] (-\L/2+\L/5, \L/2+\L/5) -- (\L/2+\L/5, \L/2+\L/5);
+    \draw [thick] (-\L/2, \L/2) -- (-\L/2+\L/5, \L/2+\L/5);
+    
+    \draw [->] (0,0) -- (0,-\L/4);
+    \node [right,thick] at (0, -\L/8) {\large $\boldsymbol{g}$};
+  
+    \draw [<->] (-\L/2,-\L/2 - \L/8) -- (\L/2,-\L/2 - \L/8);
+    \draw [<->] (\L/2,-\L/2 - \L/8) -- (\L/2+\L/5,-\L/2 - \L/8+\L/5);
+    \draw [<->] (-\L/2 -\L/8, - \L/2) -- (-\L/2 -\L/8, \L/2);
+    \node [anchor=east] at (-\L/2 - \L/8,0) {1};
+    \node [anchor=north] at (0,-\L/2 - \L/8) {1};
+    \node [anchor=north west] at (\L/2+\L/10,-\L/2 - \L/8+\L/10) {1};
+    \draw[] (-\L/10, \L/2 + \L/15) circle (\L/20);
+    \draw[] (-\L/5-\L/10, \L/2 + \L/15) circle (\L/20);
+    \draw[] (\L/10, \L/2 + \L/15) circle (\L/20);
+    \draw[] (\L/5+\L/10, \L/2 + \L/15) circle (\L/20);
+    \draw [-, fill=white] (-\L/2,\L/2 + \L/20) -- (\L/2,\L/2 + \L/20) -- (\L/2+\L/5,\L/2 + \L/20+\L/5) -- (-\L/2+\L/5,\L/2 + \L/20+\L/5) -- (-\L/2,\L/2 + \L/20);
+    \draw [-] (\L/10,\L/2 + \L/20+\L/10) -- (\L/10,\L/2 + 3*\L/10);
+    \draw [-] (\L/10-\L/10,\L/2 + 3*\L/10) -- (\L/10+\L/10,\L/2 + 3*\L/10);
+    \draw [-] (\L/10-\L/10,\L/2 + 3*\L/10) -- (\L/10-\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
+    \draw [-] (\L/10,\L/2 + 3*\L/10) -- (\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
+    \draw [-] (\L/10+\L/10,\L/2 + 3*\L/10) -- (\L/10+\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
+    %\foreach \j in {0,...,10}
+    %\draw [-] (-\L/2 + \L / 10 * \j,\L/2 + \L/10) -- (-\L/2 - \L/20 + \L/10 * \j ,\L/2 + \L/10 + \L/20);
+    % Triad:
+    \draw [->] (\L/2+\L/5+\L/8,0) -- (\L/2+\L/5+2*\L/8,0);
+    \draw [->] (\L/2+\L/5+\L/8,0) -- (\L/2+\L/5+\L/8*0.29,0-0.71*\L/8);
+    \draw [->] (\L/2+\L/5+\L/8,0) -- (\L/2+\L/5+\L/8,0+\L/8);
+    \node [anchor=north] at (\L/2+\L/5+\L/8*0.29,0-0.71*\L/8) {$x$};
+    \node [anchor=south] at (\L/2+\L/5+\L/8,0+\L/8) {$z$};
+    \node [anchor=west] at (\L/2+\L/5+2*\L/8,0) {$y$};
+    \draw [fill=red, red] (-\L/2,-\L/2) circle (1pt);
+\end{tikzpicture}
