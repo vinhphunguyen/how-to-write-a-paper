@@ -19,3 +19,7 @@ That's it.
 
 LinuX machines:
 
+1. Install Tex Live: sudo apt-get install texlive-full
+2. Install a Tex editor, for example, TexMaker: sudo apt-get install texmaker
+3. How to use TexMaker: https://www.xm1math.net/texmaker/
+
