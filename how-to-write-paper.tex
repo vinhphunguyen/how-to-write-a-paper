@@ -25,8 +25,8 @@
 %\usepackage[scaled=0.92]{helvet}  % set Helvetica as the sans-serif font
 %\renewcommand{\rmdefault}{ptm}    % set Times as the default text font
 % need to install mtpro2
-%\let\Bbbk\relax
-%\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
+\let\Bbbk\relax
+\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
 
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage[usenames]{color}
@@ -106,6 +106,7 @@
 %\usepackage[referable]{threeparttablex}
 \usepackage{threeparttable}
 \usepackage{xspace}
+\usepackage[scaled=0.84]{beramono}
 %\usepackage[breakwithin,symbol]{parnotes} % foonote in tables, but not good looking
 
 %%%% these patches ensure that the backrefs point to the actual occurrences of the citations in the text, not just the page or section in which they appeared
@@ -233,6 +234,7 @@
 \lstloadlanguages{C++,Matlab,Python}
 \definecolor{mygreen}{rgb}{0,0.6,0}
 \definecolor{darkgray}{rgb}{0.95,0.95,0.95}
+\definecolor{myblue}{rgb}{0.01, 0.31, 0.59}
 \lstset{backgroundcolor=\color{darkgray},
   basicstyle=\color{red}\ttfamily,
   keywordstyle=\color{blue}\bfseries
@@ -264,29 +266,6 @@
 \lstdefinestyle{commentstyle}{color=\color{green}}
 
 
-
-\lstloadlanguages{C++,Matlab,Python}
-\definecolor{mygreen}{rgb}{0,0.6,0}
-\definecolor{darkgray}{rgb}{0.95,0.95,0.95}
-\lstset{backgroundcolor=\color{darkgray},
-  basicstyle=\color{red}\ttfamily,
-  keywordstyle=\color{blue}\bfseries
-}
-
-\lstdefinelanguage{Sage}{%
-    language     = Python,
-   morekeywords={var, latex,  view, show, diff, integral, simplify, simplify_full}
-}
-
-
-
-\lstdefinestyle{C++}
-{
- basicstyle=\footnotesize, numbers=none, numberstyle=\tiny,%
- showstringspaces=false, language=C++, escapechar=|,frame=tb,
- commentstyle=\color{mygreen}
-}
-
 \lstdefinestyle{C-numbered}
 {
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
@@ -294,21 +273,35 @@
  commentstyle=\color{mygreen}
 }
 
-\lstdefinestyle{matlab}
-{
- basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
- showstringspaces=false, language=Matlab, escapechar=|,frame=tb,%
- commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique}
-}
 
 \lstdefinestyle{latex}
 {
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig,lstloadlanguages,definecolor,lstset,tableofcontents,boldsymbol,draw,node,tikzpicture,circle,equation}
 }
+
+\lstdefinestyle{C-numbered}
+{
+ basicstyle=\footnotesize\ttfamily, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ keywordstyle=\color{myblue}\bfseries,
+ keywordstyle=[2]{\color{red}\bfseries},
+ commentstyle=\color{blue}\textit, stringstyle=\color{cyan}\ttfamily,numbersep=5pt,
+  morekeywords=[2]{getElements,XTable,TABLE,idx_t,TABLE_NAME,TABLE_WEIGHTS,GET_TABLE,ref,getNodes,ElemGroup,ElemSet,NodeSet,Assignable,Properties,IdxVector,getIndices,size,Vector,Cubix,Matrix,Ref,IShape,newInstance,IShapeFactory,Model,Module,getDofIndices,select,addBlock,getElemNodes,StateVector,pushBack,run,ChainModule,get,getOld,addType,addDofs,getUniqueNodesOf,XDofSpace,getData,getProps,makeProps,maxOf,set,get,getShapeGradients,MatrixBuilder,String,getSomeCoords,matmul,transpose,findType,resize,ActionParams,MATRIX0,INT_VECTOR,Actions::GET_MATRIX0,Actions::GET_MATRIX2,Object,InputModule,InitModule,InfoModule,NonlinModule,FemViewModule,getShapeFunctions,ipointCount,nodeCount,addConstraint,Actions,GET_MATRIX2,GET_MATRIX0,jive,BEGIN, joinNames, END,slice,GET_INT_VECTOR,ModelFactory,models, modules,Array,input,init,extraModules,log,view,declare, model, Flex,STATE0,STATE1,STATE2,solver,precision,jem,base,System,out}
+}
+
+
+
+\lstnewenvironment{code-c-num}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+  \lstset{style=C-numbered, xleftmargin=5mm, gobble=4, #1,belowskip=.5cm,}
+}
+{\endminipage}
 
 \lstnewenvironment{snippet}[1][]
 {
@@ -322,14 +315,7 @@
 }
 {}
 
-\lstnewenvironment{code-sage}[1][]%
-{
-   \noindent
-   \minipage{\linewidth}
-   \vspace{0.5\baselineskip}
-  \lstset{style=Sage, xleftmargin=5mm, gobble=4, #1}
-}
-{\endminipage}
+
 
 %%
 
@@ -437,8 +423,7 @@
 %\pagenumbering{arabic}
 
 \begin{abstract}
-Starting with a working good research idea, this paper outlines a process that helps us to have a nearly complete paper when the last analysis task is finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.   Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting. The process seems working well as it has helped us writing thousands of pages without feeling a paint. We hope it works for you too. 
-
+Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task is finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a paint. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms, source codes using \LaTeX. We also discuss writing guidelines such as paper structure and some common mistakes.
 \end{abstract}
 
 % *********************************************************************************************************
@@ -450,7 +435,7 @@ Starting with a working good research idea, this paper outlines a process that h
 
 \end{frontmatter}
 
-\tableofcontents
+%\tableofcontents
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
@@ -466,8 +451,8 @@ Building on the advices found in the literature and our total 20 years of experi
 Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or softwares that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 First, in \cref{sec:tools}, our favorite softwares are presented. These softwares are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to structure your paper, avoid common mistakes.  Particularly, we present an iterative writing process that is intertwined with your research.
-As we use \LaTeX, a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), some \LaTeX\ related suggestions on how to prepare high-quality vector images, good-looking tables, tweaks for two-column format papers are provided (see \cref{sec:latex}). 
-Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these might not be ready for submission yet. \cref{sec:submission} presents some considerations regarding this issue.
+As we use \LaTeX, a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). 
+Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these might not be ready for submission yet. We present some considerations regarding this issue (\cref{sec:submission}).
 
 \begin{table}[h!]
       \centering
@@ -494,7 +479,7 @@ Finally, with the pressure to “publish” (or perish), it is increasingly diff
 
 
 
-There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers.
+There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton Unviersity -- saw it: `scientific writing is bad writing'.
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps you to have a nearly complete paper when the last analysis task is finished.  
 
@@ -569,7 +554,7 @@ The following general guidelines for a high quality scientific paper are nothing
 \item To inform not to impress;
 \item Aim for clarity and readability and  reproducibility;
 \item Contributions must be clearly stated;
-\item Each paragraph conveys only a single idea or message;
+\item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
 \item Avoid jargon;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
 \item Minimize chances for reviewers to raise issues;
 \end{enumerate}
@@ -578,14 +563,14 @@ The main contributions of your paper must be clearly stated after a brief review
 
 Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
 Use simple sentences that are linked together so that your writing is coherent. 
-See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information.
+See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
 
 Try to revise your writing to keep only the words/figures/tables that are necessary. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
 
 \begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version1}]
 {Version 1.}
 {\tcbfontsize{0.8}
-In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{Existing phase-field models generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly or an ad hoc hybrid formulation at the loss of variational consistency}. \textbf{To address this issue}, this work presents a variationally consistent phase-field anisotropic damage model.}
+In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{Existing phase-field models generally adopt either an intuitive split of the free energy density without capturing the crack boundary conditions properly or an ad hoc hybrid formulation at the loss of variational consistency}. \textbf{To address this issue}, this work presents a variationally consistent phase-field anisotropic damage model.}
 \end{MyBox}\hfill
 \begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version2}]
 {Version 2.}
@@ -712,7 +697,7 @@ Another way to intrigue readers is to summarize all the impressive simulations t
 
 \begin{figure}[!h]
   \centering
-  \includegraphics[width=0.4\textwidth]{mpm-all-results}
+  \includegraphics[width=0.5\textwidth]{mpm-all-results}
   \caption{A figure with all good results that the model in your paper can deliver can help to intrigue readers so that they will read your paper to the end. Taken from \cite{Vaucorbeil:AAM2019}.}
   \label{fig:all-results}
 \end{figure}
@@ -815,7 +800,7 @@ For the sake of presentation, let's assume that you need to develop a formulatio
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={A starting \TeX\ file. This is for papers to be submitted to Elsevier journals. Change the template (documentclass) accordingly for other publishers. Introducing a table of content helps to see
-  the overall structure of the paper. For brevity, packages used were skipped, see \cref{snippet_latex_packages}. },label={snippet_template},framerule=1pt,tabsize=3]
+  the overall structure of the paper. For brevity, packages used were skipped, see \cref{snippet_latex_packages}. \TeX\ keywords are highlighted in \textcolor{blue}{\textbf{bold blue font}}.  },label={snippet_template},framerule=1pt,tabsize=3]
     \documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
     \title{\textbf{}}
     \begin{abstract}
@@ -858,7 +843,7 @@ Now you know how a good quality scientific paper looks like and you are ready to
 \section{\LaTeX\ tips}\label{sec:latex}
 
 We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs},  notations and equations in \cref{sec:equation} and algorithms in \cref{sec:algorithm}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
+\cref{sec:tabs},  notations and equations in \cref{sec:equation}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Packages}\label{sec:packages}
@@ -925,7 +910,9 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 \subsection{Figures}\label{sec:figs}
 
 
-Figures are an important element of reporting the findings of your research. A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, color-blindness aware, all the axes are clearly defined, those sorts of things. 
+Figures are an important element of reporting the findings of your research. The reader usually starts by reading the abstract, conclusion and figures. If the figures are self-contained and convincing, it is likely that the reviewer will accept the paper without asking a large number of questions. If they have to read the whole text to understand the worth of each figure, this will slow their progress and could make them impatient, hence decrease the chance of acceptance. 
+
+A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, color-blindness aware, all the axes are clearly defined, those sorts of things. 
 This section discusses how to generate high quality figures: be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}). It also discusses on how figures/tables should be referred to in the paper (\cref{sec:citing-figs}).
 
 
@@ -1101,7 +1088,7 @@ The first sentence is unnecessary as it only directs the reader to the figure (F
 \subsection{Tables}\label{sec:tabs}
 
 Tables in scientific papers should be clear and focus on the data. Here are some suggestions for making good tables: avoid vertical lines, avoid double horizontal lines, avoid boxing up cells and leave enough space between rows. 
-\cref{table:params} satisfies all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}.
+\cref{table:params} satisfies all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}. 
 \cref{table:params-foot} in \cref{sec:tab-foonote} presents a table with footnotes.
 
  \begin{table}[h!]
@@ -1133,30 +1120,30 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some softwares that can generate \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). },label={snippet_latex_table},framerule=1pt,tabsize=3]
-      \begin{table}[h!]
-      \centering
-      \caption{Material parameters and characteristics for all simulations.}
-      \setlength\fboxsep{0pt}
-      \vskip-\topsep%
-      \smallskip%
-      \renewcommand\arraystretch{1.4}
-      \colorbox{darkgray}{%      
-      \begin{tabularx}{0.7\textwidth}{lll}
-      \toprule
-      Parameter                & Section 5.1     & Section 5.2     \\
-      \midrule
-      Young's modulus [MPa]    & $210\times10^3$ & 145            \\
-      Poisson's ratio [-]      & 0.3             & 0.45            \\
-      Tensile strength [MPa]   & 2445            & 20              \\
-          \midrule 
-      Experimentally validated & n/a             & n/a            \\
-      Solver                   & multi-step AM   & single-step AM implicit-explicit \\
-      State                    & Plane strain    & Plane strain    \\
-       \bottomrule
-       \end{tabularx}%
-      }
-      \label{table:params}
-      \end{table}
+    \begin{table}[h!]
+    \centering
+    \caption{Material parameters and characteristics for all simulations.}
+    \setlength\fboxsep{0pt}
+    \vskip-\topsep%
+    \smallskip%
+    \renewcommand\arraystretch{1.4}
+    \colorbox{darkgray}{%      
+    \begin{tabularx}{0.7\textwidth}{lll}
+    \toprule
+    Parameter                & Section 5.1     & Section 5.2     \\
+    \midrule
+    Young's modulus [MPa]    & $210\times10^3$ & 145            \\
+    Poisson's ratio [-]      & 0.3             & 0.45            \\
+    Tensile strength [MPa]   & 2445            & 20              \\
+        \midrule 
+    Experimentally validated & n/a             & n/a            \\
+    Solver                   & multi-step AM   & single-step AM implicit-explicit \\
+    State                    & Plane strain    & Plane strain    \\
+     \bottomrule
+     \end{tabularx}%
+    }
+    \label{table:params}
+    \end{table}
   \end{snippetlatex}
 \end{figure*}
 %---------------------------------------------------------------------------
@@ -1224,7 +1211,7 @@ The density of equations in an article on ecology and evolutionary biology has a
 
 The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
 
-To make this paper a complete scientific article\footnote{So that beginners to \LaTeX\ can learn how to write a complete paper.}, we introduce the following arbitrary equation
+To make this paper a complete scientific article, so that beginners to \LaTeX\ can learn how to write a complete paper, we introduce the following arbitrary equation
 
 \begin{equation}
   \mathscr{E} (\bfu, d) 
@@ -1234,6 +1221,8 @@ To make this paper a complete scientific article\footnote{So that beginners to \
     - \mathscr{P} (\bfu)
 \label{eq:3}
 \end{equation}
+where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Togethey they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$.  Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. 
+
 For details on how to typeset formulae in \LaTeX\, see chapter 3 of \cite{latex}.
 
 %$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
@@ -1271,9 +1260,31 @@ The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset
           \EndIf
         \end{algorithmic}
       \end{algorithm}
+      %\vspace{-10pt}
       \end{minipage}%
       }
 \end{center}
+
+%------------------------------------------------
+\subsection{Source code}\label{sec:source-code}
+
+Source code can be included in \LaTeX using either the \texttt{Listing} package or the \texttt{minted} package. As the installation of the latter package is more involved (it requires an external program), we present in \cref{list-array} some C++ source code using the \texttt{Listing} package which does not depend on external program. We refer to the \LaTeX source of this paper for the configuration of this package to produce \cref{list-array}.
+
+% ----------------------------------------------------------------
+\begin{code-c-num}[caption={Presentation of source code using the \texttt{Listing} package with the Bera Mono font (\url{https://tug.org/FontCatalogue/beramono/}). },
+                   label={list-array},framerule=1pt]
+    #include <jive/Array.h>
+    #include <jem/base/System.h>
+    using jive::Vector;    
+    using jive::Matrix;
+    
+    Vector      a;             // double vector Array<double>
+    Matrix      A(10,20);      // double matrix Array<double,2>
+
+    A(slice(BEGIN,3),2) = 2.0; // third col, rows 0, 1, 2 = 2
+    System::out() << A << "\n";// similar to std::cout << A << "\n";
+\end{code-c-num}
+% ----------------------------------------------------------------
 
 %--------------------------------
 \subsection{Two-column format}\label{sec:two-col}
@@ -1323,7 +1334,7 @@ It is most effective to get feedback sequentially rather than in parallel. For e
 Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  advices that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
 
 
-As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author.
+As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author (\url{https://github.com/vinhphunguyen/how-to-write-a-paper}).
 
 Our guidelines are rules not principles. Unlike principles, rules break all the time. Feel free to be creative as long as you write to inform not to impress. Happy writing.
 
