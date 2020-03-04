@@ -423,7 +423,7 @@
 %\pagenumbering{arabic}
 
 \begin{abstract}
-Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task is finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a paint. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms, source codes using \LaTeX. We also discuss writing guidelines such as paper structure and some common mistakes.
+Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task is finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a paint. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms and source codes using \LaTeX. We also discuss writing guidelines such as paper structure and some common mistakes.
 \end{abstract}
 
 % *********************************************************************************************************
@@ -479,7 +479,7 @@ Finally, with the pressure to “publish” (or perish), it is increasingly diff
 
 
 
-There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton Unviersity -- saw it: `scientific writing is bad writing'.
+There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'.
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps you to have a nearly complete paper when the last analysis task is finished.  
 
@@ -490,10 +490,10 @@ The \LaTeX\ source of this paper and various \texttt{Python} scripts used to pre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
 
-It is obvious that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writting papers are the following:
+It is obvious that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writing papers are the following:
 
 \begin{itemize}
-\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the de facto standard for the communication and publication of scientific documents; 
+\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the \textit{de facto} standard for the communication and publication of scientific documents; 
 \item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX\ (see \cref{sec:bibdesk});
 \item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to \texttt{BibDesk}. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bibliography entries automatically when given a DOI;
 \item \texttt{Skim}: is an open-source PDF (Portable Document Format) reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
@@ -505,7 +505,7 @@ It is obvious that using the right tool for any task is half way to success. And
 \item \texttt{GitHub} or \texttt{Gitlab}: online platforms that offer hosting for software development version control using Git. They offer both public and private (preferred for research papers) repositories. When using Git, they make access from multiple devices and parallel collaboration easy.
 \end{itemize}
 
-The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as pdf files and thus are of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of your document.
+The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as PDF files and thus are of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of your document.
 
 
 To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. This is because every co-author of the paper can work on the same paper simultaneously. This paper was written that way. 
@@ -542,8 +542,8 @@ The tools described in this section help you to write papers effectively, only w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Writing tips}\label{sec:writing-tips}
 
-This section presents  writing tips. We start with a presentation of general guidlines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}. Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
-\cref{sec:mistakes}. Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process, losely inspired by the interesting talk by \cite{Jones}.
+This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}. Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
+\cref{sec:mistakes}. Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers \citep{Jones}.
 
 %--------------------------------------
 \subsection{General guidelines}\label{sec:guidelines}
@@ -622,7 +622,7 @@ For paragraphs that are quite complex it is a good idea to write a global paragr
 \end{figure}
 
 
-Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used, etc. A table with all parameters used for all simulations would be helpful, see  \cref{table:params}.
+Papers on the field of computational engineering and sciences always have a section, typically named `Numerical Examples' where some tests are presented to demonstrate the performance of the model/theory presented. While these examples are most often presented in order of increasing complexity, we can do a better job in presenting them. For example, a global paragraph stating why these examples were chosen, which open source (if it is the case) code was used, etc. We first saw this technique probably in \cite{huang2003modeling}. Furthermore, a table with all parameters used for all simulations would be helpful, see \eg \cref{table:params}, as it is harder to get them if they are embedded in the text.
 
 \subsubsection{Introduction section}\label{sec:introduction-part}
 
@@ -644,7 +644,7 @@ See \cref{algo-static-FEM} for an example, taken from \cite{Mandal:EFM2019}.
 %---------------------------------------------------------------------------------------
 \begin{MyBox}[label={algo-static-FEM}]
 {Equations and tables can improve the introduction section.}
-According to second-order PFMs for quasi-static fracture of solids under the infinitesimal strain regime, the displacement field $\bfu$ and damage field $d$ are minimisers of the following total energy functional of the solid 
+According to second-order PFMs for quasi-static fracture of solids under the infinitesimal strain regime, the displacement field $\bfu$ and damage field $d$ are minimizers of the following total energy functional of the solid 
 \begin{equation*}
   \mathscr{E} (\bfu, d) 
     = \int_{\varOmega_{0}} \left[\omega(d)\psi_{0}^+(\bfepsilon (\bfu)) + \psi_{0}^-(\bfepsilon (\bfu)) \right]\td V
@@ -940,7 +940,7 @@ It is not a requirement that the font used in  graphs (\eg bar charts, error cha
   \centering
   \includegraphics{cold-spray-plots}
   \caption{A PDF figure of which the font nearly matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.  Be thourghful about colour blindness that affects around 8\% of men, particularly an inability to distinguish red and green. \texttt{matplotlib} can be colour-blind appropriate,  see line 29 of \cref{snippet_matplotlib}. Also, graphs should not have a title. Put the title in the figure caption.}
+  evolution of plastic strain $\varepsilon_p$ and temperature $T$ in time. Symbols, if any, in figures should be typeset with \LaTeX.  Be thoughtful about color blindness that affects around 8\% of men, particularly an inability to distinguish red and green. \texttt{matplotlib} can be color-blind appropriate,  see line 29 of \cref{snippet_matplotlib}. Also, graphs should not have a title. Put the title in the figure caption.}
   \label{fig:cold-spray-plot}
 \end{figure}
 
@@ -959,7 +959,7 @@ If you want to stack multiple pictures together with sub-captions using \LaTeX, 
 
 \subsubsection{Sketches}\label{sec:sketches}
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This app can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is done by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX using the following command (\cite{inkscape}):
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is done by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX using the following command (\cite{inkscape}):
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
@@ -1064,7 +1064,7 @@ Some people even go to the extreme of not using a graphics software with a user 
 
 \subsubsection{Contour plots}\label{sec:contours}
 
-Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
+Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}\footnote{As we embrace as much as possible open source softwares, we did not mention \texttt{tecplot},  a good data visualization package developed explicitly for engineers and scientist.}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
 
  Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections.
 
@@ -1221,9 +1221,9 @@ To make this paper a complete scientific article, so that beginners to \LaTeX\ c
     - \mathscr{P} (\bfu)
 \label{eq:3}
 \end{equation}
-where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Togethey they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$.  Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. 
+where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$.  Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. 
 
-For details on how to typeset formulae in \LaTeX\, see chapter 3 of \cite{latex}.
+For details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}.
 
 %$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
 
@@ -1327,6 +1327,7 @@ It will decrease the number of typos, which will enable your supervisor(s) to fo
 
 It is most effective to get feedback sequentially rather than in parallel. For example, rather than asking four people to read the same version of your paper, ask one person to read the paper, then make revisions before asking the next person to read it, and so on. This prevents you from getting the same comments repeatedly.
 
+Now you have submitted our paper and gotten the reviews back, and the editor has asked you to revise your paper taking into account the reviewers' comments. How should you tackle this task? Different people have different ideas but you can start with \cite{noble2017ten} if you do not know where to begin.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
