@@ -23,3 +23,5 @@ LinuX machines:
 2. Install a Tex editor, for example, TexMaker: sudo apt-get install texmaker
 3. How to use TexMaker: https://www.xm1math.net/texmaker/
 
+Please refer to folder /thesis for an example on how to write a thesis or a book using LaTeX.
+
