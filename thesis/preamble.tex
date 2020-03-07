@@ -1,0 +1,327 @@
+
+\documentclass[12pt,a4paper,twoside,openright]{book}
+% ------------------------
+%    Packages used
+% ------------------------
+
+%\usepackage{breqn} %not working
+%mathtools % provide, for example dcases with nice vertical spaces
+\usepackage{amsmath,amssymb, mathtools,mathrsfs,stmaryrd,titletoc}
+\usepackage{latexsym}
+\usepackage{appendix}
+\usepackage[pdftex]{graphicx}
+\usepackage{times}
+%\usepackage{breqn}
+\usepackage{dsfont}
+\usepackage[usenames]{color}
+\usepackage{authblk}
+%\usepackage{epsfig}
+%\usepackage{psfrag}
+\let\Bbbk\relax
+\usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
+\usepackage[retainorgcmds]{IEEEtrantools}
+%\usepackage[dvips]{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{eucal}
+\usepackage{setspace}
+\usepackage[font=small,labelfont=md]{caption,subfig}
+\usepackage[sort,nonamebreak, sectionbib]{natbib} 
+\usepackage{multirow}
+\usepackage[T1]{fontenc} % typing french
+%\usepackage{fancyheadings}
+\usepackage{fancyhdr}
+\usepackage[bookmarks=true,colorlinks=true,linkcolor=red,citecolor=blue,backref=page]{hyperref}
+\usepackage{makeidx}       % make index
+\usepackage{float}         % make new float environment such as boxes (captioned)
+\usepackage{listings}      % insert source code   
+%\usepackage{matlab-prettifier} % insert Matlab
+%\usepackage{bm}
+%\usepackage{algorithmicx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+\usepackage{siunitx}
+
+
+\usepackage[textsize=tiny]{todonotes}
+\usepackage{nicefrac} % type inline fractions: \nicefrac{1}{2}
+\usepackage{setspace}
+\usepackage{lineno}  % write numbers for lines
+%\usepackage[mediumspace,mediumqspace,Grey,squaren]{SIunits}
+\usepackage{totcount} % to count the total number of references and other things
+\usepackage[figure,table]{totalcount}
+\usepackage{blkarray, bigstrut} % write complicated matrices with borders, see http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/blkarray/blkarray.pdf
+
+\usepackage[norefs,nocites,ignoreunlbld]{refcheck} % warning for unreferred figs/tables/equas
+% search in the .log file for unused fig to detect figures not referred to in the text.
+\usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+\usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
+% clever ref: instead of Fig.~\ref{d}, use \cref{d} or \Cref{d}  capitalise -> Figure 1
+% \crefrange{eq1}{eq5}
+
+%\usepackage[mediumspace,mediumqspace,Grey,squaren]{SIunits}
+\usepackage{totcount} % to count the total number of references and other things
+\usepackage[figure,table]{totalcount}
+\usepackage{blkarray, bigstrut} % write complicated matrices with borders, see http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/blkarray/blkarray.pdf
+\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{arrows,decorations.pathmorphing,decorations.pathreplacing,backgrounds,positioning,fit,matrix,math,shapes.misc}
+\tikzset{cross/.style={cross out, draw=black, minimum size=2*(#1-\pgflinewidth), inner sep=0pt, outer sep=0pt}, cross/.default={1pt}}
+
+\usepackage{pgfplots}
+ \pgfplotsset{compat=newest}
+ %% the following commands are needed for some matlab2tikz features
+ \usetikzlibrary{plotmarks}
+ \usetikzlibrary{arrows.meta}
+ \usepgfplotslibrary{patchplots}
+ \usepackage{grffile}
+\usepackage{gensymb} % for degree symbol
+%\usepackage{underscore}
+\usepackage[english]{babel}
+\usepackage{imakeidx}
+\usepackage{wasysym}
+
+\sloppy
+
+\input{pre_commands.tex}
+
+% cleverref package
+%\crefname{figure}{Fig.}{Figs.}
+%\crefname{equation}{Equation}{Equations}
+
+\graphicspath{{./figures/}} 
+
+\setlength{\oddsidemargin}{3mm}
+\setlength{\evensidemargin}{-3mm}
+\setlength{\textwidth}{160mm}
+\setlength{\textheight}{220mm}
+
+\newcommand\Algphase[1]{%
+   \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}%\rule{\textwidth}{0.4pt}%
+      \Statex\hspace*{-\algorithmicindent}\textbf{#1}%
+      \vspace*{-.7\baselineskip}\Statex\hspace*{\dimexpr-\algorithmicindent-2pt\relax}%\rule{\textwidth}{0.4pt}%
+}
+
+% for blocks in Algorithm
+\algblockdefx{Start}{End}[1]{\textbf{#1}}{\textbf{end}}
+
+% -------------------------
+%     Header and footer
+% -------------------------
+
+%\pagestyle{fancyplain}
+%%\addtolength{\headwidth}{\marginparsep}
+%%\addtolength{\headwidth}{\marginparwidth}
+%\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{\ #1}}
+%\lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries
+%Sec. \thesection}}
+%\chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
+%\rhead[\fancyplain{}{\bfseries Chap.\
+%\thechapter}]{\fancyplain{}{\bfseries\thepage}} \cfoot{}
+
+\floatstyle{ruled}
+\newfloat{Fbox}{thp}{lop}[section]
+\floatname{Fbox}{Box}
+
+%\theoremstyle{remark}                                                                                                       
+\newtheorem{thm}{Theorem}[section]                                                                                          
+\newtheorem{rmk}[thm]{Remark}    
+
+
+\lstloadlanguages{C++,Matlab,Python}
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{darkgray}{rgb}{0.95,0.95,0.95}
+\lstset{backgroundcolor=\color{darkgray},
+  basicstyle=\color{red}\ttfamily,
+  keywordstyle=\color{blue}\bfseries
+}
+
+\lstdefinelanguage{Sage}{%
+    language     = Python,
+   morekeywords={var, latex,  view, show, diff, integral, simplify, simplify_full}
+}
+
+\lstdefinelanguage{Julia}%
+  {morekeywords={abstract,break,case,catch,const,continue,do,else,elseif,%
+   end,export,false,for,function,immutable,import,importall,if,in,%
+   macro,module,otherwise,quote,return,switch,true,try,type,typealias,%
+   using,while,Float,Float64,tic,toc,Array,zeros, det, length, size, new},%
+   sensitive=true,%
+   alsoother={$},%
+   morecomment=[l]\#,%
+   morecomment=[n]{\#=}{=\#},%
+   morestring=[s]{"}{"},%
+   morestring=[m]{'}{'},%
+   }[keywords,comments,strings]%
+
+\lstdefinestyle{julia}
+{
+ basicstyle=\scriptsize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=Julia, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen},
+ morekeywords={cell, ones, repmat, intersect, unique, Float, FLoat64}
+}
+
+\lstdefinestyle{C++}
+{
+ basicstyle=\footnotesize, numbers=none, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ commentstyle=\color{mygreen}
+}
+
+\lstdefinestyle{C-numbered}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=C++, escapechar=|,frame=tb,
+ commentstyle=\color{mygreen}
+}
+
+\lstdefinestyle{matlab}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=Matlab, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen},
+ morekeywords={cell, ones, repmat, intersect, unique}
+}
+
+\lstdefinestyle{Sage}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=Sage, escapechar=|,frame=tb,%
+ commentstyle=\color{mygreen}
+}
+
+%\lstset{language=Matlab,
+%       basicstyle=\footnotesize,
+%       keywordstyle=\color{red},
+%       commentstyle=\itshape,
+%       stringstyle=\ttfamily,
+%       showstringspaces=false,
+%       tabsize=2}
+%\lstset{backgroundcolor=\color{MyDarkBlue}}
+\lstdefinestyle{commentstyle}{color=\color{green}}
+
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+
+\lstdefinestyle{tex}
+{
+ basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
+ showstringspaces=false, language=TeX, escapechar=|,frame=tb
+}
+
+%-----------------------------------------------------------------------
+\newcommand{\tty}[1]{\textnormal{\texttt{#1}}}
+\newcommand{\sym}[1]{\textnormal{\textit{#1}}}
+
+\lstnewenvironment{snippet}[1][]
+{
+ \lstset{style=matlab, xleftmargin=5mm, gobble=4, #1}
+}
+{}
+
+\lstnewenvironment{snippet1}[1][]
+{
+ \lstset{style=matlab, xleftmargin=5mm, gobble=4, #1}
+}
+{}
+
+\lstnewenvironment{code-julia}[1][]
+{
+ \lstset{style=julia, xleftmargin=5mm, gobble=4, #1}
+}
+{}
+
+\lstnewenvironment{code-sage}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+  \lstset{style=Sage, xleftmargin=5mm, gobble=4, #1}
+}
+{\endminipage}
+
+\lstnewenvironment{snippetC}[1][]
+{
+ \lstset{style=C++, xleftmargin=5mm, gobble=4, #1}
+}
+{}
+
+\lstnewenvironment{code-matlab}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+  \lstset{style=matlab, xleftmargin=5mm, gobble=4, #1}
+}
+{\endminipage}
+
+\lstnewenvironment{code-c}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+  \lstset{style=C++, xleftmargin=5mm, gobble=4, #1}
+}
+{\endminipage}
+
+\lstnewenvironment{code-c-num}[1][]%
+{
+   \noindent
+   \minipage{\linewidth} 
+   \vspace{0.5\baselineskip}
+  \lstset{style=C-numbered, xleftmargin=5mm, gobble=4, #1}
+}
+{\endminipage}
+
+
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%%%% these patches ensure that the backrefs point to the actual occurrences of the citations in the text, not just the page or section in which they appeared
+%%%% https://tex.stackexchange.com/questions/54541/precise-back-reference-target-with-hyperref-and-backref
+%%%% BEGIN BACKREF DIRECT PATCH, apply these AFTER loading hyperref package with appropriate backref option
+% The following options are provided for the patch, currently with a poor interface!
+% * If there are multiple cites on the same (page|section) (depending on backref mode),
+%   should we show only the first one or should we show them all?
+\newif\ifbackrefshowonlyfirst
+\backrefshowonlyfirstfalse
+%\backrefshowonlyfirsttrue
+%%%% end of options
+%
+% hyperref is essential for this patch to make any sense, so it is not unreasonable to request it be loaded before applying the patch
+\makeatletter
+% 1. insert a phantomsection before every cite, so hyperref has something to target
+%    * in case natbib is loaded. hyperref provides an appropriate hook so this should be safe, and we don't even need to check if natbib is loaded!
+\let\BR@direct@old@hyper@natlinkstart\hyper@natlinkstart
+\renewcommand*{\hyper@natlinkstart}{\phantomsection\BR@direct@old@hyper@natlinkstart}% note that the anchor will appear after any brackets at the start of the citation, but that's not really a big issue?
+%    * if natbib isn't used, backref lets \@citex to \BR@citex during \AtBeginDocument
+%      so just patch \BR@citex
+\let\BR@direct@oldBR@citex\BR@citex
+\renewcommand*{\BR@citex}{\phantomsection\BR@direct@oldBR@citex}%
+
+% 2. if using page numbers, show the page number but still hyperlink to the phantomsection instead of just the page!
+\long\def\hyper@page@BR@direct@ref#1#2#3{\hyperlink{#3}{#1}}
+
+% check which package option the user loaded (pages (hyperpageref) or sections (hyperref)?)
+\ifx\backrefxxx\hyper@page@backref
+    % they wanted pages! make sure they get our re-definition
+    \let\backrefxxx\hyper@page@BR@direct@ref
+    \ifbackrefshowonlyfirst
+        %\let\backrefxxxdupe\hyper@page@backref% test only the page number
+        \newcommand*{\backrefxxxdupe}[3]{#1}% test only the page number
+    \fi
+\else
+    \ifbackrefshowonlyfirst
+        \newcommand*{\backrefxxxdupe}[3]{#2}% test only the section name
+    \fi
+\fi
+
+% 3. now make sure that even if there is no numbered section, the hyperref's still work instead of going to the start of the document!
+\RequirePackage{etoolbox}
+\patchcmd{\Hy@backout}{Doc-Start}{\@currentHref}{}{\errmessage{I can't seem to patch backref}}
+\makeatother
+%%%% END BACKREF PATCHES
+
+\flushbottom

@@ -1,0 +1,20 @@
+# Fdb version 3
+["makeindex main.idx"] 1583542421 "main.idx" "main.ind" "main" 1583542469
+  "main.idx" 1583542469 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  (generated)
+  "main.ilg"
+  "main.ind"
+["pdflatex"] 1583542469 "main.tex" "main.pdf" "main" 1583542469
+  "/usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def" 1582554592 25404 2510469cf40ec483b3c64dfe12ba5655 ""
+  "/usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf" 1583018212 39451 6c50cbbc48279cc2d67f72e32ca48ad5 ""
+  "/usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt" 1583456076 8278530 ee134fd333159ec944f75f3d7c07d421 ""
+  "/usr/local/texlive/2019/texmf.cnf" 1557341546 577 d150fef99ac436ad1156e86b0892f6ef ""
+  "main.aux" 1583542469 8 a94a2480d3289e625eea47cd1b285758 "pdflatex"
+  "main.ind" 1583542422 0 d41d8cd98f00b204e9800998ecf8427e "makeindex main.idx"
+  "main.tex" 1583542468 1683 3b121d8b12b3a9b67572f3756a8c9f91 ""
+  "preface.tex" 0 -1 0 ""
+  (generated)
+  "main.aux"
+  "main.pdf"
+  "main.idx"
+  "main.log"

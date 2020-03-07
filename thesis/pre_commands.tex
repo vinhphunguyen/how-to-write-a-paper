@@ -1,0 +1,199 @@
+\makeatletter
+\renewcommand\fs@ruled{\def\@fs@cfont{\bfseries}\let\@fs@capt\floatc@ruled
+\def\@fs@pre{\hrule height 1.2pt depth0pt \kern2pt}%
+%\def\@fs@post{\hrule height1.2pt depth0pt \kern2pt}%
+\def\@fs@post{\kern2pt\hrule height 1.2pt depth0pt \kern2pt \relax}%
+\def\@fs@mid{\kern2pt\hrule\kern2pt}%
+\let\@fs@iftopcapt\iftrue}
+\makeatother
+
+% index generation
+% see LATEX companion p 354
+\newcommand{\bs}{\symbol{'134}}%print backslash
+\newcommand{\Com}[1]{\texttt{\bs#1}%
+\index{#1@\texttt{\bs#1}}}
+\newcommand{\Prog}[1]{\texttt{#1}%
+\index{#1@\texttt{#1} program }}
+
+% shortcuts
+
+% inner product <x,y>
+\newcommand{\ipn}{\langle \cdot , \cdot \rangle}
+\newcommand{\ip}[2]{\langle #1 , #2 \rangle}
+
+% norm ||x||
+\newcommand{\normn}{\left|\left| \cdot \right|\right|}
+\newcommand{\norm}[1]{\left|\left|#1\right|\right|}
+\newcommand{\meas}[1]{\left|#1\right|}
+
+% McAuley brackets <x>
+\newcommand{\mcauley}[1]{\langle #1 \rangle}
+
+\newcommand{\x}{~$\times$~}
+\newcommand{\fig}{Fig.~}
+\newcommand{\eref}[1]{(\ref{eq:#1})}
+\newcommand{\sref}[1]{\ref{section:#1}}
+\newcommand{\fref}[1]{\ref{fig:#1}}
+\newcommand{\tref}[1]{\ref{table:#1}}
+%\newcommand{\eref}[1]{Eq.~(\ref{#1})}
+%\newcommand{\erefs}[1]{Eqs.~(\ref{#1})}
+%\newcommand{\fref}[1]{Fig.~\ref{#1}}
+%\newcommand{\frefs}[1]{Figs.~\ref{#1}}
+%\newcommand{\tref}[1]{Table~\ref{#1}}
+\newcommand{\trefs}[1]{Tables~\ref{#1}}
+%\newcommand{\sref}[1]{Section~\ref{#1}}
+\newcommand{\srefs}[1]{Sections~\ref{#1}}
+\newcommand{\crefs}[1]{Chapters~\ref{#1}}
+\newcommand{\aref}[1]{Appendix~\ref{#1}}
+\newcommand{\tsty}{\textstyle}
+\newcommand{\dsty}{\displaystyle}
+\newcommand{\D}{\displaystyle}
+\newcommand{\arrow}{~$\rightarrow$~}
+\newcommand{\otheta}{\overline \theta}
+\newcommand{\mathG}{\mathcal{G}}
+
+\newcommand{\mi}{_\mathrm{m}}
+\newcommand{\ma}{_\mathrm{M}}
+
+\newcommand{\Mi}{^\mathrm{m}}
+\newcommand{\Ma}{^\mathrm{M}}
+
+\newcommand{\dep}{_\mathrm{d}}
+\newcommand{\ind}{_\mathrm{i}}
+
+\newcommand{\di}{\mathrm{d}}
+
+\newcommand{\defi}{\mathrel{\mathop:}=}
+
+% abbreviations
+
+\usepackage{xspace}
+\newcommand{\eg}{\textit{e.g.}\xspace}
+\newcommand{\ie}{\textit{i.e.},\xspace}
+\newcommand{\etc}{\textit{etc.}\@\xspace}
+\newcommand{\CF}{\textit{cf.}\,}     % i.e.
+\newcommand{\cf}{\textit{cf.}\,}     % i.e.
+\newcommand{\ETAL}{et. al.\@\xspace}
+\newcommand{\etal}{et. al.\@\xspace}
+\newcommand{\cmatrixb}{\left\{ \begin{matrix}}
+\newcommand{\cmatrixe}{\end{matrix} \right\}}
+
+% general vector/matrix commands:
+
+\newcommand{\tvm}[1]{\textbf{#1}}
+\newcommand{\tvms}[1]{$\boldsymbol{#1}$\ }
+\newcommand{\vm}[1]{\mathbf{#1}}
+\newcommand{\vms}[1]{\mathbf{#1}}
+\newcommand{\bsym}[1]{\boldsymbol{#1}}
+
+% vector/matrix for space coordinates 'x' and 'y'
+
+\newcommand{\vx}{\mathbf{x}}
+\newcommand{\vy}{\mathbf{y}}
+\newcommand{\ve}[1]{\mathbf{e}_{#1}}
+\newcommand{\bx}{\boldsymbol{x}}
+\newcommand{\vxI}{\mathbf{x}_{I}}
+\newcommand{\vj}[1]{\mathbf{#1}_{j}}
+\newcommand{\xI}{x_{I}}
+\newcommand{\yI}{y_{I}}
+\newcommand{\hvx}{\hat{\mathbf{x}}}
+\newcommand{\hx}{\hat{x}}
+\newcommand{\hy}{\hat{y}}
+
+\newcommand{\trans}{^\mathrm{T}}
+\newcommand{\transi}{^\mathrm{-T}}
+\newcommand{\el}{_\mathrm{e}}
+\newcommand{\pl}{_\mathrm{p}}
+
+\newcommand{\inte} [1]{\int_\Omega #1 d\Omega}
+\newcommand{\intE}[1]{\int_{\Omega_0} #1 d\Omega_0}
+\newcommand{\intg}[1]{\int_{\Gamma} #1 d\Gamma}
+\newcommand{\intG}[1]{\int_{\Gamma_0} #1 d\Gamma_0}
+
+
+
+%\newcommand{\T}{\underline{\vm{T}}}
+
+% Shortcuts for making slides
+
+\newcommand{\fontone}{\bfseries\Large}
+\newcommand{\fonttwo}{\bfseries\large}
+\newcommand{\fontonesc}{\scshape\Large}
+\newcommand{\fonttwosc}{\scshape\large}
+\newcommand{\fontthree}{\bfseries}
+\newcommand{\bc}{\begin{center}}
+\newcommand{\ec}{\end{center}}
+\newcommand{\bitem}{\begin{itemize}}
+\newcommand{\eitem}{\end{itemize}}
+
+% ************************ MATH TYPE MACROS **************************
+\newcommand{\mth}[1]{\mathit{#1}}      % print standard math italics
+\newcommand{\boldsym}[1]{\mbox{\boldmath${#1}$}}
+\newcommand{\vct}[1]{\boldsym{#1}}     % print vector
+\newcommand{\fnc}[1]{\prno{#1}}        % print function i.e. sin ...
+\newcommand{\mtx}[1]{\mathbf{#1}}      % print matrix
+\newcommand{\msc}[1]{\mathcal{#1}}     % print script
+\newcommand{\mss}[1]{\mathsf{#1}}      % print sans sarif
+\newcommand{\tns}[1]{\boldsym{#1}}     % print tensor
+\newcommand{\dbl}[1]{\mathbb{#1}}      % print sets letters like |R |C, etc...
+%\newcommand{\Grad}{\stackrel{\rightharpoonup}{\boldsym{\nabla}}\!\!}
+                                       % print gradient operator
+\newcommand{\GradL}{\!\!\stackrel{\leftharpoonup}{\boldsym{\nabla}}}
+                                       % print gradient operator
+\newcommand{\Grad}{\boldsym{\nabla}}
+                                       % print gradient operator
+\newcommand{\Div}{\Grad\cdot}          % print divergnece operator
+\newcommand{\DivL}{\cdot\GradL}        % print divergnece operator
+
+\newcommand{\ljump}{\lbrack \! \lbrack } % print left jump oerator
+\newcommand{\rjump}{\rbrack \! \rbrack } % print right jump oerator
+                                         % derivative
+\newcommand{\jump}[1]{\ljump {#1} \rjump} % jump operator
+\newcommand{\derivv}[2]{ \frac{d^2 {#1} }{d {#2}$^2$ } }
+\newcommand{\deriv}[2]{ \frac{d {#1} }{d {#2} } }   % partial derivivative
+\newcommand{\pderiv}[2]{ \frac{\partial {#1} }{\partial {#2} } }
+\newcommand{\testspc}{\mathcal{V}}
+\newcommand{\trialspc}{\mathcal{S}}
+
+\newcommand{\volint}[1]{\int_{\Omega}\,{#1}\,dV} % integrals
+\newcommand{\bndint}[2]{\int_{#1}\,{#2}\,dS}
+
+\newcommand{\beq}{\begin{equation}}
+\newcommand{\eeq}{\end{equation}}
+\newcommand{\beqa}{\begin{eqnarray}}
+\newcommand{\eeqa}{\end{eqnarray}}
+
+%--My own definitions--
+
+\newcommand{\reals}{{\mathbb R}}
+\newcommand{\dof}{\emph{dof}}
+\newcommand{\dofs}{\emph{dofs}}
+\newcommand{\bfalfi}{\mbox{\boldmath$\alpha$\unboldmath$_i$}}
+\newcommand{\bfalfj}{\mbox{\boldmath$\alpha$\unboldmath$_j$}}
+\newcommand{\remark}[2]{\vspace{0.1cm}
+\noindent {\bf Remark #1:}  {#2}  \vspace{0.1cm}}
+\newcommand{\invisible}[1]{}
+\newcommand{\bgl}[1]{\mbox{\boldmath$#1$\unboldmath}}
+\newcommand{\parti}[2]{\frac{\partial #1}{\partial #2}}
+
+% X-FEM related
+\newcommand{\xfemlong}{\textit{eXtended Finite Element Method}\,}     % extend..
+\newcommand{\xfem}{\textit{X-FEM}\,}     % x-fem
+
+% ********************** VERBATIM AND IGNORE *************************
+\newcommand{\bv}{\begin{verbatim}}
+\newcommand{\V}{\verb}                  % EX: \V=-d{#@~}= Expr must
+                                        % fit on a line
+
+% ************************ FIGURE COMMANDS ***************************
+\newcommand{\testpix}[1]{\fbox{\begin{minipage}[c]{\textwidth}
+                      #1 \end{minipage} }}
+
+%\ifpdf
+% \newcommand{\putfig}[2]{\includegraphics[scale=#2]{#1.pdf}}
+%\else
+% \newcommand{\putfig}[2]{\includegraphics[scale=#2]{#1.eps}}
+%\fi
+
+\newcommand{\putpstex}[1]{\includegraphics{#1.pstex_t}}
+% END FIGURE COMMANDS

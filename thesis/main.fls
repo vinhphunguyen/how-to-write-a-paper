@@ -1,0 +1,12 @@
+PWD /Users/vingu/Dropbox/my-writtings/papers-dropbox/how-to-write-paper/thesis
+INPUT /usr/local/texlive/2019/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-dist/web2c/texmf.cnf
+INPUT /usr/local/texlive/2019/texmf-var/web2c/pdftex/pdflatex.fmt
+INPUT main.tex
+OUTPUT main.log
+OUTPUT main.idx
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT /usr/local/texlive/2019/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
+INPUT main.aux
+INPUT main.aux
+OUTPUT main.aux

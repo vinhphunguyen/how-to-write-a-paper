@@ -1,0 +1,86 @@
+%&preamble
+
+% I used precompiled header to save time:  execute the following command when preamble changed
+% pdflatex -ini -jobname="preamble" "&pdflatex preamble.tex\dump"
+% see file preamble.tex for all the packages and other stuff.
+
+%\bibliography{~/literature/meshfree-mpm.bib}
+%\graphicspath{{../../papers/latex/igafem/}} 
+
+% comment our some chapters to speed up the compiling process
+\includeonly{
+introduction,
+chapter1,
+chapter2,
+%chapter3
+}
+
+\makeindex[intoc]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\title{Title of your thesis/book/report}
+
+\author[1]{First author}
+\author[2]{Second author}
+
+\affil[1]{Affiliation of 1st author}
+\affil[2]{Affiliation of 2nd author}
+
+
+
+\date{ }
+
+
+\maketitle
+
+\input{preface}
+
+\tableofcontents
+%\listoffigures
+
+\pagestyle{fancy}
+\fancyhf{
+  \fancyhead[LE]{\thepage}
+  \fancyhead[RE]{\leftmark}
+  \fancyhead[LO]{\rightmark}
+  \fancyhead[RO]{\thepage}
+  %\fancyfoot[CE,CO]{\leftmark}
+  %\fancyfoot[LE,RO]{\thepage}
+}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\pagenumbering{arabic}
+
+
+
+% **********************************************************************************************************
+
+% -----------------------
+\include{introduction}
+\include{chapter1}
+\include{chapter2}
+\include{chapter3}
+
+
+
+\appendix
+
+\include{appendix1}
+
+% ----------------------
+
+% **********************************************************************************************************
+\clearpage % or \cleardoublepage
+\addcontentsline{toc}{chapter}{Bibliography}
+
+\bibliographystyle{plainnat}
+\bibliographystyle{natbib}
+\bibliography{bibfile.bib}
+
+\printindex
+
+\end{document}
