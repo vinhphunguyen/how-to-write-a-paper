@@ -1045,11 +1045,18 @@ If you want to stack multiple pictures together with sub-captions using \LaTeX, 
 
 \subsubsection{Sketches}\label{sec:sketches}
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is done by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. Saving the drawing into svg, and then exporting it as a PDF\_TEX using the following command (\cite{inkscape}):
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is achieved by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape} For example, if we want to get $\nabla \sigma$, we write the following text in  \texttt{Inkscape}:
+
+\begin{verbatim}
+$\nabla \sigma$
+\end{verbatim}
+
+Saving the drawing into the SVG format (SVG is short for scalable vector graphic file), and then exporting it as a PDF\_TEX file using the following command (\cite{inkscape})\footnote{This can also be done using the GUI:File/Save as/ and enable the option 'Omit text in PDF and create LaTeX file'.}:
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
-Finally inserting the figure is done according to \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example.
+This command generates two files: one is \textit{output.pdf} and the other is \textit{output.pdf\_tex}. And 
+then we insert the figure using the file \textit{output.pdf\_tex}, see \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example.
 
 Some people even go to the extreme of not using a graphics software with a user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a TeX package for creating graphics programmatically. It has a steep learning curve but the results are outstanding. An example is provided in \cref{fig:tikz}. The code used to generate this drawing is given in \cref{snippet_code_tikz}. One can appreciate the fact that it is fully parameterized, \ie the size of the drawing is controlled by the variable $L$.
 
@@ -1096,6 +1103,7 @@ Some people even go to the extreme of not using a graphics software with a user 
   \end{center}
 \end{figure}
 
+    
 
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={\texttt{TikZ} code used to obtain \cref{fig:tikz}.},label={snippet_code_tikz},framerule=1pt,tabsize=3]
@@ -1152,7 +1160,18 @@ Some people even go to the extreme of not using a graphics software with a user 
 
 Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}\footnote{As we embrace as much as possible open source software, we did not mention \texttt{tecplot},  a good data visualization package developed explicitly for engineers and scientist.}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
 
+For complex drawings we have to combine the different tools together. \cref{fig:complex-fig} shows one example in which we combined \texttt{ParaView}, \texttt{matplotlib} and \texttt{Inkscape}. 
+
  Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections.
+
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{complex-fig}
+\caption{Complex figures: contour plot from \texttt{ParaView} is combined with a polar plot from \texttt{matplotlib} using \texttt{Inkscape}.}
+\label{fig:complex-fig}
+\end{figure}
+
 
  \subsubsection{Citing figures (and tables)}\label{sec:citing-figs}
 
@@ -1421,7 +1440,7 @@ Now you have submitted our paper and gotten the reviews back, and the editor has
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Conclusions}
 
-Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  advices that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
+Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  suggestions and recommendations that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
 
 
 As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author (\url{https://github.com/vinhphunguyen/how-to-write-a-paper}).
