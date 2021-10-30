@@ -1016,7 +1016,7 @@ It is not a requirement that the font used in  graphs (\eg bar charts, error cha
       \input{cold-spray-plots.pgf}           % insert a PGF
       \input{output.pdf_tex}                 % insert a pdf_tex
       \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
-      \label{fig:cold-spray}
+      \label{fig:cold}                       % this label is used in \cref{fig:cold}
     \end{figure}
   \end{snippetlatex}
 \end{figure*}
@@ -1045,13 +1045,13 @@ If you want to stack multiple pictures together with sub-captions using \LaTeX, 
 
 \subsubsection{Sketches}\label{sec:sketches}
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is achieved by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape} For example, if we want to get $\nabla \sigma$, we write the following text in  \texttt{Inkscape}:
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}. Note that, it works only for Mac OS.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is achieved by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. For example, if we want to get $\nabla \sigma$, we write the following text in  \texttt{Inkscape}:
 
 \begin{verbatim}
 $\nabla \sigma$
 \end{verbatim}
 
-Saving the drawing into the SVG format (SVG is short for scalable vector graphic file), and then exporting it as a PDF\_TEX file using the following command (\cite{inkscape})\footnote{This can also be done using the GUI:File/Save as/ and enable the option 'Omit text in PDF and create LaTeX file'.}:
+Saving the drawing into the SVG format (SVG is short for scalable vector graphic file), and then exporting it as a PDF\_TEX file using the following command (\cite{inkscape})\footnote{This can also be done using the GUI: File/Save as/ and enable the option 'Omit text in PDF and create LaTeX file'.}:
 \begin{verbatim}
 inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 \end{verbatim}
@@ -1431,7 +1431,7 @@ Do not submit until you are really happy with the work, as it usually does not s
 It is also useful to ask peers to read over your work. Before giving your first draft to your supervisor(s), have it proof-read by a peer (\ie if you are a PhD student, ask another PhD student for their opinion). This will bring the following positive points: 
 It will value your peer as you think her/his opinion counts;
 It will give you insights on how understandable your paper is by someone who is connected to your field but did not do exactly the same piece of research;
-It will decrease the number of typos, which will enable your supervisor(s) to focus on the science as opposed to bumping over each spelling mistake, grammatical error, jargon. 
+It will decrease the number of typos, which will enable your supervisor(s) to focus on the scientific content as opposed to bumping over each spelling mistake, grammatical error, jargon. 
 
 It is most effective to get feedback sequentially rather than in parallel. For example, rather than asking four people to read the same version of your paper, ask one person to read the paper, then make revisions before asking the next person to read it, and so on. This prevents you from getting the same comments repeatedly.
 
