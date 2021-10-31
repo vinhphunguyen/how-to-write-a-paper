@@ -16,9 +16,6 @@
 
 % bibtex 
 \usepackage{natbib}
-% biblatex
-% \usepackage[hyperref=true,natbib=true,backref=true,style=authoryear-comp,giveninits=true,maxbibnames=9,maxcitenames=2,uniquelist=false,sortcites=none,doi=false,url=false,eprint=false,uniquename=false,dashed=false]{biblatex}
-% \bibliography{mpm.bib,mpm_SS.bib}
 
 
 %\usepackage{bm}% bold math
@@ -32,20 +29,11 @@
 \usepackage[usenames]{color}
 \usepackage{tabularx}
 \usepackage{booktabs}
-%\usepackage{scalerel} % for large angle brackets <>, does not work
-%\usepackage{cite}
-%\usepackage[authoryear,sort,nonamebreak,sectionbib]{natbib} 
-%\usepackage[authoryear,nonamebreak,sectionbib]{natbib} 
 \usepackage[font=small,labelfont=md]{caption,subfig}
 \usepackage{multirow}
-\usepackage[T1]{fontenc} % typing french
-%\usepackage{fancyhdr}
-%\usepackage[english,hyperpageref]{backref}                         
 \usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,citecolor=red,backref=page]{hyperref}
-\usepackage{makeidx}       % make index
 \usepackage{float}         % make new float environment such as boxes (captioned)
 \usepackage{listings}      % insert source code   
-%\usepackage{bm}
 \usepackage{algorithm}
 %\usepackage{algorithmicx}
 \usepackage{algpseudocode}
@@ -58,7 +46,7 @@
 
 
 % nomenclature and glossaries for XFEM, CDM
-\usepackage{nomencl}
+%\usepackage{nomencl}
 \usepackage[acronym]{glossaries}
 
 % the following packages just to improve the latex experience 
@@ -74,17 +62,16 @@
 % tracking=true, kerning=true, spacing=true - activate these techniques
 % factor=1100 - add 10% to the protrusion amount (default is 1000)
 % stretch=10, shrink=10 - reduce stretchability/shrinkability (default is 20/20)
-%\usepackage{varioref}
 \usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
 % clever ref: instead of Fig.~\ref{d}, use \cref{d} or \Cref{d}  capitalise -> Figure 1
 % \crefrange{eq1}{eq5}
 \usepackage[textsize=tiny]{todonotes}
 \usepackage{nicefrac} % type inline fractions: \nicefrac{1}{2}
-\usepackage{setspace}
+\usepackage{setspace} % gives commands such as \doublespacing, or \begin{singlespace} \end{singlespace}
 \usepackage{lineno}  % write numbers for lines
 %\usepackage[mediumspace,mediumqspace,Grey,squaren]{SIunits}
-\usepackage{totcount} % to count the total number of references and other things
-\usepackage[figure,table]{totalcount}
+%\usepackage{totcount} % to count the total number of references and other things
+%\usepackage[figure,table]{totalcount}
 \usepackage{blkarray, bigstrut} % write complicated matrices with borders, see http://mirror.lagoon.nc/pub/ctan/macros/latex/contrib/blkarray/blkarray.pdf
 \usepackage{tikz}
 \usetikzlibrary{arrows,decorations.pathmorphing,decorations.pathreplacing,backgrounds,positioning,fit,matrix,math,shapes.misc}
@@ -98,10 +85,10 @@
  \usetikzlibrary{plotmarks}
  \usetikzlibrary{arrows.meta}
  \usepgfplotslibrary{patchplots}
- \usepackage{grffile}
+ \usepackage{grffile} % load graphicx package, The package extends the file name processing of package graphics to sup- port a larger range of file names. 
 \usepackage{pgf}
 %\usepackage{underscore}
-\usepackage[english]{babel}
+\usepackage[english]{babel}  %also automatically activates the appropriate hyphenation rules for the language you choose
 \usepackage[title,titletoc,toc]{appendix} 
 %\usepackage[referable]{threeparttablex}
 \usepackage{threeparttable}
@@ -373,10 +360,10 @@
 %1. bibtex
 
 % total number of references
-\newtotcounter{citenum}
-\def\oldcite{}
-\let\oldcite=\bibcite
-\def\bibcite{\stepcounter{citenum}\oldcite}
+% \newtotcounter{citenum}
+% \def\oldcite{}
+% \let\oldcite=\bibcite
+% \def\bibcite{\stepcounter{citenum}\oldcite}
 
 % new command for colorbox gray
 \newcommand{\graybox}[1]{%
@@ -423,13 +410,13 @@
 %\pagenumbering{arabic}
 
 \begin{abstract}
-Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms and source codes using \LaTeX. We also discuss writing guidelines such as paper structure and some common mistakes.
+Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms and source codes using \LaTeX. We also discuss writing guidelines such as paper structure, major components of a paper from title, abstract, introduction, results to references, and some common mistakes.
 \end{abstract}
 
 % *********************************************************************************************************
 
 \begin{keyword}
- scientific writing; \LaTeX; scientific publication; high quality writing.
+ scientific writing; \LaTeX; scientific publication; high quality writing; reproducibility.
 \end{keyword}
 
 
@@ -487,7 +474,6 @@ It is obvious that, no matter how good you are as a writer, a bad research idea 
 The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare high quality images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
 
@@ -521,7 +507,7 @@ The co-authors can still use their own favorite \LaTeX\ editor\footnote{which is
 
 \begin{rmk}\label{rm:a}
 
-Without going in to the debate of which is the best editor, we use \texttt{Sublime Text}. This is
+Without going into the debate of which is the best editor, we use \texttt{Sublime Text}. This is
 because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. And the two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
 
 
@@ -543,8 +529,10 @@ The tools described in this section help you to write papers effectively, only w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Writing tips}\label{sec:writing-tips}
 
-This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}. Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
-\cref{sec:mistakes}.  Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers \citep{Jones}.
+This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}: nearly all major components of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
+\cref{sec:equation} and figures in \cref{sec:citing-figs}.
+Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
+\cref{sec:mistakes}.  Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers, \eg \cite{Jones}.
 
 %--------------------------------------
 \subsection{General guidelines}\label{sec:guidelines}
@@ -564,7 +552,14 @@ The main contributions of your paper must be clearly stated after a brief review
 
 Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
 Use simple sentences that are linked together so that your writing is coherent. 
-See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
+See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. Another example is, from S.P. Jones (yes, the same Jones who has written the interesting paper on how to write great papers \citep{Jones})
+
+
+\begin{quote}
+\textit{Security proofs} of cryptographic protocols are crucial for the security of everyday electronic communication. However, \textit{these proofs} tend to be complex and difficult to get right. To make it easier to manage \textit{such proofs}, Jones et al. have proposed a new design principle, called the \textit{game-playing technique}. 
+\textit{This technique} follows a code-based approach where the security properties are formulated in therms of probabilistic programs, called games.
+\end{quote} 
+We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
 
 Try to revise your writing to keep only the words/figures/tables that are necessary. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
 
@@ -792,10 +787,29 @@ Some papers with well written sections even do not have a conclusion section. We
 
 \begin{itemize}
 \item One or two sentences summarizing what the paper has been about;
-\item Summarizing the key findings of the paper;
-\item What could be improved.
+\item A summary of the key findings of the paper;
+\item A list of potential improvements.
 \end{itemize}
-The key findings can be presented using bullet points.
+The key findings can be presented using bullet points. And as far as bullet points are concerned, we have to mention parallel structure. Parallel structure means that coordinate parts of a sentence, such as items in a series or list, have the same grammatical form. 
+
+For example, in a draft version, one student of ours wrote (in the introduction section): We present the following concrete contributions:
+\begin{itemize}
+	\item A unified fourth order phase field fracture framework for brittle and quasi-brittle solids which can be considered as an extension of the unified PFM of Wu (2017);
+	\item A semi-analytical (analytical-numerical) approach for PF-CZM;
+\item A almost length scale insensitive fourth order PFM;
+\item The first fourth order PFM for cohesive fracture;
+\item The PF-CZM is applied to study the phenomena of crack kinking in anisotropic brittle fracture
+\end{itemize}
+We do not need to be a native English to recognize that the above list is wrong. Just by reading it out loud we can see that the first three bullet points are ok, but something wrong with the fourth and fifth bullets.
+
+Using parallel structure, the above list must be written as follows: We present the following concrete contributions:
+\begin{itemize}
+	\item A unified fourth order phase field fracture framework for brittle and quasi-brittle fracture;
+\item A semi-analytical approach for the fourth order PF-CZM;
+\item A comparison of the fourth order PF-CZM against the second order PF-CZM;
+\item A study of the phenomena of crack kinking and sawtooth cracking in strongly anisotropic brittle fracture.
+\end{itemize}
+
 
 \subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
 
@@ -816,6 +830,107 @@ You should pick one reference style and stick to it so that the references are c
 \item Avoid citing a list of two many papers \eg `See [1-20] for some relevant work'. This helps neither the readers to find anything, nor the authors of [1-20] to get credit;
 \item If a author-year reference format is used \eg 'Walker (1996) studied ...', all references in a single citation should be ordered in chronological order. For instance, `To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}.'
 \end{itemize}
+
+\subsection{Notations and equations}\label{sec:equation}
+
+Avoid overly complex notations, see \cref{tab:complex-notation} for some examples. Try to introduce a nomenclature in the paper, to ease things for the reviewers and readers.  Sometimes, a table such as \cref{tab:notations} does a good job to introduce main notations. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.3\textwidth}{ll}
+   \toprule
+   Don't & Do  \\
+  \midrule
+   $\varkappa$ & $\kappa$  \\
+   $\hbar$ & $\bar{h}$  \\
+   $\underline{\underline{A}}$ & $\boldsymbol{A}$ or $A_{ij}$\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Avoid overly complex notations.}
+ \label{tab:complex-notation}
+\end{table}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setlength{\fboxsep}{0pt}
+\begin{table}[h!]
+   \centering
+     \setlength\fboxsep{0pt}
+\vskip-\topsep%
+\smallskip%
+%\renewcommand\arraystretch{1.3}
+\colorbox{darkgray}{%
+   \begin{tabularx}{0.6\textwidth}{llX}
+   \toprule
+   Variable & Type  & Meaning\\
+  \midrule
+  $\mathbf{x}_p$ & Vector & Particle position (time-dependent)\\
+  $\mathbf{X}_p$ & Vector & Particle initial position\\
+  $m_p$ & Scalar & Particle mass\\
+  $V_p$ & Scalar & Particle volume\\
+  $\rho_p$ & Scalar & Particle density\\
+  $T_p$ & Scalar & Particle temperature\\
+  $\mathbf{P}_p$ & Tensor/Matrix & Particle 1$^\text{st}$ Piola-Kirchoff stress\\
+  \bottomrule
+ \end{tabularx}%
+ }
+\caption{Major notations can be put in a table.}
+ \label{tab:notations}
+\end{table}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Ideally, the impact of a scientific work should be determined by its scientific merit, rather than by presentational style. Unfortunately, \cite{Fawcett11735,Higginson_2016} showed that scientifically strong papers may have reduced impact if not presented in an accessible manner. 
+The density of equations in an article on ecology and evolutionary biology has a significant negative impact on citation rates, with papers receiving 28\% fewer citations overall for each additional equation per page in the main text \citep{Fawcett11735}. For papers in physics, the number is 6\% fewer citations for each additional equation per page \citep{Higginson_2016}.
+
+The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
+
+A paper in the field of computational sciences certainly contains some mathematical equations and/or expressions. To demonstrate how equations are written, we use the following one (taken from one of our papers)
+
+\begin{equation}
+  \mathscr{E} (\bfu, d) 
+    = \int_{\varOmega_{0}} \left[\omega(d)\psi_{0}^+(\bfepsilon (\bfu)) + \psi_{0}^-(\bfepsilon (\bfu)) \right]\td V
+    + \int_{\varOmega_{0}}  \frac{G_\text{f}}{c_\alpha} \left[ \frac{1}{b} \alpha(d)
+    + b \left( \nabla d \cdot \nabla d \right) \right] \td V
+    - \mathscr{P} (\bfu)   
+\label{eq:energy-functional}
+\end{equation}
+where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$\footnote{Any mathematical symbols appearing in the text must be typset using a math font. In \latex this is achieved by putting the symbols in two dollar signs.}.  
+
+Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. Later on we refer to this equation using its number as: \textit{The energy functional in \cref{eq:energy-functional} is minimized to obtain ...}
+
+We do not want to discuss about punctuations in equations as this problem is still a debate. Do whatever you feel comfortable with. But the editor can ask you to add punctuations in your equations!
+
+\subsection{Figures}\label{sec:citing-figs}
+
+Figures  are  an important element of reporting the findings of your research. The reader usually starts by reading the abstract, conclusion and figures. If the figures are self-contained and convincing, it is likely that the reviewers will accept the paper without asking a large number of questions. If they have to read the whole text to understand the worth of each figure, this will slow their progress and could make them impatient, hence decrease the chance of giving recommendation for your paper. 
+
+A high quality figure is worth a thousand words. By a high quality figure we meant the one that has a legible font size, a high resolution, is color-blindness aware, of which all the axes are clearly defined, those sorts of things. Later on we will discuss how to prepare such figures (\cref{sec:figs}). We emphasize the importance of high quality figures because we have seen so many figures which are, without better words, of very low quality.
+
+Tables and figures, although important components of any research papers, are just that—components; you can publish a paper without them but you cannot publish tables or figures without a paper. Thus a figure (or table) exists to support the text. So the first rule is: make sure that every table and figure is mentioned in the text. Even though there are some \LaTeX\ packages (\eg \texttt{Refcheck}) that help to find out unused figures and tables, our practice is when we insert a figure in our document, we cite it immediately. And the second rule is: remove any figure if it does not support your discussion. The third rule is good figure captions. Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections. And the final is how figures/tables are referred to in the text.
+
+One usually does not pay enough attention to how figures (and tables) should be referred to in the text. That is why one usually write the following sentences
+
+ \begin{quote}
+  \textit{Fig. 10 depicts the global responses. As can be seen, the global responses are 
+  insensitive to the incorporated length scale.}
+ \end{quote}
+The first sentence is unnecessary as it only directs the reader to the figure (Fig. 10), and thus it provides no information. We have found similar sentences in the literature (including our papers). A better version of the above is:
+
+ \begin{quote}
+  \textit{The global responses are insensitive to the incorporated length scale (Fig. 10).}
+ \end{quote}
+We say that this is a better version because it did not use the phrase `As can be seen'. It is clear that the use of too many such phrases should (and can be) be avoided. 
+Actually we already use this style when we cite published articles and books to support an argument. We can do the same thing with figures and tables.
+
+
+
 
 % 
 %--------------------------------------
@@ -863,7 +978,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   \bottomrule
  \end{tabularx}%
  }
-\caption{Some common mistakes.}
+\caption{Some common mistakes. A good way to improve your writing is by reading your writing, including all of the writing out loud. Your ears can often pick out sentence fragments and grammatical errors better than your eyes. If you find yourself saying a series of fragmented sentences or feeling something unnatural, you should do some rewriting.}
  \label{tab:mistakes}
 \end{table}
 
@@ -929,7 +1044,7 @@ Now you know how a good quality scientific paper looks like and you are ready to
 \section{\LaTeX\ tips}\label{sec:latex}
 
 We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs},  notations and equations in \cref{sec:equation}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
+\cref{sec:tabs},  equations in \cref{sec:equation-latex}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Packages}\label{sec:packages}
@@ -996,10 +1111,8 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
 \subsection{Figures}\label{sec:figs}
 
 
-Figures are an important element of reporting the findings of your research. The reader usually starts by reading the abstract, conclusion and figures. If the figures are self-contained and convincing, it is likely that the reviewer will accept the paper without asking a large number of questions. If they have to read the whole text to understand the worth of each figure, this will slow their progress and could make them impatient, hence decrease the chance of acceptance. 
 
-A high quality figure is worth a thousand words. By a high quality figure we meant one that has a legible font size, a high resolution, color-blindness aware, all the axes are clearly defined, those sorts of things. 
-This section discusses how to generate high quality figures: be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}). It also discusses on how figures/tables should be referred to in the paper (\cref{sec:citing-figs}). For more detail on preparing figures, we refer to \cite{rougier2014ten}.
+This section discusses how to generate high quality figures: be it graphs (\cref{sec:graphs}), sketches (\cref{sec:sketches}) and contour plots (\cref{sec:contours}).  For more detail on preparing figures, we refer to \cite{rougier2014ten}.
 
 
 \subsubsection{Graphs}\label{sec:graphs}
@@ -1008,7 +1121,7 @@ It is not a requirement that the font used in  graphs (\eg bar charts, error cha
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF, or PGF or PDF\_TEX image. The crucial point here is not to scale the inserted image. Otherwise, the font size will be affected.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF, or PGF or PDF\_TEX image. The crucial point here is not to scale the inserted image. Otherwise, the font size will be affected. Each figure should have a unique label (here is 'fig:cold'), which is used to refer to it in text.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
     \begin{figure}[!ht]
       \centering
       % only one of the following three
@@ -1154,6 +1267,7 @@ Some people even go to the extreme of not using a graphics software with a user 
 \end{figure*}
 
 
+
 %---------------------------------------------------------------------------
 
 \subsubsection{Contour plots}\label{sec:contours}
@@ -1162,7 +1276,6 @@ Another type of images in scientific papers is contour plots (see \cref{fig:figu
 
 For complex drawings we have to combine the different tools together. \cref{fig:complex-fig} shows one example in which we combined \texttt{ParaView}, \texttt{matplotlib} and \texttt{Inkscape}. 
 
- Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections.
 
 
 \begin{figure}[h!]
@@ -1173,24 +1286,7 @@ For complex drawings we have to combine the different tools together. \cref{fig:
 \end{figure}
 
 
- \subsubsection{Citing figures (and tables)}\label{sec:citing-figs}
-
-
-Tables and figures, although important components of any research papers, are just that—components; you can publish a paper without them but you cannot publish tables or figures without a paper. And if text is supported by tables or figures, it must mention them. So the first rule is: make sure that every table and figure is mentioned in the text. Even though there are some \LaTeX\ packages (\eg \texttt{Refcheck}) that help to find out unused figures and tables, our practice is when we insert a figure in our document, we cite it immediately. And the second rule is: remove any figure if it does not support your discussion.
-
-One usually does not pay enough attention to how figures (and tables) should be referred to in the text. That is why one usually write the following sentences
-
- \begin{quote}
-  \textit{Fig. 10 depicts the global responses. As can be seen, the global responses are 
-  insensitive to the incorporated length scale.}
- \end{quote}
-The first sentence is unnecessary as it only directs the reader to the figure (Fig. 10), and thus it provides no information. We have found similar sentences in the literature (including our papers). A better version of the above is:
-
- \begin{quote}
-  \textit{The global responses are insensitive to the incorporated length scale (Fig. 10).}
- \end{quote}
-We say that this is a better version because it did not use the phrase `As can be seen'. It is clear that the use of too many such phrases should (and can be) be avoided. 
-Actually we already use this style when we cite published articles and books to support an argument. We can do the same thing with figures and tables.
+ 
 
 %--------------------------------------
 \subsection{Tables}\label{sec:tabs}
@@ -1259,81 +1355,39 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 %The angle was \ang{12.3} The brightness was \SI{.23e7}{\candela} \SI{20}{MPa} \SI{10}{N.m.m^{-2}}
 
 
-\subsection{Notations and equations}\label{sec:equation}
+\subsection{Equations}\label{sec:equation-latex}
 
-Avoid overly complex notations, see \cref{tab:complex-notation} for some examples. Try to introduce a nomenclature in the paper, to ease things for the reviewers and readers.  Sometimes, a table such as \cref{tab:notations} does a good job to introduce main notations. 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
-   \centering
-     \setlength\fboxsep{0pt}
-\vskip-\topsep%
-\smallskip%
-%\renewcommand\arraystretch{1.3}
-\colorbox{darkgray}{%
-   \begin{tabularx}{0.3\textwidth}{ll}
-   \toprule
-   Don't & Do  \\
-  \midrule
-   $\varkappa$ & $\kappa$  \\
-   $\hbar$ & $\bar{h}$  \\
-   $\underline{\underline{A}}$ & $\boldsymbol{A}$ or $A_{ij}$\\
-  \bottomrule
- \end{tabularx}%
- }
-\caption{Avoid overly complex notations.}
- \label{tab:complex-notation}
-\end{table}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
-   \centering
-     \setlength\fboxsep{0pt}
-\vskip-\topsep%
-\smallskip%
-%\renewcommand\arraystretch{1.3}
-\colorbox{darkgray}{%
-   \begin{tabularx}{0.6\textwidth}{llX}
-   \toprule
-   Variable & Type  & Meaning\\
-  \midrule
-  $\mathbf{x}_p$ & Vector & Particle position (time-dependent)\\
-  $\mathbf{X}_p$ & Vector & Particle initial position\\
-  $m_p$ & Scalar & Particle mass\\
-  $V_p$ & Scalar & Particle volume\\
-  $\rho_p$ & Scalar & Particle density\\
-  $T_p$ & Scalar & Particle temperature\\
-  $\mathbf{P}_p$ & Tensor/Matrix & Particle 1$^\text{st}$ Piola-Kirchoff stress\\
-  \bottomrule
- \end{tabularx}%
- }
-\caption{Major notations can be put in a table.}
- \label{tab:notations}
-\end{table}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-Ideally, the impact of a scientific work should be determined by its scientific merit, rather than by presentational style. Unfortunately, \cite{Fawcett11735,Higginson_2016} showed that scientifically strong papers may have reduced impact if not presented in an accessible manner. 
-The density of equations in an article on ecology and evolutionary biology has a significant negative impact on citation rates, with papers receiving 28\% fewer citations overall for each additional equation per page in the main text \citep{Fawcett11735}. For papers in physics, the number is 6\% fewer citations for each additional equation per page \citep{Higginson_2016}.
-
-The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
-
-To make this paper a complete scientific article, so that beginners to \LaTeX\ can learn how to write a complete paper, we introduce the following arbitrary equation
+With \latex it is possible to get nice mathematical symbols and equations, for example
 
 \begin{equation}
   \mathscr{E} (\bfu, d) 
     = \int_{\varOmega_{0}} \left[\omega(d)\psi_{0}^+(\bfepsilon (\bfu)) + \psi_{0}^-(\bfepsilon (\bfu)) \right]\td V
     + \int_{\varOmega_{0}}  \frac{G_\text{f}}{c_\alpha} \left[ \frac{1}{b} \alpha(d)
     + b \left( \nabla d \cdot \nabla d \right) \right] \td V
-    - \mathscr{P} (\bfu)
+    - \mathscr{P} (\bfu)   
 \label{eq:3}
 \end{equation}
-where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$.  Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. 
+The TeX code used to generate this equation is given in \cref{snippet_latex_eq}. For details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}.
 
-For details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}.
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to generate \cref{eq:3}. Each equation should have a unique label.},label={snippet_latex_eq},framerule=1pt,tabsize=3]
+    \begin{equation}
+      \mathscr{E} (\bfu, d) 
+        = \int_{\varOmega_{0}} \left[\omega(d)\psi_{0}^+(\bfepsilon (\bfu)) + 
+        \psi_{0}^-(\bfepsilon (\bfu)) \right]\td V + 
+        \int_{\varOmega_{0}}  \frac{G_\text{f}}{c_\alpha} \left[ \frac{1}{b} \alpha(d)
+        + b \left( \nabla d \cdot \nabla d \right) \right] \td V
+        - \mathscr{P} (\bfu)   
+    \label{eq:3}    % use this label 'eq:3' in \cref{eq:3} to refer to this in text
+    \end{equation}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
 
-%$\nicefrac{1}{2}$ ggglg;kgk, $\frac{1}{2}$ $\nicefrac{\alpha}{4\pi}$ $\frac{\alpha}{4\pi}$
+
+
 
 
 \subsection{Algorithm}\label{sec:algorithm}
