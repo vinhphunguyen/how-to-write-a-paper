@@ -1,26 +1,19 @@
 
 
-\documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
+\documentclass[authoryear,12pta4paper,fleqn]{article}
 
-% ------------------------
-%    Packages used
-% ------------------------
 
 % \usepackage[paper=a4paper,top=1.5cm,left=1.2cm,right=0.8cm,
 %     foot=1cm,bottom=1.5cm]{geometry}
 
-\usepackage[utf8]{inputenc}    % utf8 support       %!!!!!!!!!!!!!!!!!!!!
+\usepackage{arxiv}                  % https://www.overleaf.com/gallery/tagged/arxiv
+
+\usepackage[utf8]{inputenc}         % utf8 support       %!!!!!!!!!!!!!!!!!!!!
 \usepackage[T1]{fontenc} 
 \usepackage{amsmath,amssymb, amsthm,mathtools,mathrsfs,stmaryrd,titletoc}
 
 
-% bibtex 
-\usepackage{natbib}
-
-
-%\usepackage{bm}% bold math
-%\usepackage[scaled=0.92]{helvet}  % set Helvetica as the sans-serif font
-%\renewcommand{\rmdefault}{ptm}    % set Times as the default text font
+\usepackage{natbib}   % bibtex 
 % need to install mtpro2
 \let\Bbbk\relax
 \usepackage[subscriptcorrection,slantedGreek,nofontinfo,mtphrd]{mtpro2}
@@ -42,8 +35,6 @@
 %\usepackage[ruled,vlined]{algorithm2e}
 %\sloppy
 %\usepackage{authblk}
-
-
 
 % nomenclature and glossaries for XFEM, CDM
 %\usepackage{nomencl}
@@ -193,19 +184,7 @@
     \fi%
     }]}
     
-% -------------------------
-%     Header and footer
-% -------------------------
 
-% \pagestyle{fancyplain}
-% %\addtolength{\headwidth}{\marginparsep}
-% %\addtolength{\headwidth}{\marginparwidth}
-% %\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
-% \renewcommand{\sectionmark}[1]{\markright{\ #1}}
-% \lhead[\fancyplain{}{\bfseries\thepage}]{\fancyplain{}{\bfseries Sec. \thesection}}
-% \chead[\fancyplain{}{\bfseries\leftmark}]{\fancyplain{}{\bfseries\rightmark}}
-% \rhead[\fancyplain{}] {\fancyplain{}{\bfseries\thepage}} 
-% \cfoot{}
 
 %\floatstyle{ruled}
 %\newfloat{Fbox}{thp}{lop}[chapter]
@@ -375,39 +354,64 @@
 %\journal{Advances in Engineering Software}
 %\journal{International Journal for Numerical Method in Engineering}
 
-\begin{document}
+
 
 %\newcommand\barbelow[1]{\stackunder[1.2pt]{$#1$}{\rule{.8ex}{.075ex}}}
 
-\begin{frontmatter}
+%\begin{frontmatter}
 
 
 
 %\title{Modeling crack propagation of concrete gravity dams with the phase-field regularized cohesive zone model}
 \title{\textbf{How to effortlessly write a high quality scientific paper in the field of computational engineering and sciences }}
 
-%\tnotetext[label1]{Dedicate to }
+%\tnotet%ext[label1]{Dedicate to }
 
 % use optional labels to link authors explicitly to addresses:
 % \author[label1,label2]{}
 % \address[label1]{}
 % \address[label2]{}
 
-\author[1]{Vinh Phu Nguyen\corref{cor1}}
- \ead{phu.nguyen@monash.edu}
-\author[2]{Stephane Bordas}
-\author[3]{Alban de Vaucorbeil}
+% \author[1]{Vinh Phu Nguyen\corref{cor1}}
+%  \ead{phu.nguyen@monash.edu}
+% \author[2]{Stephane Bordas}
+% \author[3]{Alban de Vaucorbeil}
 
-\cortext[cor1]{Corresponding Author}
+% \cortext[cor1]{Corresponding Author}
 
-\address[1]{Department of Civil Engineering, Monash University, Clayton 3800, VIC, Australia}
-\address[2]{Institute of Computational Engineering, University of Luxembourg, Faculty of Sciences Communication and Technology, Luxembourg}
-\address[3]{Institute for Frontier Materials, Deakin University, Geelong, VIC, 3216, Australia}
+% \address[1]{Department of Civil Engineering, Monash University, Clayton 3800, VIC, Australia}
+% \address[2]{Institute of Computational Engineering, University of Luxembourg, Faculty of Sciences Communication and Technology, Luxembourg}
+% \address[3]{Institute for Frontier Materials, Deakin University, Geelong, VIC, 3216, Australia}
 %\maketitle
 
+%\author{Vinh Phu Nguyen\thanks{corresponding author} and St\'ephane Bordas and Alban de Vaucorbeil}
 
-%\pagestyle{fancyplain}
-%\pagenumbering{arabic}
+\author{
+    Vinh Phu Nguyen\thanks{corresponding author} \\
+    Department of Civil Engineering\\
+     Monash University\\
+     Clayton 3800, VIC, Australia\\
+    \texttt{phu.nguyen@monash.edu} \\
+    %% examples of more authors
+    \And
+    St\'{e}phane Bordas \\
+    Institute of Computational Engineering\\
+     University of Luxembourg\\
+     Luxembourg\\
+    \texttt{stephane.bordas@uni.lu} 
+    \And
+    Alban de Vaucorbeil\\
+    Institute for Frontier Materials\\
+    Deakin University\\
+    Geelong, VIC, 3216, Australia\\
+    \texttt{alban.devaucorbeil@deakin.edu.au} 
+}
+
+\renewcommand{\shorttitle}{How to write a high quality scientific paper}
+
+\begin{document}
+
+\maketitle
 
 \begin{abstract}
 Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms and source codes using \LaTeX. We also discuss writing guidelines such as paper structure, major components of a paper from title, abstract, introduction, results to references, and some common mistakes.
@@ -415,12 +419,12 @@ Starting with a working good research idea, this paper outlines a scientific wri
 
 % *********************************************************************************************************
 
-\begin{keyword}
- scientific writing; \LaTeX; scientific publication; high quality writing; reproducibility.
-\end{keyword}
+\keywords{
+ scientific writing \and \LaTeX \and scientific publication \and high quality writing \and reproducibility.
+}
 
 
-\end{frontmatter}
+%\end{frontmatter}
 
 \tableofcontents
 
@@ -431,19 +435,19 @@ Starting with a working good research idea, this paper outlines a scientific wri
 
 
 Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated. Writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}.
-However, writing a high quality paper is not an easy task due to technical and language barriers. To help remove those barriers, books and articles giving advices on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}. 
+However, writing a high quality paper is not an easy task due to technical and language barriers. To help remove those barriers, books and articles giving advice on how to write scientific papers have been written \citep{white1972elements,day1998write,ashby2000write,plaxco2010art}. 
 
 
 Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
-Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or software that ease our writing process. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
+Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or software that ease our writing process. Furthermore, we present a writing process that is tightly coupled to the research being conducted.  In this writing style, we start writing very early in the research process instead of waiting until all results are ready. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
-First, in \cref{sec:tools}, our favorite writing tools are presented. These tools are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to write a good paper.  Particularly, we present an iterative writing process that is intertwined with your research. The most important recommendation is to write early in the research process instead of waiting until all results are ready.
-As we use \LaTeX, a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}), we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). 
+The remaining of the paper is structured as follows. First, in \cref{sec:tools}, our favorite writing tools are presented. These tools are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to write a good paper.  Particularly, we present an iterative writing process that is intertwined with your research. 
+As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex})
 Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these papers might not be ready for submission yet. We present some considerations regarding this issue (\cref{sec:submission}).
 
-\begin{table}[h!]
-      \centering
+\begin{table*}[h!]
       \caption{Summary statistics of the use of \LaTeX\ in science disciplines (\% of submitted papers) taken from \url{https://www.the-scientist.com/uncategorized/dont-format-manuscripts-44040}.}
+      \centering
       \setlength\fboxsep{0pt}
       \vskip-\topsep%
       \smallskip%
@@ -462,7 +466,7 @@ Finally, with the pressure to “publish” (or perish), it is increasingly diff
        \end{tabularx}%
       }
       \label{table:latex}
-      \end{table}
+      \end{table*}
 
 
 
@@ -508,7 +512,7 @@ The co-authors can still use their own favorite \LaTeX\ editor\footnote{which is
 \begin{rmk}\label{rm:a}
 
 Without going into the debate of which is the best editor, we use \texttt{Sublime Text}. This is
-because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. And the two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced softwares, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
+because it can be used for both writing \LaTeX\ documents and coding. Furthermore, it can render equations in real time, see  \cref{fig:sublime-text}, which is quite handy. And the two way sync between \texttt{Skim} and \texttt{Sublime Text} is super convenient. However, \texttt{Sublime Text} is proprietary. If you prefer open-sourced software, look into \texttt{Vim} and \texttt{Emacs}. Coupled with the \texttt{AucTex} package, \texttt{Emacs} can recognize \LaTeX\ code and compile it easily. We prefer using a general purpose text editor rather than a \LaTeX\ editor so that we just use one editor  for both \LaTeX\ typesetting and coding. 
 
 
 \begin{figure}[h!]
@@ -530,7 +534,7 @@ The tools described in this section help you to write papers effectively, only w
 \section{Writing tips}\label{sec:writing-tips}
 
 This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}: nearly all major components of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
-\cref{sec:equation} and figures in \cref{sec:citing-figs}.
+\cref{sec:equation} and figures in \cref{sec:citing-figs}. How to construct sentences and paragraphs is outlined in \cref{sec:sentences,sec:paragraph}, respectively.
 Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
 \cref{sec:mistakes}.  Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers, \eg \cite{Jones}.
 
@@ -540,39 +544,18 @@ Some common mistakes and a few tips to make your paper less verbose or wordy are
 The following general guidelines for a high quality scientific paper are nothing new but they are worth being repeated:
 
 \begin{enumerate}
-\item To inform not to impress;
-\item Aim for clarity and readability and  reproducibility;
+\item The purpose of a paper is to inform not to impress;
+\item The writers should aim for clarity and readability and  reproducibility;
 \item Contributions must be clearly stated;
-\item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
+\item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science,McCarthy}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
 \item Avoid jargon and abbreviations;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
+\item Figures should be of high quality (\eg at least the font is legible);
 \item Minimize chances for reviewers to raise issues;
 \end{enumerate}
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
 
-Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
-Use simple sentences that are linked together so that your writing is coherent. 
-See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. Another example is, from S.P. Jones (yes, the same Jones who has written the interesting paper on how to write great papers \citep{Jones})
 
-
-\begin{quote}
-\textit{Security proofs} of cryptographic protocols are crucial for the security of everyday electronic communication. However, \textit{these proofs} tend to be complex and difficult to get right. To make it easier to manage \textit{such proofs}, Jones et al. have proposed a new design principle, called the \textit{game-playing technique}. 
-\textit{This technique} follows a code-based approach where the security properties are formulated in therms of probabilistic programs, called games.
-\end{quote} 
-We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
-
-Try to revise your writing to keep only the words/figures/tables that are necessary. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
-
-\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version1}]
-{Version 1.}
-{\tcbfontsize{0.8}
-In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{Existing phase-field models generally adopt either an intuitive split of the free energy density without capturing the crack boundary conditions properly or an ad hoc hybrid formulation at the loss of variational consistency}. \textbf{To address this issue}, this work presents a variationally consistent phase-field anisotropic damage model.}
-\end{MyBox}\hfill
-\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version2}]
-{Version 2.}
-{\tcbfontsize{0.8}
-In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{To capture this asymmetric behavior}, previous phase-field models  generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly ... This work presents a phase-field anisotropic model that is able to capture \textbf{the asymmetric behavior}, \textbf{variationally consistent} and satisfy \textbf{crack boundary conditions}.}
-\end{MyBox}
 
 Avoid jargon which are the specialized vocabulary of any profession, trade, science.  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand.
 Our advice is try to avoid jargon in the abstract and introduction as much as possible so that your paper is more accessible to a wide range of audience. In case that a jargon is needed, provide a definition for it the first time it appears in the paper, and also include clarifications for any poorly formed jargon.
@@ -636,9 +619,10 @@ Why should you pay more attention to the title of your paper? This is because
 What a good title look like then? It should
 
 \begin{itemize}
-\item Indicate accurately the subject/scope of the study;
-\item not contain abbreviations;
-\item not include phrases such as "study of," "analysis of" or similar constructions.
+\item indicate accurately the subject/scope of the study;
+\item reveal the significance of the paper;
+\item contain no abbreviations;
+\item exclude phrases such as "study of," "analysis of" or similar constructions.
 \end{itemize}
 
 The following title 
@@ -728,6 +712,7 @@ One way to visually demonstrate the contributions of your paper is to use a tabl
 \vspace*{3mm}
 \begin{table*}[h!]
 \centering
+ \caption{Overall characteristics of common MPM variants. The smileys and frownies are typeset using the package \texttt{wasysym}. }  
   \setlength\fboxsep{0pt}
 \vskip-\topsep%
 \smallskip%
@@ -745,7 +730,6 @@ One way to visually demonstrate the contributions of your paper is to use a tabl
    \bottomrule
  \end{tabularx}%
 }
- \caption{Overall characteristics of common MPM variants. The smileys and frownies are typeset using the package \texttt{wasysym}. }  
  \label{tab:summary}
 \end{table*}
 
@@ -786,7 +770,7 @@ There are two misunderstandings about the Conclusion section. First, the Conclus
 Some papers with well written sections even do not have a conclusion section. We are not a fan of that and believe having a conclusion is a good thing. Following the Nature paper introduced at the beginning of this section, a well written conclusion section should include the following items:
 
 \begin{itemize}
-\item One or two sentences summarizing what the paper has been about;
+\item A brief summary (one or two sentences) of what the paper is about;
 \item A summary of the key findings of the paper;
 \item A list of potential improvements.
 \end{itemize}
@@ -800,16 +784,17 @@ For example, in a draft version, one student of ours wrote (in the introduction 
 \item The first fourth order PFM for cohesive fracture;
 \item The PF-CZM is applied to study the phenomena of crack kinking in anisotropic brittle fracture
 \end{itemize}
-We do not need to be a native English to recognize that the above list is wrong. Just by reading it out loud we can see that the first three bullet points are ok, but something wrong with the fourth and fifth bullets.
+We do not need to be a native English to recognize that the above list is wrong. Just by reading it out loud we can see that the first three bullet points are ok, but there is something wrong with the fourth and fifth bullets.
 
 Using parallel structure, the above list must be written as follows: We present the following concrete contributions:
 \begin{itemize}
 	\item A unified fourth order phase field fracture framework for brittle and quasi-brittle fracture;
 \item A semi-analytical approach for the fourth order PF-CZM;
 \item A comparison of the fourth order PF-CZM against the second order PF-CZM;
-\item A study of the phenomena of crack kinking and sawtooth cracking in strongly anisotropic brittle fracture.
+\item A study of the phenomena of crack kinking and saw-tooth cracking in strongly anisotropic brittle fracture.
 \end{itemize}
 
+Parallel structures can be used in sentences and in paragraphs. 
 
 \subsubsection{Appendix and footnotes}\label{sec:appendix-footnotes}
 
@@ -817,7 +802,7 @@ It is appropriate to include appendices when
 the incorporation of material in the body of the paper would make it poorly structured or it would be too long and detailed and to ensure inclusion of supporting material that would otherwise clutter or break up the narrative flow of the paper.
 As discussed later in \cref{sec:equation}, it is better to move some equations to an appendix.
 
-There are opposite ideas about footnotes. Some authors use them scarcely and some use them extensively. The argument of the former is that footnotes \textit{break the flow of thoughts and send your eyes darting back and forth while your hands are turning pages or clicking on links} according to Pulitzer prizewinner novelist Cormac McCarthy (see \url{https://www.nature.com/articles/d41586-019-02918-5}). The argument of the latter is probably to reduce the paper's length. But, we find one wrong thing about footnotes: too lengthy footnotes. Some papers contain footnotes that are half a page long and with a smaller font than the main text. These are not readable.
+There are opposite ideas about footnotes. Some authors use them scarcely and some use them extensively. The argument of the former is that footnotes \textit{break the flow of thoughts and send your eyes darting back and forth while your hands are turning pages or clicking on links} according to Pulitzer prizewinner novelist Cormac McCarthy \citep{McCarthy}. The argument of the latter is probably to reduce the paper's length. But, we find one wrong thing about footnotes: too lengthy footnotes. Some papers contain footnotes that are half a page long and with a smaller font than the main text. These are not readable.
 
 We use footnotes sparingly and they are most often short. If you find a long footnote, consider using a remark as we have done in \cref{rm:a}.
 
@@ -836,9 +821,9 @@ You should pick one reference style and stick to it so that the references are c
 Avoid overly complex notations, see \cref{tab:complex-notation} for some examples. Try to introduce a nomenclature in the paper, to ease things for the reviewers and readers.  Sometimes, a table such as \cref{tab:notations} does a good job to introduce main notations. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
+\begin{table*}[h!]
    \centering
+\caption{Avoid overly complex notations.}
      \setlength\fboxsep{0pt}
 \vskip-\topsep%
 \smallskip%
@@ -854,13 +839,13 @@ Avoid overly complex notations, see \cref{tab:complex-notation} for some example
   \bottomrule
  \end{tabularx}%
  }
-\caption{Avoid overly complex notations.}
  \label{tab:complex-notation}
-\end{table}
+\end{table*}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
+
+\begin{table*}[h!]
+\caption{Major notations can be put in a table.}
    \centering
      \setlength\fboxsep{0pt}
 \vskip-\topsep%
@@ -881,9 +866,8 @@ Avoid overly complex notations, see \cref{tab:complex-notation} for some example
   \bottomrule
  \end{tabularx}%
  }
-\caption{Major notations can be put in a table.}
  \label{tab:notations}
-\end{table}
+\end{table*}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Ideally, the impact of a scientific work should be determined by its scientific merit, rather than by presentational style. Unfortunately, \cite{Fawcett11735,Higginson_2016} showed that scientifically strong papers may have reduced impact if not presented in an accessible manner. 
@@ -901,11 +885,13 @@ A paper in the field of computational sciences certainly contains some mathemati
     - \mathscr{P} (\bfu)   
 \label{eq:energy-functional}
 \end{equation}
-where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$\footnote{Any mathematical symbols appearing in the text must be typset using a math font. In \latex this is achieved by putting the symbols in two dollar signs.}.  
+where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$\footnote{Any mathematical symbols appearing in the text must be typeset using a math font. In \latex this is achieved by putting the symbols in two dollar signs.}.  
 
 Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. Later on we refer to this equation using its number as: \textit{The energy functional in \cref{eq:energy-functional} is minimized to obtain ...}
 
-We do not want to discuss about punctuations in equations as this problem is still a debate. Do whatever you feel comfortable with. But the editor can ask you to add punctuations in your equations!
+We do not want to discuss about punctuation in equations as this problem is still a debate. Do whatever you feel comfortable with. But the editor can ask you to add punctuation in your equations!
+
+
 
 \subsection{Figures}\label{sec:citing-figs}
 
@@ -929,6 +915,55 @@ The first sentence is unnecessary as it only directs the reader to the figure (F
 We say that this is a better version because it did not use the phrase `As can be seen'. It is clear that the use of too many such phrases should (and can be) be avoided. 
 Actually we already use this style when we cite published articles and books to support an argument. We can do the same thing with figures and tables.
 
+\subsection{Sentences}\label{sec:sentences}
+
+We recommend the advice of the Pulitzer prizewinner Cormac McCarthy \citep{McCarthy}
+
+\begin{quote}
+Keep sentences short, simply constructed and direct. Concise, clear sentences work well for scientific explanations. Minimize clauses, compound sentences and transition words — such as ‘however’ or ‘thus’ — so that the reader can focus on the main message.
+\end{quote}
+Don't worry too much about grammatically perfect sentences. It is more important to be understood \citep{McCarthy}. 
+
+
+\noindent\textbf{Passive vs active voice}.     Sentences can be written using either an active voice  or passive voice. The active voice focuses on the agent: "David measured the temperature." (Here, the agent--David--is the subject of the sentence). In contrast, the passive voice focuses on the object that is acted upon: "The temperature was measured by David". 
+
+To choose between active and passive voice, consider what you are discussing and place it in the subject position. Using the above example of measurement of temperature, it is obvious that the temperature is the focus. So, we should write: "The temperature was measured." David was omitted because no matter who measured the temperature we would expect its value to be the same. And this demand for objectivity of the writing has led to an overuse of the passive voice in scientific writing. For example, we see  sentences similar to the below one all the time:
+
+\begin{quote}
+\textit{In this section, a discussion of the influence of the temperature on the deformation of ... is presented.}
+\end{quote}
+This sentence is not only boring but also verbose. Look at the following equivalent sentence using an active voice:
+
+\begin{quote}
+\textit{This section discusses the influence of the temperature on the deformation of ...}
+\end{quote}
+This sentence is shorter and easier to understand. Therefore, a systematic preference for the passive voice is by no means optimal. Use both in your papers and note that using a personal tone can help to engage a reader. 
+
+\subsection{Paragraphs}\label{sec:paragraph}
+
+Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
+Use simple sentences that are linked together so that your writing is coherent. 
+See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. Another example is, from S.P. Jones (yes, the same Jones who has written the interesting paper on how to write great papers \citep{Jones})
+
+
+\begin{quote}
+\textit{Security proofs} of cryptographic protocols are crucial for the security of everyday electronic communication. However, \textit{these proofs} tend to be complex and difficult to get right. To make it easier to manage \textit{such proofs}, Jones et al. have proposed a new design principle, called the \textit{game-playing technique}. 
+\textit{This technique} follows a code-based approach where the security properties are formulated in therms of probabilistic programs, called games.
+\end{quote} 
+We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
+
+Try to revise your writing to keep only the words/figures/tables that are necessary: The main message of \textit{The Elements of Style} is to omit unnecessary words \citep{white1972elements}. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
+
+\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version1}]
+{Version 1.}
+{\tcbfontsize{0.8}
+In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{Existing phase-field models generally adopt either an intuitive split of the free energy density without capturing the crack boundary conditions properly or an ad hoc hybrid formulation at the loss of variational consistency}. \textbf{To address this issue}, this work presents a variationally consistent phase-field anisotropic damage model.}
+\end{MyBox}\hfill
+\begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version2}]
+{Version 2.}
+{\tcbfontsize{0.8}
+In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{To capture this asymmetric behavior}, previous phase-field models  generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly ... This work presents a phase-field anisotropic model that is able to capture \textbf{the asymmetric behavior}, \textbf{variationally consistent} and satisfy \textbf{crack boundary conditions}.}
+\end{MyBox}
 
 
 
@@ -937,11 +972,11 @@ Actually we already use this style when we cite published articles and books to 
 \subsection{Some common mistakes}\label{sec:mistakes}
 
 
-Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mistakes by studying the writing style of your favorite author. Don't worry too much about grammatically perfect sentences. It is more important to be understood. \\
+Some common mistakes are given in \cref{tab:mistakes}. You could have avoided these mistakes by carefully studying the writing of your favorite author (who ever she/he is). Anyway, we collect them here in one table as a checklist.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setlength{\fboxsep}{0pt}
-\begin{table}[h!]
+\begin{table*}[h!]
+\caption{Some common mistakes. A good way to improve your writing is by reading your writing, including all of the writing out loud. Your ears can often pick out sentence fragments and grammatical errors better than your eyes. If you find yourself saying a series of fragmented sentences or feeling something unnatural, you should do some rewriting.}
    \centering
      \setlength\fboxsep{0pt}
 \vskip-\topsep%
@@ -978,13 +1013,11 @@ Some common mistakes are given in \cref{tab:mistakes}. You can avoid these mista
   \bottomrule
  \end{tabularx}%
  }
-\caption{Some common mistakes. A good way to improve your writing is by reading your writing, including all of the writing out loud. Your ears can often pick out sentence fragments and grammatical errors better than your eyes. If you find yourself saying a series of fragmented sentences or feeling something unnatural, you should do some rewriting.}
  \label{tab:mistakes}
-\end{table}
+\end{table*}
 
-Sentences can be described as active or passive. Using the passive voice is a way of writing sentences so that the subject has the action done to it. A common belief is that the passive voice can be useful for making writing sound more formal and objective. However, using it extensively results in papers which are boring with hard to understand lengthy sentences.
+Most scientific papers will include numbers. Write out all numbers less than 10 (\ie seven not “7”). Write out any number at the start of a sentence. For sentences starting with long numbers, it is usually best to rearrange so that the long numbers are not at the beginning.
 
-On the other hand, using a personal tone can help to engage a reader. And the sentences are shorter and thus easier to understand. 
 
 
 
@@ -1050,8 +1083,9 @@ We present in this section some \LaTeX\ tips which have been collected over the 
 \subsection{Packages}\label{sec:packages}
 
 
-To improve the writing experience, once in a while one should update their \LaTeX\ skills. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
+To improve the writing experience, once in a while we update our \LaTeX\ skills by learning the best practices and best packages. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
 We do not plan to discuss all the packages. Instead, we want to discuss two packages: \texttt{hyperref} and \texttt{cleveref} which are useful.
+
 By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references which are back-references  to the page(s)  in which a given reference was cited.
 
 
@@ -1225,17 +1259,14 @@ Some people even go to the extreme of not using a graphics software with a user 
         \L = 3;
         \h = \L / 30;
       }
-
       \draw [thick] (-\L/2,-\L/2) rectangle (\L/2,\L/2);
       \draw [thick] (\L/2, -\L/2) -- (\L/2+\L/5, -\L/2+\L/5);
       \draw [thick] (\L/2+\L/5, -\L/2+\L/5) -- (\L/2+\L/5, \L/2+\L/5);
       \draw [thick] (\L/2, \L/2) -- (\L/2+\L/5, \L/2+\L/5);
       \draw [thick] (-\L/2+\L/5, \L/2+\L/5) -- (\L/2+\L/5, \L/2+\L/5);
       \draw [thick] (-\L/2, \L/2) -- (-\L/2+\L/5, \L/2+\L/5);
-      
       \draw [->] (0,0) -- (0,-\L/4);
       \node [right,thick] at (0, -\L/8) {\large $\boldsymbol{g}$};
-      
       \draw [<->] (-\L/2,-\L/2 - \L/8) -- (\L/2,-\L/2 - \L/8);
       \draw [<->] (\L/2,-\L/2 - \L/8) -- (\L/2+\L/5,-\L/2 - \L/8+\L/5);
       \draw [<->] (-\L/2 -\L/8, - \L/2) -- (-\L/2 -\L/8, \L/2);
@@ -1247,13 +1278,12 @@ Some people even go to the extreme of not using a graphics software with a user 
       \draw[] (\L/10, \L/2 + \L/15) circle (\L/20);
       \draw[] (\L/5+\L/10, \L/2 + \L/15) circle (\L/20);
       \draw [-, fill=white] (-\L/2,\L/2 + \L/20) -- (\L/2,\L/2 + \L/20) --%
-      (\L/2+\L/5,\L/2 + \L/20+\L/5) -- (-\L/2+\L/5,\L/2 + \L/20+\L/5) -- (-\L/2,\L/2 + \L/20);
+      (\L/2+\L/5,\L/2 + \L/20+\L/5) -- (-\L/2+\L/5,\L/2+\L/20+\L/5)--(-\L/2,\L/2+\L/20);
       \draw [-] (\L/10,\L/2 + \L/20+\L/10) -- (\L/10,\L/2 + 3*\L/10);
       \draw [-] (\L/10-\L/10,\L/2 + 3*\L/10) -- (\L/10+\L/10,\L/2 + 3*\L/10);
-      \draw [-] (\L/10-\L/10,\L/2 + 3*\L/10) -- (\L/10-\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
+      \draw [-] (\L/10-\L/10,\L/2 + 3*\L/10) -- (\L/10-\L/10+\L/20,\L/2+3*\L/10+\L/20);
       \draw [-] (\L/10,\L/2 + 3*\L/10) -- (\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
-      \draw [-] (\L/10+\L/10,\L/2 + 3*\L/10) -- (\L/10+\L/10 + \L/20,\L/2 + 3*\L/10 + \L/20);
-      
+      \draw [-] (\L/10+\L/10,\L/2 + 3*\L/10) -- (\L/10+\L/10+\L/20,\L/2+3*\L/10 +\L/20);
       % Triad:
       \draw [->] (\L/2+\L/5+\L/8,0) -- (\L/2+\L/5+2*\L/8,0);
       \draw [->] (\L/2+\L/5+\L/8,0) -- (\L/2+\L/5+\L/8*0.29,0-0.71*\L/8);
@@ -1295,7 +1325,7 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 \cref{table:params} satisfies all the criteria. The \LaTeX\ code is shown in \cref{snippet_latex_table}. 
 \cref{table:params-foot} in \cref{sec:tab-foonote} presents a table with footnotes.
 
- \begin{table}[h!]
+ \begin{table*}[h!]
       \centering
       \caption{Material parameters and characteristics for all simulations.}
       \setlength\fboxsep{0pt}
@@ -1318,12 +1348,12 @@ Tables in scientific papers should be clear and focus on the data. Here are some
        \end{tabularx}%
       }
       \label{table:params}
-      \end{table}
+      \end{table*}
 
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some softwares that can generate \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). },label={snippet_latex_table},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some software that can generate \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). Note that the table was shaded with a dark-gray color; it is just a personal taste. Remove lines 8 and 22 will undo this. },label={snippet_latex_table},framerule=1pt,tabsize=3]
     \begin{table}[h!]
     \centering
     \caption{Material parameters and characteristics for all simulations.}
@@ -1354,6 +1384,7 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 
 %The angle was \ang{12.3} The brightness was \SI{.23e7}{\candela} \SI{20}{MPa} \SI{10}{N.m.m^{-2}}
 
+If you look at the figures and tables in any paper including this one you will see that figure captions are generally placed below the figures, whereas table captions must be placed above the tables. This is because we generally read tables from the top down, and therefore want to see the caption at the top. Figures are not always read top down. When you open a page and see a figure, the first thing you want to know is “what is that?” The caption below it should immediately identify what the figure represents for the reader.  If you choose to do the opposite \eg placing figure captions above the figures, do so consistently throughout your document.
 
 \subsection{Equations}\label{sec:equation-latex}
 
@@ -1645,7 +1676,7 @@ If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for 
 
 Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:params-foot} is one example and we refer to the source (at our github account) to see how it was made. It is probably not an elegant solution but it is the best solution we have found.
 
-\begin{table}
+\begin{table*}[!h]
       \centering
       \caption{A table with footnotes generated using package \texttt{threeparttable}.}
       \label{table:params-foot}
@@ -1677,7 +1708,7 @@ Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:par
       \item[\ddag]Taken from \cite{Mandal:EFM2019}.
     \end{tablenotes}}
     \end{threeparttable}
-      \end{table}
+      \end{table*}
 
 
 %-------------------------------
