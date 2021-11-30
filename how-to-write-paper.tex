@@ -31,7 +31,7 @@
 %\usepackage{algorithmicx}
 \usepackage{algpseudocode}
 \usepackage[most]{tcolorbox}
-\usepackage{mathtools}
+\usepackage{IEEEtrantools}
 %\usepackage[ruled,vlined]{algorithm2e}
 %\sloppy
 %\usepackage{authblk}
@@ -245,7 +245,7 @@
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig,lstloadlanguages,definecolor,lstset,tableofcontents,boldsymbol,draw,node,tikzpicture,circle,equation}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig,lstloadlanguages,definecolor,lstset,tableofcontents,boldsymbol,draw,node,tikzpicture,circle,equation,array,varOmega,mathscr,text,maketitle,keywords}
 }
 
 \lstdefinestyle{C-numbered}
@@ -414,10 +414,13 @@
 \maketitle
 
 \begin{abstract}
-Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, (3) best tools for writing should be used.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too.  Due to our personal preferences, the discussion is confined to \LaTeX\ based typesetting where we present guidelines to prepare high-quality images, tables, algorithms and source codes using \LaTeX. We also discuss writing guidelines such as paper structure, major components of a paper from title, abstract, introduction, results to references, and some common mistakes.
+Writing a good scientific paper is not easy for many graduate students. To help these students, particularly those working on the field of computational engineering and sciences, this paper presents some writing guidelines that we have collected and used for the last twenty years.
+Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  We follow the writing style in which writing is to inform not to impress and writing is for reader and not for authors. Based on this writing style, we  discuss ways  to write major components of a paper from title, abstract, introduction, results to conclusion and references. Finally, due to our personal preferences,  we present \LaTeX\ centered writing tools and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. 
 \end{abstract}
 
 % *********************************************************************************************************
+
+% The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too. 
 
 \keywords{
  scientific writing \and \LaTeX \and scientific publication \and high quality writing \and reproducibility.
@@ -439,10 +442,10 @@ However, writing a high quality paper is not an easy task due to technical and l
 
 
 Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
-Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or software that ease our writing process. Furthermore, we present a writing process that is tightly coupled to the research being conducted.  In this writing style, we start writing very early in the research process instead of waiting until all results are ready. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
+Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or software that ease our writing process. Furthermore, we present a writing process that is tightly coupled to the research being conducted.  In this writing style, we start writing very early in the research process instead of waiting until all results are ready.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 The remaining of the paper is structured as follows. First, in \cref{sec:tools}, our favorite writing tools are presented. These tools are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to write a good paper.  Particularly, we present an iterative writing process that is intertwined with your research. 
-As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex})
+As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}).
 Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these papers might not be ready for submission yet. We present some considerations regarding this issue (\cref{sec:submission}).
 
 \begin{table*}[h!]
@@ -481,7 +484,7 @@ The \LaTeX\ source of this paper and various \texttt{Python} scripts used to pre
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Tools}\label{sec:tools}
 
-It is obvious that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writing papers are the following:
+It is certain that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writing papers are the following:
 
 \begin{itemize}
 \item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the \textit{de facto} standard for the communication and publication of scientific documents; 
@@ -492,7 +495,7 @@ It is obvious that using the right tool for any task is half way to success. And
 \item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
 \item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
 \item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
-\item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development.
+\item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development;
 \item \texttt{GitHub} or \texttt{Gitlab}: online platforms that offer hosting for software development version control using Git. They offer both public and private (preferred for research papers) repositories. When using Git, they make access from multiple devices and parallel collaboration easy.
 \end{itemize}
 
@@ -533,7 +536,7 @@ The tools described in this section help you to write papers effectively, only w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Writing tips}\label{sec:writing-tips}
 
-This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure}: nearly all major components of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
+This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure};  all major components of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
 \cref{sec:equation} and figures in \cref{sec:citing-figs}. How to construct sentences and paragraphs is outlined in \cref{sec:sentences,sec:paragraph}, respectively.
 Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
 \cref{sec:mistakes}.  Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers, \eg \cite{Jones}.
@@ -550,7 +553,7 @@ The following general guidelines for a high quality scientific paper are nothing
 \item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science,McCarthy}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
 \item Avoid jargon and abbreviations;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
 \item Figures should be of high quality (\eg at least the font is legible);
-\item Minimize chances for reviewers to raise issues;
+\item Minimize chances for reviewers to raise issues.
 \end{enumerate}
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
@@ -585,7 +588,7 @@ You can save time for both you -- the authors -- and the reviewers by not making
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{How to structure your paper}\label{structure}
 
-Typically a paper in the field of computational of computational engineering and sciences consists of the following parts:
+Typically a paper in the field of  computational engineering and sciences consists of the following parts:
 
 \begin{itemize}
     \item Title
@@ -598,8 +601,7 @@ Typically a paper in the field of computational of computational engineering and
     \item Appendices
     \item References
 \end{itemize}
- In this section we discuss some suggestions on how to write some of these parts. We start with titles in \cref{sec:title}, which is followed by \cref{sec:abstract} on the abstract part. Then we present a way to organize long sections by having a global paragraph before going into its subsection (\cref{sec:global-para}). Next, we discuss how to write a compelling introduction section (\cref{sec:introduction-part}), and 
-what the conclusion part  should include (\cref{sec:conclusion-part}).  Appendices and footnotes are discussed in \cref{sec:appendix-footnotes} and references in \cref{sec:references}.
+ In this section we discuss some suggestions on how to write  these parts. We start with titles in \cref{sec:title}, which is followed by \cref{sec:abstract} on the abstract part. Then we present a way to organize long sections by having a global paragraph before going into its subsection (\cref{sec:global-para}). Next, we discuss how to write a compelling introduction section (\cref{sec:introduction-part}). After that, we discuss the results section (\cref{sec:result}) and the conclusion section(\cref{sec:conclusion-part}).  Appendices and footnotes are discussed in \cref{sec:appendix-footnotes} and references in \cref{sec:references}.
 
 An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. There are certainly overlaps between it and our discussion. 
 
@@ -613,7 +615,7 @@ Why should you pay more attention to the title of your paper? This is because
 \item it is usually read first; and thus a good title gives a good first impression;
 \item papers with short titles  got more citations \citep{paiva2012articles};
 \item using a question mark in a paper’s title reduces the citations;
-\item using a colon tended to improve the citations;
+\item using a colon tended to improve the citations.
 \end{itemize}
 
 What a good title look like then? It should
@@ -1027,35 +1029,47 @@ Most scientific papers will include numbers. Write out all numbers less than 10 
 
 The  first idea of the presented writing process is that when you have finished your last simulation, the first draft of your full paper is complete. Here, by \textit{you}, we mean the co-author of the paper who is in charge of the writing. After that, it just comes down to polishing the paper. The second idea is to not lose motivation due to set backs. That is, if the simulations are not working, don't be upset; let's write something instead. It can be as easy as filling Section \textit{Acknowledgments}. Having updated your paper will definitely make you feel good. And that is very important. The third idea is that writing is intertwined with all other activities (formulation, coding and running simulations) as illustrated in \cref{fig:writing}. 
 
-
-After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \TeX\ file for an empty paper.
-For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a PDF can help you to spot errors and to crystallize your thinking. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you become more confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
-%---------------------------------------------------------------------------
-\begin{figure*}[!h]
-  \begin{snippetlatex}[caption={A starting \TeX\ file. This is for papers to be submitted to Elsevier journals. Change the template (documentclass) accordingly for other publishers. Introducing a table of content helps to see
-  the overall structure of the paper. For brevity, packages used were skipped, see \cref{snippet_latex_packages}. \TeX\ keywords are highlighted in \textcolor{blue}{\textbf{bold blue font}}.  },label={snippet_template},framerule=1pt,tabsize=3]
-    \documentclass[authoryear,3p,times,preprint,review,fleqn]{elsarticle}
-    \title{\textbf{}}
-    \begin{abstract}
-    \end{abstract}
-    \tableofcontents            % TOC
-    \section{Introduction}
-    \section{Methodology}
-    \section{Examples}
-    \section{Conclusions}
-    \section*{Acknowledgments}
-    \bibliographystyle{abbrvnat} % bib style
-    \bibliography{mpm}           % bib file
-  \end{snippetlatex}
-\end{figure*}
-%---------------------------------------------------------------------------
-
  \begin{figure}[!ht]
       \centering
       \includegraphics{writing.pdf}
       \caption{Writing is intertwined with other activities of the project.}
       \label{fig:writing}
     \end{figure}
+
+After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
+For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a PDF can help you to spot errors and to crystallize your thinking. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you become more confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={A starting \LaTeX\ file (file with extension .tex). The paper is not formatted to any specific journal. Change the template (documentclass) accordingly for the publisher you plan to submit your paper. Introducing a table of content helps to see
+  the overall structure of the paper. For brevity, packages used were skipped, see \cref{snippet_latex_packages}. \LaTeX\ keywords are highlighted in \textcolor{blue}{\textbf{bold blue font}}.  },label={snippet_template},framerule=1pt,tabsize=3]
+    \documentclass[authoryear,fleqn]{article}
+    \usepackage{amsmath,arxiv} % see  Listing 2 for packages 
+    \input{pre_commands.tex}   % shortcuts for long latex commands in 1 place
+    \title{\textbf{Title of your paper}}
+    \author{...}
+    \begin{document}
+    \maketitle
+    \begin{abstract}
+     % put your abstract here
+    \end{abstract}
+    \keywords{
+      scientific writing \and \LaTeX \and scientific publication.}
+    \tableofcontents            % TOC
+    \section{Introduction}
+    \section{Methodology}
+    \section{Examples}
+    \section{Conclusions}
+    \section*{Acknowledgments}
+    \begin{appendices}           % remove this if you do not have appendices
+    \end{appendices}
+    \bibliographystyle{abbrvnat} % bib style
+    \bibliography{mpm}           % bib file
+    \end{document}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
+
+
 
 If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
 
@@ -1065,9 +1079,9 @@ Continuing this process, by the time the final simulation has been finished, you
 You just need to write the conclusions. And voila, you have a complete paper. That is why we call this writing process an effortless experience.
 Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
 
-Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later, for instance, in your books), save it as another \TeX\ file and remove unnecessary parts.
+Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later, for instance, in your books), save it as another \LaTeX\ file and remove unnecessary parts.
 
-Now you know how a good quality scientific paper looks like and you are ready to compile such one. The next section presents some suggestions on how to do this electronically using \LaTeX. \\
+Now you know what a good quality scientific paper looks like and you are ready to compile such one. The next section presents some suggestions on how to do this electronically using \LaTeX. Note that the next section is not a \LaTeX tutorial. It aims to be a starting point for your \LaTeX\ journey.
 
 %---------------------------------------------------------------------------------------
 % 
@@ -1077,7 +1091,8 @@ Now you know how a good quality scientific paper looks like and you are ready to
 \section{\LaTeX\ tips}\label{sec:latex}
 
 We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs},  equations in \cref{sec:equation-latex}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}.
+\cref{sec:tabs},  equations in \cref{sec:equation-latex}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}. 
+To help people new to \LaTeX\ \cref{sec:latex-installation} presents its installation.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Packages}\label{sec:packages}
@@ -1109,25 +1124,21 @@ Using standard cross-referencing in \LaTeX\ only produces the label number, a na
     \usepackage{booktabs}    % better tables
     \usepackage{multirow}    % multi-row tables
     \usepackage[font=small,labelfont=md]{caption,subfig} % sub-figures (see Fig. 6)
-    \usepackage[T1]{fontenc} % typing french                        
+    \usepackage[most]{tcolorbox} %colored/framed text boxes with headline (see Box 1)                  
     \usepackage[bookmarks=true,colorlinks=true,linkcolor=blue,backref=page]{hyperref}
     \usepackage{float}         % make new float environment such as boxes (captioned)
-    \usepackage{listings}      % insert source code, used herein to insert LaTeX and Python codes 
-    \usepackage{algorithm}     % flow wrapper for algorithm,similar to block commands table/figure
-    \usepackage{algpseudocode} % second algorithm typesetting environment (actual pseudocode)
-    %microtype: for Micro-Typographic Improvements
+    \usepackage{listings}      % insert source code \eg LaTeX and Python codes 
+    \usepackage{algorithm}     % flow wrapper for algorithm
+    \usepackage{algpseudocode} % second algorithm typesetting environment
     \usepackage[activate={true,nocompatibility},final,tracking=true,kerning=true,
-    spacing=true,factor=1100,stretch=10,shrink=10]{microtype}
+    spacing=true,factor=1100,stretch=10,shrink=10]{microtype}%Micro-Typographic Improve.
     \usepackage{nicefrac}             % type inline fractions: \nicefrac{1}{2}
     \usepackage{numprint}             % \numprint{10000} => 10 000 not 10000
     \usepackage[title,titletoc,toc]{appendix}
     \usepackage[capitalise]{cleveref} %Basically, cleveref must be loaded last.
     \definecolor{darkgray}{rgb}{0.95,0.95,0.95} % color used in tables
-    % cleverref package: just do \cref{label} for figures, tables, equations anything
-    % the package will determine the correct prefix be it Fig. or Equation or Listing.
     \crefname{figure}{Fig.}{Figs.}  
     \crefname{equation}{Equation}{Equations}
-
     \renewcommand*{\backref}[1]{}
     \renewcommand*{\backrefalt}[4]{[{%
         \ifcase #1 %
@@ -1153,21 +1164,6 @@ This section discusses how to generate high quality figures: be it graphs (\cref
 
 It is not a requirement that the font used in  graphs (\eg bar charts, error chats, $x\text{-}y$ scatter plots \etc)  match that of the text. Yet, it would be better if they match. Using  \texttt{Matplotlib}, one can generate graphs scatterplots which either are PDFs with font nearly matching the text font  (see \cref{fig:cold-spray-plot}) or PGFs (Portal Graphic Format) with matching font (see \cref{fig:cold-spray-plot-pgf}).  The \LaTeX\ code used to include this type of plot  is shown in \cref{snippet_latex_figure}. We refer to \cref{snippet_matplotlib,snippet_matplotlib_pgf} in \cref{sec:scripts} for the \texttt{Python} source codes that generate these PDFs and PGFs from a data file.
 
-%---------------------------------------------------------------------------
-\begin{figure*}[!h]
-  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF, or PGF or PDF\_TEX image. The crucial point here is not to scale the inserted image. Otherwise, the font size will be affected. Each figure should have a unique label (here is 'fig:cold'), which is used to refer to it in text.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
-    \begin{figure}[!ht]
-      \centering
-      % only one of the following three
-      \includegraphics{cold-spray-plots.pdf} % insert a PDF
-      \input{cold-spray-plots.pgf}           % insert a PGF
-      \input{output.pdf_tex}                 % insert a pdf_tex
-      \caption{Cold spraying with a single impact: evolution of plastic strain and temperature.}
-      \label{fig:cold}                       % this label is used in \cref{fig:cold}
-    \end{figure}
-  \end{snippetlatex}
-\end{figure*}
-%---------------------------------------------------------------------------
 
 \begin{figure}[!h]
   \centering
@@ -1181,14 +1177,53 @@ It is not a requirement that the font used in  graphs (\eg bar charts, error cha
   \centering
   \input{cold-spray-plots.pgf}
   \caption{A PGF figure of which the font matches the text font: 
-  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time. PGF pictures are embedded as raw commands in \LaTeX\ documents and thus can slow down the compilation process (\ie the process from a \TeX\ file to the final PDF).}
+  evolution of plastic strain $\varepsilon_p$ and temperature  $T$ in time. PGF pictures are embedded as raw commands in \LaTeX\ documents and thus can slow down the compilation process (\ie the process from a \LaTeX\ file to the final PDF).}
   \label{fig:cold-spray-plot-pgf}
 \end{figure}
 
 
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={\LaTeX\ commands to insert either a PDF, or PGF or PDF\_TEX image. The crucial point here is not to scale the inserted image. Otherwise, the font size will be affected. Each figure should have a unique label (here is 'fig:cold'), which is used to refer to it in text.},label={snippet_latex_figure},framerule=1pt,tabsize=3]
+    \begin{figure}[!ht]
+      \centering
+      % only one of the following three
+      \includegraphics{cold-spray-plots.pdf} % insert a PDF
+      \input{cold-spray-plots.pgf}           % insert a PGF
+      \input{output.pdf_tex}                 % insert a pdf_tex
+      \caption{Cold spraying test: evolution of plastic strain and temperature.}
+      \label{fig:cold}                       % this label is used in \cref{fig:cold}
+    \end{figure}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
+
 %---------------------------
 
-If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of 4 figures, with caption for each one of them. The corresponding \LaTeX\ code is given in \cref{snippet_sub_figures}.
+If you want to stack multiple pictures together with sub-captions using \LaTeX, the package \texttt{subfig} can do the job. \cref{fig:figures1} is a collection of four figures, with caption for each one of them. The corresponding \LaTeX\ code is given in \cref{snippet_sub_figures}.
+
+\begin{figure}[!h]
+  \centering
+\includegraphics[width=0.9\textwidth]{figures1}
+  \caption{Stacking multiple pictures together with sub-captions using the package \texttt{subfig}.}
+  \label{fig:figures1}
+\end{figure}
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Stacking multiple images using \LaTeX\ package \texttt{subfig}.},label={snippet_sub_figures},framerule=1pt,tabsize=3]
+    \begin{figure}[h!] \centering
+    \subfloat[CMOD=0.008 inch]{\includegraphics[width=0.18\textwidth]{t4}\label{fig:a}}\;
+    \subfloat[CMOD=0.010 inch]{\includegraphics[width=0.18\textwidth]{t6}\label{fig:b}}\;
+    \subfloat[CMOD=0.012 inch]{\includegraphics[width=0.18\textwidth]{t0}\label{fig:c}}\;
+    \subfloat[CMOD=0.016 inch]{\includegraphics[width=0.18\textwidth]{t8}\label{fig:d}}\;
+    \subfloat[CMOD=0.018 inch]{\includegraphics[width=0.18\textwidth]{t3}\label{fig:e}}\;
+    \caption{Asymmetric notched beam under three-point bending: crack evolution.}
+    \label{fig:bittencourt-evolution}
+    \end{figure}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------
 
 \subsubsection{Sketches}\label{sec:sketches}
 
@@ -1205,33 +1240,12 @@ inkscape -z -D --file=input.svg --export-pdf="output.pdf" --export-latex
 This command generates two files: one is \textit{output.pdf} and the other is \textit{output.pdf\_tex}. And 
 then we insert the figure using the file \textit{output.pdf\_tex}, see \cref{snippet_latex_figure} (use line 5). \cref{fig:figures11b} presents an example.
 
-Some people even go to the extreme of not using a graphics software with a user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a TeX package for creating graphics programmatically. It has a steep learning curve but the results are outstanding. An example is provided in \cref{fig:tikz}. The code used to generate this drawing is given in \cref{snippet_code_tikz}. One can appreciate the fact that it is fully parameterized, \ie the size of the drawing is controlled by the variable $L$.
+Some people even go to the extreme of not using a graphics software with a user interface (e.g. \texttt{Illustrator}). Instead, they use  \texttt{TikZ}, a \LaTeX\ package for creating graphics programmatically. It has a steep learning curve but the results are outstanding. An example is provided in \cref{fig:tikz}. The code used to generate this drawing is given in \cref{snippet_code_tikz}. One can appreciate the fact that it is fully parameterized, \ie the size of the drawing is controlled by the variable $L$.
 
 
 
 
-\begin{figure}[!h]
-  \centering
-\includegraphics[width=0.9\textwidth]{figures1}
-  \caption{Stacking multiple pictures together with sub-captions using the package \texttt{subfig}.}
-  \label{fig:figures1}
-\end{figure}
 
-%---------------------------------------------------------------------------
-\begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Stacking multiple images using \LaTeX\ package \texttt{subfig}.},label={snippet_sub_figures},framerule=1pt,tabsize=3]
-    \begin{figure}[h!] \centering
-    \subfloat[CMOD=0.008 inch]{\includegraphics[width=0.18\textwidth]{t14} \label{fig:a}}\;
-    \subfloat[CMOD=0.010 inch]{\includegraphics[width=0.18\textwidth]{t16} \label{fig:b}}\;
-    \subfloat[CMOD=0.012 inch]{\includegraphics[width=0.18\textwidth]{t20} \label{fig:c}}\;
-    \subfloat[CMOD=0.016 inch]{\includegraphics[width=0.18\textwidth]{t28} \label{fig:d}}\;
-    \subfloat[CMOD=0.018 inch]{\includegraphics[width=0.18\textwidth]{t30} \label{fig:e}}\;
-    \caption{Asymmetric notched beam under three-point bending: crack evolution.}
-    \label{fig:bittencourt-evolution}
-    \end{figure}
-  \end{snippetlatex}
-\end{figure*}
-%---------------------------------------------------------------------------
 
 \begin{figure}[!h]
   \centering
@@ -1302,7 +1316,7 @@ Some people even go to the extreme of not using a graphics software with a user 
 
 \subsubsection{Contour plots}\label{sec:contours}
 
-Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization applications such as \texttt{ParaView}\footnote{As we embrace as much as possible open source software, we did not mention \texttt{tecplot},  a good data visualization package developed explicitly for engineers and scientist.}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of biggest resolution and include them in the TEX document in the same manner as PDF images.
+Another type of images in scientific papers is contour plots (see \cref{fig:figures1}), which are the outcomes of some visualization application such as \texttt{ParaView}\footnote{As we embrace as much as possible open source software, we did not mention \texttt{tecplot},  a good data visualization package developed explicitly for engineers and scientist.}. These images should contain a color bar, and color bars limits should be the same on contour plots you are comparing, otherwise it is very difficult to compare. We do not know how to match the font used in these images with the one in the text. We simply save them as PNG files of highest resolution and include them in the \LaTeX\ document in the same manner as PDF images.
 
 For complex drawings we have to combine the different tools together. \cref{fig:complex-fig} shows one example in which we combined \texttt{ParaView}, \texttt{matplotlib} and \texttt{Inkscape}. 
 
@@ -1353,7 +1367,7 @@ Tables in scientific papers should be clear and focus on the data. Here are some
 
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
-  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some software that can generate \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). Note that the table was shaded with a dark-gray color; it is just a personal taste. Remove lines 8 and 22 will undo this. },label={snippet_latex_table},framerule=1pt,tabsize=3]
+  \begin{snippetlatex}[caption={Typesetting tables in \LaTeX. Note that all columns are nicely aligned with \texttt{AlignTab} package in \texttt{Sublime Text}. There exist some software that can convert \texttt{Excel} tables to \LaTeX\ or visually generate \LaTeX\ tables online (\url{https://www.tablesgenerator.com}). Note that the table was shaded with a dark-gray color; it is just a personal taste. Remove lines 8 and 22 will undo this. },label={snippet_latex_table},framerule=1pt,tabsize=3]
     \begin{table}[h!]
     \centering
     \caption{Material parameters and characteristics for all simulations.}
@@ -1369,12 +1383,12 @@ Tables in scientific papers should be clear and focus on the data. Here are some
     Young's modulus [MPa]    & $210\times10^3$ & 145            \\
     Poisson's ratio [-]      & 0.3             & 0.45            \\
     Tensile strength [MPa]   & 2445            & 20              \\
-        \midrule 
+    \midrule 
     Experimentally validated & n/a             & n/a            \\
     Solver                   & multi-step AM   & single-step AM implicit-explicit \\
     State                    & Plane strain    & Plane strain    \\
-     \bottomrule
-     \end{tabularx}%
+    \bottomrule
+    \end{tabularx}%
     }
     \label{table:params}
     \end{table}
@@ -1399,10 +1413,12 @@ With \latex it is possible to get nice mathematical symbols and equations, for e
     - \mathscr{P} (\bfu)   
 \label{eq:3}
 \end{equation}
-The TeX code used to generate this equation is given in \cref{snippet_latex_eq}. For details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}.
+The \LaTeX\ code used to generate this equation is given in \cref{snippet_latex_eq}. To speed up the typing of commonly used symbols, they have been redefined (\ie made short) and put in a .tex file (see pre\_commands.tex in \cref{snippet_template}). You can check this file at our github repository to know how to define a new command.
+
+For more details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}. To be self-containing, \cref{sec:writing_equation} discusses how to write complex equations.
 
 %---------------------------------------------------------------------------
-\begin{figure*}[!h]
+\begin{figure*}
   \begin{snippetlatex}[caption={\LaTeX\ commands to generate \cref{eq:3}. Each equation should have a unique label.},label={snippet_latex_eq},framerule=1pt,tabsize=3]
     \begin{equation}
       \mathscr{E} (\bfu, d) 
@@ -1423,7 +1439,7 @@ The TeX code used to generate this equation is given in \cref{snippet_latex_eq}.
 
 \subsection{Algorithm}\label{sec:algorithm}
 
-The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset algorithms. See  \cref{alg:alg10-a} for an example. These algorithms written as pseudo codes are easier to understand than flowcharts. Yet, they are also easier to generate, directly with \LaTeX. We refer to our github repository for the source.\\
+The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset algorithms. See  \cref{alg:alg10-a} for an example. These algorithms written as pseudo codes are easier to understand than flowcharts. Yet, they are also easier to generate, directly with \LaTeX. We refer to our github repository for the source.
 
 \begin{center}
 \setlength\fboxsep{0pt}
@@ -1461,7 +1477,7 @@ The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset
 %------------------------------------------------
 \subsection{Source code}\label{sec:source-code}
 
-Source code can be included in \LaTeX using either the \texttt{Listing} package or the \texttt{minted} package. As the installation of the latter package is more involved (it requires an external program), we present in \cref{list-array} some C++ source code using the \texttt{Listing} package which does not depend on external program. We refer to the \LaTeX source of this paper for the configuration of this package to produce \cref{list-array}.
+Source code can be included in \LaTeX\ using either the \texttt{Listing} package or the \texttt{minted} package. As the installation of the latter package is more involved (it requires an external program), we present in \cref{list-array} some C++ source code using the \texttt{Listing} package which does not depend on external program. We refer to the \LaTeX\ source of this paper for the configuration of this package to produce \cref{list-array}.
 
 % ----------------------------------------------------------------
 \begin{code-c-num}[caption={Presentation of source code using the \texttt{Listing} package with the Bera Mono font (\url{https://tug.org/FontCatalogue/beramono/}). },
@@ -1551,11 +1567,31 @@ Our guidelines are rules not principles. Unlike principles, rules break all the 
 %
 \crefalias{section}{appsec}
 
+%-------------------------------
+\section{Installing \LaTeX}\label{sec:latex-installation}
+
+To help those new to \LaTeX\, herein we present how to set up \LaTeX\ for  macOS and Ubuntu computers, the operating systems that we use.
+
+For macOS, do the following
+\begin{enumerate}
+    \item Install \texttt{macTeX} from \url{http://www.tug.org/mactex/}
+     \item It comes with \texttt{TexShop}--a LaTeX editor, so you can start using \LaTeX\ immediately.
+\item To get the pdf of this paper, open TexShop (in folder /Applications/TeX/), press Command T, and you're done. 
+\item If you want to use \texttt{Sublime Text}, check \href{http://individual.utoronto.ca/dobronyi/latexsublime.html}{this blog}.
+\end{enumerate}
+And for Ubuntu,
+\begin{enumerate}
+    \item Install \texttt{Tex Live}: sudo apt-get install texlive-full
+\item Install a Tex editor, for example, \texttt{TexMaker}: sudo apt-get install texmaker
+\item How to use \texttt{TexMaker}: \url{https://www.xm1math.net/texmaker/}.
+\item For \texttt{emacs}, check \href{https://www.wangzerui.com/2017/02/21/setting-up-a-nice-environment-for-latex-on-ubuntu/}{this blog}.
+\end{enumerate}
+
 \section{Python scripts for plotting data}\label{sec:scripts}
 
-This appendix present two \texttt{Python} scripts to produce high quality plots which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in \LaTeX\ documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
+This appendix present two \texttt{Python} scripts to produce high quality graphs which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in \LaTeX\ documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
 
-The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the \TeX\ file:
+The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the \LaTeX\ file:
 
 
 \begin{verbatim}
@@ -1564,10 +1600,9 @@ The main idea is to get the correct figure size, and insert it in the paper with
 Then you can search for `width of the pdf' in this log file to find out the width of your paper.
 
 \begin{figure*}[!h]
-  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
+  \begin{snippet}[caption={Python script for plotting data (PDF).},label={snippet_matplotlib},framerule=1pt,tabsize=3]   
     import matplotlib as mpl
     import matplotlib.pyplot as plt
-
     def set_size(width, fraction=1, subplot=[1, 1]):
         if width == 'elsevier':
             width_pt = 468.
@@ -1582,19 +1617,14 @@ Then you can search for `width of the pdf' in this log file to find out the widt
         fig_height_in = fig_width_in * golden_ratio * (subplot[0] / subplot[1])
         fig_dim = (fig_width_in, fig_height_in)
         return fig_dim
-
     parser = argparse.ArgumentParser(description='Plot the evolution of variables.',
                                      add_help=False,
                                      formatter_class=argparse.RawDescriptionHelpFormatter)
 
-
     parser.add_argument('--quiet', '-q', action='store_const', const=True, default=False,
                         help='do not show plot.')
     args = parser.parse_args()
-
-    # Using seaborn's style
-    plt.style.use('seaborn-colorblind')  
-
+    plt.style.use('seaborn-colorblind')      # Using seaborn's style
     nice_fonts = {
             "text.usetex": True,
             "font.family": "serif",
@@ -1604,39 +1634,32 @@ Then you can search for `width of the pdf' in this log file to find out the widt
             "xtick.labelsize": 8,
             "ytick.labelsize": 8,
     }
-
     mpl.rcParams.update(nice_fonts)
-
     # Dimer 5: Read Data
     fnames = ['log.mpm', 'dam-break-Sun.csv', 'water-break-experiment.csv']
     dat    = [pylab.genfromtxt(f,skip_header=1) for f in fnames]
-
     fig, ax = plt.subplots(1, 1, figsize=set_size('elsevier', fraction=0.6))
     # fig, (ax1,ax2) = plt.subplots(1, 2, figsize=set_size(width, subplot=[1, 2]))
-
     for i, f in enumerate(fnames):   
         x = dat[i][:,3]
         y = dat[i][:,4]
         ax.plot(x, y, color='black', label='MPM',linewidth=1.5, linestyle='dotted')
-       
         xmax = max(xmax, np.max(x))
         ymax = max(ymax, np.max(y))
-         
-    ax.set_xlabel(r'$T$')
-    ax.set_ylabel(r'$L(T)$')
-    ax.set_ylim(1.0, 2.8)
-    ax.set_xlim(0, 1.6)
-    ax.legend(loc=0)
-    plt.tight_layout()
-    plt.savefig('./water-break-plot.pdf', format='pdf', bbox_inches='tight')
-
-    if args.quiet == False:
-        plt.show()
+        ax.set_xlabel(r'$T$')
+        ax.set_ylabel(r'$L(T)$')
+        ax.set_ylim(1.0, 2.8)
+        ax.set_xlim(0, 1.6)
+        ax.legend(loc=0)
+        plt.tight_layout()
+        plt.savefig('./water-break-plot.pdf', format='pdf', bbox_inches='tight')
+        if args.quiet == False:
+            plt.show()
   \end{snippet}
 \end{figure*}
 
 \begin{figure*}[!h]
-  \begin{snippet}[caption={Python script for plotting data.},label={snippet_matplotlib_pgf},framerule=1pt,tabsize=3]   
+  \begin{snippet}[caption={Python script for plotting data (PGF).},label={snippet_matplotlib_pgf},framerule=1pt,tabsize=3]   
     nice_fonts = {
             "text.usetex": True,
             "font.family": "serif",
@@ -1711,6 +1734,8 @@ Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:par
       \end{table*}
 
 
+
+
 %-------------------------------
 \section{Reference management with \texttt{BibDesk}}\label{sec:bibdesk}
  
@@ -1719,6 +1744,76 @@ This section presents some ideas on how we manage our library (bibliography entr
 
 We have a single \texttt{.bib} file for our library. This file is stored in a \texttt{Dropbox} folder so that it syncs to all devices. \texttt{BibDesk} is configured such that whenever a PDF is added to a 
 bibliography entry, the PDF will be automatically renamed and stored in a specified location (in \texttt{Dropbox}) with a specified file naming convention. You do not  care where they go: just go to \texttt{BibDesk} and search for the article and the PDF is there.
+
+\section{Writing equations} % (fold)
+\label{sec:writing_equation}
+
+This appendix presents some equations that are hard to create using \LaTeX\ for beginners. 
+
+For example, to get the following equation, 
+
+\begin{equation}
+\begin{array}{ll}
+  \dfrac{D \rho}{Dt} + \rho \nabla \cdot \vm{v} = 0 & \text{(conservation of mass)}\\[8pt]
+\rho\dfrac{D\vm{v}}{Dt}  = \nabla \cdot \bsym{\sigma} + \rho \vm{b}
+& \text{(conservation of linear momentum)} \\[8pt]
+  \rho \dfrac{D e}{Dt}  = \vm{D}:\bsym{\sigma}   & \text{(conservation of energy)}\\[8pt]
+   \vm{v}(\vm{x},t=0) = \vm{v}_0,\; \bsym{\sigma}(\vm{x},t=0) = \bsym{\sigma}_0
+   & \text{(initial conditions)}
+   \label{eq:governing}
+\end{array}
+\end{equation}
+we use an \texttt{array} inside an \texttt{equation} block (\cref{snippet_strong_form}). This way produces only one number for the entire equation only.
+
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Writing \cref{eq:governing} using \LaTeX.},label={snippet_strong_form},framerule=1pt,tabsize=3]
+    \begin{equation}
+    \begin{array}{ll}
+      \dfrac{D \rho}{Dt} + \rho \nabla \cdot \vm{v}=0&\text{(mass conservation)}\\[8pt]
+    \rho\dfrac{D\vm{v}}{Dt}  = \nabla \cdot \bsym{\sigma} + \rho \vm{b}
+    & \text{(conservation of linear momentum)} \\[8pt]
+      \rho \dfrac{D e}{Dt}  = \vm{D}:\bsym{\sigma}&\text{(energy conservation)}\\[8pt]
+       \vm{v}(\vm{x},t=0) = \vm{v}_0,\; \bsym{\sigma}(\vm{x},t=0) = \bsym{\sigma}_0
+       &  \text{(initial conditions)}
+    \label{eq:governing}
+    \end{array}
+    \end{equation}  
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------  
+
+
+
+If you want to have labels for all the sub-equations, for example, as in the following equation
+
+\begin{subequations}\label{eq:pfms}
+  \begin{IEEEeqnarray}{lll}
+  \texttt{Model1}: \quad \alpha(d) = 9d,     \quad & \chi_2 = 0,           \quad & \chi_4 = 1\label{eq:s1}\\
+  \texttt{Model2}: \quad \alpha(d) = d^2, \quad & \chi_2 = 1, \quad & \chi_4 = 2
+  \end{IEEEeqnarray}
+\end{subequations}
+you can use \texttt{subequations} and \texttt{IEEEeqnarray} as shown in \cref{snippet_eqnarray}. Each sub-equation has its own label, and thus can be referred to.
+
+
+%---------------------------------------------------------------------------
+\begin{figure*}[!h]
+  \begin{snippetlatex}[caption={Writing \cref{eq:pfms} using \LaTeX.},label={snippet_eqnarray},framerule=1pt,tabsize=3]
+    \usepackage[retainorgcmds]{IEEEtrantools} % to use IEEEeqnarray
+    \begin{subequations}\label{eq:pfms}
+    \begin{IEEEeqnarray}{lll}
+     \texttt{Model1}:\quad\alpha(d)=9d,\quad & \chi_2=0,\quad&\chi_4=1\label{eq:s1}\\
+     \texttt{Model2}:\quad\alpha(d)=d^2,\quad& \chi_2=1,\quad&\chi_4=2\label{eq:s2}
+    \end{IEEEeqnarray}
+    \end{subequations}
+  \end{snippetlatex}
+\end{figure*}
+%---------------------------------------------------------------------------  
+
+
+
+% section writing_equation (end)
 
 \end{appendices}
 
