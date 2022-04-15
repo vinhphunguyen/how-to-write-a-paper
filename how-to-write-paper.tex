@@ -1,4 +1,12 @@
-
+% arara: halt if
+% arara: --> (unchanged('tex') &&
+% arara: -->  unchanged('bib') &&
+% arara: -->  exists('log'))
+% arara: pdflatex: {synctex: on}
+% arara: bibtex
+% arara: pdflatex: {synctex: on} if
+% arara: --> (changed('bbl')) 
+% arara: pdflatex if changed('gls') || changed('ind')
 
 \documentclass[authoryear,12pta4paper,fleqn]{article}
 
@@ -6,7 +14,7 @@
 % \usepackage[paper=a4paper,top=1.5cm,left=1.2cm,right=0.8cm,
 %     foot=1cm,bottom=1.5cm]{geometry}
 
-\usepackage{arxiv}                  % https://www.overleaf.com/gallery/tagged/arxiv
+\usepackage{arxiv}                  %ss https://www.overleaf.com/gallery/tagged/arxiv
 
 \usepackage[utf8]{inputenc}         % utf8 support       %!!!!!!!!!!!!!!!!!!!!
 \usepackage[T1]{fontenc} 
@@ -414,8 +422,7 @@
 \maketitle
 
 \begin{abstract}
-Writing a good scientific paper is not easy for many graduate students. To help these students, particularly those working on the field of computational engineering and sciences, this paper presents some writing guidelines that we have collected and used for the last twenty years.
-Starting with a working good research idea, this paper outlines a scientific writing process that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this process are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  We follow the writing style in which writing is to inform not to impress and writing is for reader and not for authors. Based on this writing style, we  discuss ways  to write major components of a paper from title, abstract, introduction, results to conclusion and references. Finally, due to our personal preferences,  we present \LaTeX\ centered writing tools and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. 
+Writing a good scientific paper is not easy for many graduate students. To help these students, particularly those working on the field of computational engineering and sciences, this paper presents some writing guidelines that we have collected and used for the last twenty years. The guidelines consist of three major parts. The first part is a writing framework that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this framework are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  The second part is about   how to  write the major components of a paper from title, abstract, introduction, results to conclusion and references. The writing is based on the writing style that writing is to inform not to impress and writing is for reader and not for authors. And  finally, the third part is technical:  we present \LaTeX\ centered writing tools--due to our personal preferences--and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. 
 \end{abstract}
 
 % *********************************************************************************************************
@@ -434,18 +441,20 @@ Starting with a working good research idea, this paper outlines a scientific wri
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Introduction}
 
-\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
+%\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
 
 Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated. Writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}.
 However, writing a high quality paper is not an easy task due to technical and language barriers. To help remove those barriers, books and articles giving advice on how to write scientific papers have been written \citep{white1972elements,day1998write,ashby2000write,plaxco2010art}. 
 
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text.
-Different from existing related works, see e.g. \cite{day1998write,ashby2000write}, we focus here on the tools or software that ease our writing process. Furthermore, we present a writing process that is tightly coupled to the research being conducted.  In this writing style, we start writing very early in the research process instead of waiting until all results are ready.  The process seems working well as it has helped us writing thousands of pages without feeling a pain. We hope it works for you too. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
+Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text. The paper is centred around three parts. 
+The first part is a writing framework that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this framework are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  The second part is about   how to  write the major components of a paper from title, abstract, introduction, results to conclusion and references. The writing is based on the writing style that writing is to inform not to impress and writing is for reader and not for authors. And  finally, the third part is technical:  we present \LaTeX\ centered writing tools--based on our personal preferences--and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
+
+
 
 The remaining of the paper is structured as follows. First, in \cref{sec:tools}, our favorite writing tools are presented. These tools are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to write a good paper.  Particularly, we present an iterative writing process that is intertwined with your research. 
-As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (see \cref{table:latex}).
+As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (\cref{table:latex}).
 Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these papers might not be ready for submission yet. We present some considerations regarding this issue (\cref{sec:submission}).
 
 \begin{table*}[h!]
@@ -474,7 +483,7 @@ Finally, with the pressure to “publish” (or perish), it is increasingly diff
 
 
 There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. We were among them. This is not surprising since  we, as engineers, rarely change something that is working. 
-What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'. Or as a paper published in Nature Index concluded 'Science is getting harder to read' \footnote{\url{https://www.natureindex.com/news-blog/science-research-papers-getting-harder-to-read-acronyms-jargon}.}.
+What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'. Or as a paper published in Nature Index concluded 'Science is getting harder to read'\footnote{\url{https://www.natureindex.com/news-blog/science-research-papers-getting-harder-to-read-acronyms-jargon}.}.
 
 It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps you to have a nearly complete paper when the last analysis task has been finished.  
 
@@ -502,8 +511,8 @@ It is certain that using the right tool for any task is half way to success. And
 The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file that is automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as PDF files and thus are of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of the  document.
 
 
-To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. This is because every co-author of the paper can work on the same paper simultaneously. This paper was written that way. 
-The co-authors can still use their own favorite \LaTeX\ editor\footnote{which is most often also their own coding editor.} (\eg the first author used \texttt{Sublime Text} while the last author used \texttt{Emacs}). We find this organization to be better than \texttt{Overleaf} at \url{https://www.overleaf.com}, which forces all authors to use a web-based \LaTeX\ editor.
+To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. The choice of using \texttt{Git} is because every co-author of the paper can work on the same paper simultaneously. (This paper was written that way.) Furthermore,
+the co-authors can still use their own favorite \LaTeX\ editor\footnote{which is most often also their own coding editor.} (\eg the first author used \texttt{Sublime Text} while the last author used \texttt{Emacs}). We find this organization to be better than \texttt{Overleaf} at \url{https://www.overleaf.com}, which forces all authors to use a web-based \LaTeX\ editor.
 
 
 
@@ -553,7 +562,7 @@ The following general guidelines for a high quality scientific paper are nothing
 \item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science,McCarthy}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
 \item Avoid jargon and abbreviations;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
 \item Figures should be of high quality (\eg at least the font is legible);
-\item Minimize chances for reviewers to raise issues.
+%\item Minimize chances for reviewers to raise issues.
 \end{enumerate}
 
 The main contributions of your paper must be clearly stated after a brief review of the literature: in which way your work differs from the existing literature. Be precise, as this is where the reviewers will try to find problems with your work. Their goal is to identify whether your work is novel or not. If it is not immediately clear from the Abstract and Introduction you risk being unconvincing. 
@@ -580,7 +589,7 @@ Reproducibility is a big issue in scientific research nowadays. Reproducibility 
 However, we just confine ourselves here to the situation where a published simulation result is genuinely correct but impossible to reproduce by people other than the authors. The world would be a better place if all authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
 
 
-You can save time for both you -- the authors -- and the reviewers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. The bottom line is: \textit{Explain everything}; if something is obvious to you does not mean that it is obvious to your reader. If reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections.
+You can save time for both you -- the authors -- and the reviewers and the readers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. The bottom line is: \textit{Explain everything}; if something is obvious to you does not mean that it is obvious to your reader. If reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections. When that happened you have lost your valuable time.
 
 
 
@@ -601,7 +610,7 @@ Typically a paper in the field of  computational engineering and sciences consis
     \item Appendices
     \item References
 \end{itemize}
- In this section we discuss some suggestions on how to write  these parts. We start with titles in \cref{sec:title}, which is followed by \cref{sec:abstract} on the abstract part. Then we present a way to organize long sections by having a global paragraph before going into its subsection (\cref{sec:global-para}). Next, we discuss how to write a compelling introduction section (\cref{sec:introduction-part}). After that, we discuss the results section (\cref{sec:result}) and the conclusion section(\cref{sec:conclusion-part}).  Appendices and footnotes are discussed in \cref{sec:appendix-footnotes} and references in \cref{sec:references}.
+ In this section we discuss some suggestions on how to write  these parts. We start with titles in \cref{sec:title}, which is followed by \cref{sec:abstract} on the abstract part. Then we present a way to organize long sections by having a global paragraph before going into its subsections (\cref{sec:global-para}). Next, we discuss how to write a compelling introduction section (\cref{sec:introduction-part}). After that, we discuss the results section (\cref{sec:result}) and the conclusion section (\cref{sec:conclusion-part}).  Appendices and footnotes are discussed in \cref{sec:appendix-footnotes} and references in \cref{sec:references}.
 
 An excellent article on how to structure a scientific paper can be found at \url{https://www.nature.com/scitable/topicpage/scientific-papers-13815490/}. There are certainly overlaps between it and our discussion. 
 
@@ -627,7 +636,7 @@ What a good title look like then? It should
 \item exclude phrases such as "study of," "analysis of" or similar constructions.
 \end{itemize}
 
-The following title 
+For example, the following title 
 \begin{quote}
   \textit{An efficient and robust staggered algorithm applied to the quasi-static description 
   of brittle fracture by a phase-field approach}
@@ -668,19 +677,19 @@ Papers on the field of computational engineering and sciences always have a sect
 
 \subsubsection{Introduction section}\label{sec:introduction-part}
 
-Everyone would agree that the introductory section of a paper should contain the following items, in order:
+Everyone would agree that the introductory section of a paper should answer the following questions, in order:
 
 \begin{enumerate}
-\item What the problem that the paper is solving;
-\item Demonstration the importance of that problem;
+\item What is the problem that the paper is solving;
+\item Why that problem (the importance of the problem);
 \item What are the current approaches to solving this problem and what is wrong about them;
 \item What are the contributions of the paper; 
-\item Planning  the readers for reading the subsequent sections.
 \end{enumerate}
+And it should also plan  the readers for reading the subsequent sections.
 
-It is not an easy task to write an introductory section that (i) includes all the above items, (ii) covers all relevant works, (iii) is easy to follow and (iv) is short.
+It is not an easy task to write an introductory section that (i) answers all the above questions, (ii) covers all relevant works, (iii) is easy to follow and (iv) is short.
 
-What we commonly see in the literature is introductory sections of about 2 to 3 pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in the introduction section significantly improves the readability.
+What we commonly see in the literature is introductory sections of about two to three pages, full of just plain text with lots of jargons. There are two problems with this type of writing. First, only the authors and a dozens of experts can understand what is going on. Second, the paper loses many readers. We have realized that using some formula, figures, tables in the introduction section significantly improves the readability.
 See \cref{algo-static-FEM} for an example, taken from \cite{Mandal:EFM2019}.
 
 %---------------------------------------------------------------------------------------
@@ -748,7 +757,7 @@ Another way to intrigue readers is to summarize all the impressive simulations t
 
 In many fields a paper contains one section discussing the results and one section ``Discussions'' to elaborate on the results. However, in the field of computational mechanics, most often these two are combined into one section named ``Numerical examples'' or the likes.
 
-As we have discussed in \cref{sec:global-para} for long and complex section we need to have a global paragraph planning the reader. For the Results section, this global paragraph should explain: (1) what examples are considered and for what purposes, (2) which codes are used and (3) what not considered and reason of doing so. If all these details are given it is easier for the reviewers and the researchers transitioning to a new field to know what is going on. \cref{fig:examples} presents such a global paragraph.
+As we have discussed in \cref{sec:global-para} for a long and complex section we need to have a global paragraph planning the reader. For the Results section, this global paragraph should explain: (1) what examples are considered and for what purposes, (2) which codes are used and (3) what not considered and reason of doing so. If all these details are given it is easier for the reviewers and the researchers transitioning to a new field to know what is going on. \cref{fig:examples} presents such a global paragraph.
 
 \begin{figure}[h!]
 \centering
@@ -815,7 +824,7 @@ You should pick one reference style and stick to it so that the references are c
 \begin{itemize}
 \item Cite originals not derivatives;
 \item Avoid citing a list of two many papers \eg `See [1-20] for some relevant work'. This helps neither the readers to find anything, nor the authors of [1-20] to get credit;
-\item If a author-year reference format is used \eg 'Walker (1996) studied ...', all references in a single citation should be ordered in chronological order. For instance, `To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}.'
+\item Cite all references in a single citation with a author-year reference format   chronologically. For instance, `To help ease the writing process, books and articles giving advice on how to write scientific papers have been written \citep{day1998write,ashby2000write,plaxco2010art}.'
 \end{itemize}
 
 \subsection{Notations and equations}\label{sec:equation}
@@ -901,7 +910,7 @@ Figures  are  an important element of reporting the findings of your research. T
 
 A high quality figure is worth a thousand words. By a high quality figure we meant the one that has a legible font size, a high resolution, is color-blindness aware, of which all the axes are clearly defined, those sorts of things. Later on we will discuss how to prepare such figures (\cref{sec:figs}). We emphasize the importance of high quality figures because we have seen so many figures which are, without better words, of very low quality.
 
-Tables and figures, although important components of any research papers, are just that—components; you can publish a paper without them but you cannot publish tables or figures without a paper. Thus a figure (or table) exists to support the text. So the first rule is: make sure that every table and figure is mentioned in the text. Even though there are some \LaTeX\ packages (\eg \texttt{Refcheck}) that help to find out unused figures and tables, our practice is when we insert a figure in our document, we cite it immediately. And the second rule is: remove any figure if it does not support your discussion. The third rule is good figure captions. Pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections. And the final is how figures/tables are referred to in the text.
+Tables and figures, although important components of any research papers, are just that—components; you can publish a paper without them but you cannot publish tables or figures without a paper. Thus a figure (or table) exists to support the text. So the first rule is: make sure that every table and figure is mentioned in the text. Even though there are some \LaTeX\ packages (\eg \texttt{Refcheck}) that help to find out unused figures and tables, our practice is when we insert a figure in our document, we cite it immediately. And the second rule is: remove any figure if it does not support your discussion. The third rule is: writing good figure captions. Thus, pay attention to the figure captions. Ideally, the reader should be able to ascertain the entire story just by reading the figure captions \ie without going back and forth between the figure and the text sections. And the final rule is how figures/tables are referred to in the text.
 
 One usually does not pay enough attention to how figures (and tables) should be referred to in the text. That is why one usually write the following sentences
 
@@ -919,7 +928,7 @@ Actually we already use this style when we cite published articles and books to 
 
 \subsection{Sentences}\label{sec:sentences}
 
-We recommend the advice of the Pulitzer prizewinner Cormac McCarthy \citep{McCarthy}
+We recommend the advice of Cormac McCarthy \citep{McCarthy}
 
 \begin{quote}
 Keep sentences short, simply constructed and direct. Concise, clear sentences work well for scientific explanations. Minimize clauses, compound sentences and transition words — such as ‘however’ or ‘thus’ — so that the reader can focus on the main message.
@@ -929,7 +938,10 @@ Don't worry too much about grammatically perfect sentences. It is more important
 
 \noindent\textbf{Passive vs active voice}.     Sentences can be written using either an active voice  or passive voice. The active voice focuses on the agent: "David measured the temperature." (Here, the agent--David--is the subject of the sentence). In contrast, the passive voice focuses on the object that is acted upon: "The temperature was measured by David". 
 
-To choose between active and passive voice, consider what you are discussing and place it in the subject position. Using the above example of measurement of temperature, it is obvious that the temperature is the focus. So, we should write: "The temperature was measured." David was omitted because no matter who measured the temperature we would expect its value to be the same. And this demand for objectivity of the writing has led to an overuse of the passive voice in scientific writing. For example, we see  sentences similar to the below one all the time:
+To choose between active and passive voice, consider what you are discussing and place it in the subject position. Using the above example of measurement of temperature, it is obvious that the temperature is the focus. So, we should write: "The temperature was measured." David was omitted because no matter who measured the temperature we would expect its value to be the same. 
+
+ A common belief is that the passive voice can be useful for making the writing sound more formal and objective. 
+Unfortunately, this demand for objectivity of the writing has led to an overuse of the passive voice in scientific writing. For example, we see  sentences similar to the below one all the time:
 
 \begin{quote}
 \textit{In this section, a discussion of the influence of the temperature on the deformation of ... is presented.}
@@ -945,16 +957,7 @@ This sentence is shorter and easier to understand. Therefore, a systematic prefe
 
 Each paragraph conveys only a single idea or message. Do not be afraid of writing short paragraphs, even two-sentence ones. 
 Use simple sentences that are linked together so that your writing is coherent. 
-See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. Another example is, from S.P. Jones (yes, the same Jones who has written the interesting paper on how to write great papers \citep{Jones})
-
-
-\begin{quote}
-\textit{Security proofs} of cryptographic protocols are crucial for the security of everyday electronic communication. However, \textit{these proofs} tend to be complex and difficult to get right. To make it easier to manage \textit{such proofs}, Jones et al. have proposed a new design principle, called the \textit{game-playing technique}. 
-\textit{This technique} follows a code-based approach where the security properties are formulated in therms of probabilistic programs, called games.
-\end{quote} 
-We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
-
-Try to revise your writing to keep only the words/figures/tables that are necessary: The main message of \textit{The Elements of Style} is to omit unnecessary words \citep{white1972elements}. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
+See \cref{version1} for a paragraph that was not well written: the second sentence is not related to the first one and 'this issue' in the third sentence was not clear. A better version is shown in \cref{version2} where the writing is more coherent: sentences start with the familiar (old) information and end with unfamiliar (new) information. We prefer the new, important information at the end, because its job is to intrigue the reader. 
 
 \begin{MyBox}[width=0.48\textwidth,nobeforeafter,label={version1}]
 {Version 1.}
@@ -967,6 +970,17 @@ In the phase-field modeling of fracture in brittle and quasi-brittle solids, it 
 In the phase-field modeling of fracture in brittle and quasi-brittle solids, it is crucial to represent the \textbf{asymmetric tensile/compressive material behavior}. \textbf{To capture this asymmetric behavior}, previous phase-field models  generally adopt either and intuitive split of the free energy density without capturing the crack boundary conditions properly ... This work presents a phase-field anisotropic model that is able to capture \textbf{the asymmetric behavior}, \textbf{variationally consistent} and satisfy \textbf{crack boundary conditions}.}
 \end{MyBox}
 
+Another example is, from S.P. Jones (yes, the same Jones who has written the interesting paper on how to write great papers \citep{Jones})
+\begin{quote}
+\textit{Security proofs} of cryptographic protocols are crucial for the security of everyday electronic communication. However, \textit{these proofs} tend to be complex and difficult to get right. To make it easier to manage \textit{such proofs}, Jones et al. have proposed a new design principle, called the \textit{game-playing technique}. 
+\textit{This technique} follows a code-based approach where the security properties are formulated in therms of probabilistic programs, called games.
+\end{quote} 
+We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
+
+Try to revise your writing to keep only the words/figures/tables that are necessary: The main message of \textit{The Elements of Style} is to omit unnecessary words \citep{white1972elements}. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
+
+
+
 
 
 % 
@@ -974,7 +988,7 @@ In the phase-field modeling of fracture in brittle and quasi-brittle solids, it 
 \subsection{Some common mistakes}\label{sec:mistakes}
 
 
-Some common mistakes are given in \cref{tab:mistakes}. You could have avoided these mistakes by carefully studying the writing of your favorite author (who ever she/he is). Anyway, we collect them here in one table as a checklist.
+Some common mistakes are given in \cref{tab:mistakes}. You could have avoided these mistakes by carefully studying the writing of your favorite author (whoever she/he is). Anyway, we collect them here in one table as a checklist (the first author refer to this quite often to avoid these mistakes).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{table*}[h!]
@@ -1018,7 +1032,7 @@ Some common mistakes are given in \cref{tab:mistakes}. You could have avoided th
  \label{tab:mistakes}
 \end{table*}
 
-Most scientific papers will include numbers. Write out all numbers less than 10 (\ie seven not “7”). Write out any number at the start of a sentence. For sentences starting with long numbers, it is usually best to rearrange so that the long numbers are not at the beginning.
+Most scientific papers will include numbers. Write out all numbers less than 10 (\eg seven not “7”). Write out any number at the start of a sentence. For sentences starting with long numbers, it is usually best to rearrange so that the long numbers are not at the beginning.
 
 
 
@@ -1036,8 +1050,35 @@ The  first idea of the presented writing process is that when you have finished 
       \label{fig:writing}
     \end{figure}
 
-After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is empty, see \cref{snippet_template} for a \LaTeX\ file for an empty paper.
+After a research idea has been developed, you should start writing the paper \citep{Gray:2005a}. Obviously, the paper is now empty.
 For the sake of presentation, let's assume that you need to develop a formulation, implement it in a code, and carry out simulations using this code. You first work on the formulation. Then, when there is some progresses, you can write some key equations in the paper (filling Section \textit{Methodology}). Having the formulations nicely written in a PDF can help you to spot errors and to crystallize your thinking. Now that the formulation is complete, let's move to the implementation. Again, this task should be intertwined  with the writing as well (filling Section \textit{Methodology}). Most often, you start with a very simple problem to test the code (and the idea). If this example works, you become more confident about the idea, you can write something on Section \textit{Introduction} while the second simulation is under way. If this second example is important, you can write about it in Section \textit{Examples}. If you are lucky, the result of this second simulation is  good. Bingo, you can now fill  Sections \textit{Introduction} and  \textit{Abstract} while working on the third simulation.
+
+
+
+
+If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
+
+While working on a paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} (or \texttt{JabRef}) can link a PDF to a paper. Therefore, we can have a library of papers on top of a \texttt{.bib} file. 
+
+Continuing this process, by the time the final simulation has been finished, you already have a nearly complete paper. Note that you have already revised your paper many times when your simulations were running (which usually take a long time).
+You just need to write the conclusions. And voila, you have a complete paper. That is why we call this writing process an effortless experience.
+Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
+
+Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later, for instance, in your books), save it as another  file and remove unnecessary parts.
+
+Now you know what a good quality scientific paper looks like and you are ready to compile such one. The next section presents some suggestions on how to do this electronically using \LaTeX. Note that the next section is not a \LaTeX\ tutorial. It aims to be a starting point for your \LaTeX\ journey.
+
+%---------------------------------------------------------------------------------------
+% 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\LaTeX\ tips}\label{sec:latex}
+
+We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
+\cref{sec:tabs},  equations in \cref{sec:equation-latex}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}. 
+To help people new to \LaTeX\ \cref{sec:latex-installation} presents its installation.  For those who are new to \LaTeX\ see \cref{snippet_template} for a \LaTeX\ file for an empty paper. All the format is taken care off, we just need to fill in the content.
+
 %---------------------------------------------------------------------------
 \begin{figure*}[!h]
   \begin{snippetlatex}[caption={A starting \LaTeX\ file (file with extension .tex). The paper is not formatted to any specific journal. Change the template (documentclass) accordingly for the publisher you plan to submit your paper. Introducing a table of content helps to see
@@ -1068,31 +1109,6 @@ For the sake of presentation, let's assume that you need to develop a formulatio
   \end{snippetlatex}
 \end{figure*}
 %---------------------------------------------------------------------------
-
-
-
-If you feel stuck at writing any parts of the paper, feel free to do something else because keeping focusing on the writing does not always help. Most often, ideas come when you are in a diffuse mode, a concept proposed in \cite{Oakley:2018a}. For example, while playing with your kids on a playground, the idea for writing a good abstract usually comes. Jotting down the idea on a phone and you're done with this part of the paper.
-
-While working on a paper, you read the literature (we always read it anyway). If you find a good paper relevant to your work, put it in \texttt{Bibdesk} or \texttt{JabRef}, and cite it in the paper with some key sentences about it. Doing so saves you a lot of time by not re-discovering this paper in the future. Note that \texttt{Bibdesk} (or \texttt{JabRef}) can link a PDF to a paper. Therefore, we can have a library of papers on top of a \texttt{.bib} file. 
-
-Continuing this process, by the time the final simulation has been finished, you already have a nearly complete paper. Note that you have already revised your paper many times when your simulations were running (which usually take a long time).
-You just need to write the conclusions. And voila, you have a complete paper. That is why we call this writing process an effortless experience.
-Before submission, there are some steps discussed in \cref{sec:submission} that need to be done.
-
-Don't worry about the size of the paper while you are working on it. Put as many details as you feel needed. You might end up with, not a paper, but a long report (but in a format of a paper). If this is the case, keep this report (which can be used later, for instance, in your books), save it as another \LaTeX\ file and remove unnecessary parts.
-
-Now you know what a good quality scientific paper looks like and you are ready to compile such one. The next section presents some suggestions on how to do this electronically using \LaTeX. Note that the next section is not a \LaTeX tutorial. It aims to be a starting point for your \LaTeX\ journey.
-
-%---------------------------------------------------------------------------------------
-% 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\LaTeX\ tips}\label{sec:latex}
-
-We present in this section some \LaTeX\ tips which have been collected over the years. In \cref{sec:packages}, we list the must-have packages. Then, we discuss how to prepare high quality plots in \cref{sec:figs}, tables in 
-\cref{sec:tabs},  equations in \cref{sec:equation-latex}, algorithms in \cref{sec:algorithm} and source code in \cref{sec:source-code}. Modifications required for preparing two-column format papers are presented in \cref{sec:two-col}. 
-To help people new to \LaTeX\ \cref{sec:latex-installation} presents its installation.
 
 %%%%%%%%%%%%%%%%%%%%%%
 \subsection{Packages}\label{sec:packages}
@@ -1413,7 +1429,7 @@ With \latex it is possible to get nice mathematical symbols and equations, for e
     - \mathscr{P} (\bfu)   
 \label{eq:3}
 \end{equation}
-The \LaTeX\ code used to generate this equation is given in \cref{snippet_latex_eq}. To speed up the typing of commonly used symbols, they have been redefined (\ie made short) and put in a .tex file (see pre\_commands.tex in \cref{snippet_template}). You can check this file at our github repository to know how to define a new command.
+The \LaTeX\ code used to generate this equation is given in \cref{snippet_latex_eq}. To speed up the typing of commonly used long symbols, they have been redefined (\ie made short) and put in a .tex file (see pre\_commands.tex in \cref{snippet_template}). You can check this file at our github repository to know how to define a new command.
 
 For more details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}. To be self-containing, \cref{sec:writing_equation} discusses how to write complex equations.
 
@@ -1572,13 +1588,14 @@ Our guidelines are rules not principles. Unlike principles, rules break all the 
 
 To help those new to \LaTeX\, herein we present how to set up \LaTeX\ for  macOS and Ubuntu computers, the operating systems that we use.
 
-For macOS, do the following
+For macOS, just do one thing: install \texttt{macTeX} from \url{http://www.tug.org/mactex/}. With that you also get a \LaTeX\ editor called \texttt{TexShop}, so you can start using \LaTeX\ immediately. To get the pdf of this paper, do the following
+
 \begin{enumerate}
-    \item Install \texttt{macTeX} from \url{http://www.tug.org/mactex/}
-     \item It comes with \texttt{TexShop}--a LaTeX editor, so you can start using \LaTeX\ immediately.
-\item To get the pdf of this paper, open TexShop (in folder /Applications/TeX/), press Command T, and you're done. 
-\item If you want to use \texttt{Sublime Text}, check \href{http://individual.utoronto.ca/dobronyi/latexsublime.html}{this blog}.
+    \item get the source of the paper from \url{https://github.com/vinhphunguyen/how-to-write-a-paper};
+    \item launch TexShop (in folder /Applications/TeX/), open the file `how-to-write-paper.tex', press Command T, and you're done. 
 \end{enumerate}
+If you want to use \texttt{Sublime Text}, check \href{http://individual.utoronto.ca/dobronyi/latexsublime.html}{this blog}.
+
 And for Ubuntu,
 \begin{enumerate}
     \item Install \texttt{Tex Live}: sudo apt-get install texlive-full
@@ -1693,6 +1710,8 @@ Then you can search for `width of the pdf' in this log file to find out the widt
 If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for converting \texttt{Matlab} figures into native TikZ/Pgfplots figures. The script can be found at
 \url{https://www.mathworks.com/matlabcentral/fileexchange/22022-matlab2tikz-matlab2tikz}.
 \end{rmk}
+
+
 
 %-------------------------------
 \section{Tables with footnotes}\label{sec:tab-foonote}
