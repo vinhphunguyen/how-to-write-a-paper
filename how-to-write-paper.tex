@@ -253,7 +253,7 @@
  basicstyle=\footnotesize, numbers=left, numberstyle=\tiny,%
  showstringspaces=false, language=[LaTeX]TeX, escapechar=|,frame=tb,%
  commentstyle=\color{mygreen},
- morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig,lstloadlanguages,definecolor,lstset,tableofcontents,boldsymbol,draw,node,tikzpicture,circle,equation,array,varOmega,mathscr,text,maketitle,keywords}
+ morekeywords={cell, ones, repmat, intersect, unique,includegraphics,input,toprule,midrule,bottomrule,colorbox,table,tabularx,setlength,subfloat,figure,width,subplots,set_xlabel,set_ylabel,set_ylim,set_xlim,legend,plot,update,savefig,lstloadlanguages,definecolor,lstset,tableofcontents,boldsymbol,draw,node,tikzpicture,circle,equation,array,varOmega,mathscr,text,maketitle,keywords,crefname}
 }
 
 \lstdefinestyle{C-numbered}
@@ -444,18 +444,53 @@ Writing a good scientific paper is not easy for many graduate students. To help 
 %\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
 
-Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated. Writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}.
-However, writing a high quality paper is not an easy task due to technical and language barriers. To help remove those barriers, books and articles giving advice on how to write scientific papers have been written \citep{white1972elements,day1998write,ashby2000write,plaxco2010art}. 
+Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated for many reasons, indirectly and directly beneficial to the authors. Firstly, writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}. Secondly, a research paper is designed to create new knowledge and communicate it to the community \citep{gopen1990science}, but if you can't communicate that knowledge (because the paper is not well written) to the reader effectively, you have accomplished nothing: no new knowledge. Thirdly, well written papers likely get more citations \citep{freeling2019opinion}.
 
 
-Building on the advice found in the literature and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text. The paper is centred around three parts. 
+It should be clear now that writing skills are vital to the career of a researcher. Unfortunately, she/he does not usually get trained on writing. Furthermore, researchers most often do not pay attention to this because they have to focus on their research. And why they have to care if  (many of) their papers get published and cited? We used to be in the same situation.
+What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- the Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'. Or as a paper published in Nature Index concluded 'Science is getting harder to read'\footnote{\url{https://www.natureindex.com/news-blog/science-research-papers-getting-harder-to-read-acronyms-jargon}.}.
+
+To improve the scientific writing, books and articles giving advice on how to write clear papers have been written \citep{white1972elements,day1998write,ashby2000write,plaxco2010art}. Building on the advice found in these works and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text. The paper is centered around three parts. 
 The first part is a writing framework that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this framework are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  The second part is about   how to  write the major components of a paper from title, abstract, introduction, results to conclusion and references. The writing is based on the writing style that writing is to inform not to impress and writing is for reader and not for authors. And  finally, the third part is technical:  we present \LaTeX\ centered writing tools--based on our personal preferences--and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 
 
+There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. The suggestions presented in this paper should then help you to have a nearly complete paper when the last analysis task has been finished and the paper, once get published, will surely well communicate its selling points to the community.
+
 The remaining of the paper is structured as follows. First, in \cref{sec:tools}, our favorite writing tools are presented. These tools are mostly open source and cross platform. Then, \cref{sec:writing-tips} provides actionable suggestions on how to write a good paper.  Particularly, we present an iterative writing process that is intertwined with your research. 
-As we use \LaTeX, we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). \LaTeX\ is a high-quality free typesetting system which is the \textit{de facto} standard for the publication of scientific documents for hard sciences (\cref{table:latex}).
+As we use \LaTeX--a high-quality free typesetting system--we present some \LaTeX\ related guidelines on how to prepare high-quality vector images, good-looking tables, algorithms, source codes and tweaks for two-column format papers (see \cref{sec:latex}). 
 Finally, with the pressure to “publish” (or perish), it is increasingly difficult for students and researchers alike to resist the temptation to submit a “large” number of papers. Some of these papers might not be ready for submission yet. We present some considerations regarding this issue (\cref{sec:submission}).
+
+
+
+
+%The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare high quality images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Tools}\label{sec:tools}
+
+It is certain that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writing papers are the following:
+
+\begin{itemize}
+\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the \textit{de facto} standard for the communication and publication of scientific documents for hard sciences (\cref{table:latex}); 
+\item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX\ (see \cref{sec:bibdesk});
+\item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to \texttt{BibDesk}. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bibliography entries automatically when given a DOI;
+\item \texttt{Skim}: an open-source PDF (Portable Document Format) reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
+\item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
+\item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
+\item \texttt{Matplotlib}: a \texttt{Python} 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
+\item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
+\item \texttt{Git}:  a distributed version-control system for tracking changes in source code during software development;
+\item \texttt{GitHub} or \texttt{Gitlab}: online platforms that offer hosting for software development version control using \texttt{Git}. They offer both public and private (preferred for research papers) repositories. When using \texttt{Git}, they make access from multiple devices and parallel collaboration easy.
+\end{itemize}
+
+The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file that is automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as PDF files and thus are of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of the  document.
+
+
+To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. The choice of using \texttt{Git} is because every co-author of the paper can work on the same paper simultaneously. (This paper was written that way.) Furthermore,
+the co-authors can still use their own favorite \LaTeX\ editor\footnote{which is most often also their own coding editor.} (\eg the first author used \texttt{Sublime Text} while the last author used \texttt{Emacs}). We find this organization to be better than \texttt{Overleaf} at \url{https://www.overleaf.com}, which forces all authors to use a web-based \LaTeX\ editor.
+
 
 \begin{table*}[h!]
       \caption{Summary statistics of the use of \LaTeX\ in science disciplines (\% of submitted papers) taken from \url{https://www.the-scientist.com/uncategorized/dont-format-manuscripts-44040}.}
@@ -479,42 +514,6 @@ Finally, with the pressure to “publish” (or perish), it is increasingly diff
       }
       \label{table:latex}
       \end{table*}
-
-
-
-There is no single, correct way to write.  Our goal was not to convince you that what is described in this paper is the one true way, but instead to get people thinking, talking and sharing ideas about writing. Many researchers do not think much about writing because (many of) their papers get accepted and cited. We were among them. This is not surprising since  we, as engineers, rarely change something that is working. 
-What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'. Or as a paper published in Nature Index concluded 'Science is getting harder to read'\footnote{\url{https://www.natureindex.com/news-blog/science-research-papers-getting-harder-to-read-acronyms-jargon}.}.
-
-It is obvious that, no matter how good you are as a writer, a bad research idea will not result in a good paper. Therefore, we  assume that you have had a  sound research idea. This paper outlines a process that helps you to have a nearly complete paper when the last analysis task has been finished.  
-
-The \LaTeX\ source of this paper and various \texttt{Python} scripts used to prepare high quality images can be found at the github account of the first author: \url{https://github.com/vinhphunguyen/how-to-write-a-paper}.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Tools}\label{sec:tools}
-
-It is certain that using the right tool for any task is half way to success. And writing is no exception. Our favorite tools for writing papers are the following:
-
-\begin{itemize}
-\item \LaTeX:  a high-quality free typesetting system; it includes features designed for the production of technical and scientific documentation. It is the \textit{de facto} standard for the communication and publication of scientific documents; 
-\item \texttt{BibDesk}: an open-source reference management software package for macOS, used to manage bibliographies and references when writing essays and articles. It is primarily a BibTeX front-end for use with \LaTeX\ (see \cref{sec:bibdesk});
-\item \texttt{JabRef}:  an open-source and cross-platform reference management software package. Its use is similar to \texttt{BibDesk}. It is primarily a BibTeX front-end for use with \LaTeX. One great feature that we like: it fetches bibliography entries automatically when given a DOI;
-\item \texttt{Skim}: is an open-source PDF (Portable Document Format) reader for macOS. Alternatives are \texttt{Sumatra PDF} for Windows and \texttt{evince} for Linux;
-\item \texttt{Adobe Illustrator}: an industry-standard vector graphics software to create high quality drawings;
-\item \texttt{Inkscape}: a free and open-source vector graphics editor available for Linux, macOS, and Windows;
-\item \texttt{Matplotlib}: is a Python 2D plotting library which produces publication quality figures in a variety of hardcopy formats. It can be used in Python scripts;
-\item \texttt{Dropbox}: on-going papers are stored in \texttt{Dropbox} so that we can access them from multiple devices;
-\item \texttt{Git}: is a distributed version-control system for tracking changes in source code during software development;
-\item \texttt{GitHub} or \texttt{Gitlab}: online platforms that offer hosting for software development version control using Git. They offer both public and private (preferred for research papers) repositories. When using Git, they make access from multiple devices and parallel collaboration easy.
-\end{itemize}
-
-The flowchart for the generation of a paper is as follows. \LaTeX~ is used to typeset the paper. The references used in the paper are stored in a \texttt{.bib} file that is automatically generated and managed by \texttt{BibDesk} or \texttt{JabRef}. Sketches used in the paper are drawn using \texttt{Adobe Illustrator} or \texttt{Inkscape} and graphs are created using \texttt{Matplotlib}. Sketches and graphs are saved as PDF files and thus are of very high quality, see \cref{sec:figs}. Also, sketches and graphs could be generated such a way that the font used for embedded text is the same as that of the  document.
-
-
-To keep track of the changes in the code, figures, and even research data, \texttt{Git} is used. For collaborative writings, the git repository is hosted in either \texttt{Github} or \texttt{Gitlab}. They offer access to free private repositories that are very useful. The choice of using \texttt{Git} is because every co-author of the paper can work on the same paper simultaneously. (This paper was written that way.) Furthermore,
-the co-authors can still use their own favorite \LaTeX\ editor\footnote{which is most often also their own coding editor.} (\eg the first author used \texttt{Sublime Text} while the last author used \texttt{Emacs}). We find this organization to be better than \texttt{Overleaf} at \url{https://www.overleaf.com}, which forces all authors to use a web-based \LaTeX\ editor.
-
-
 
 
 % \begin{rmk}
@@ -545,7 +544,7 @@ The tools described in this section help you to write papers effectively, only w
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Writing tips}\label{sec:writing-tips}
 
-This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure};  all major components of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
+This section presents  writing tips. We start with a presentation of general guidelines in \cref{sec:guidelines}. Then we  discuss the paper structure in \cref{structure};  all major sections of a paper are treated: title, abstract, introduction, results, conclusions, appendices, and references. Next, we discuss equations in
 \cref{sec:equation} and figures in \cref{sec:citing-figs}. How to construct sentences and paragraphs is outlined in \cref{sec:sentences,sec:paragraph}, respectively.
 Some common mistakes and a few tips to make your paper less verbose or wordy are given next in 
 \cref{sec:mistakes}.  Finally, \cref{sec:writing-process} -- the most significant contribution of the paper -- outlines an iterative writing process in which writing is intertwined with other research activities. Recently, we realized that this technique has been, not surprisingly, adopted by other researchers, \eg \cite{Jones}.
@@ -589,7 +588,7 @@ Reproducibility is a big issue in scientific research nowadays. Reproducibility 
 However, we just confine ourselves here to the situation where a published simulation result is genuinely correct but impossible to reproduce by people other than the authors. The world would be a better place if all authors are more thoughtful when reporting their results: all information needed to make that particular simulation work should be provided. Particularly, nontrivial parameters.
 
 
-You can save time for both you -- the authors -- and the reviewers and the readers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. The bottom line is: \textit{Explain everything}; if something is obvious to you does not mean that it is obvious to your reader. If reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections. When that happened you have lost your valuable time.
+You can save time for both you -- the authors -- and the reviewers and the readers by not making them guess. For example, if you do not do large deformation simulations, make it clear and justify that choice. If you have used a particular value for one numerical parameter, explain your choice. The bottom line is: \textit{Explain everything}; if something is obvious to you does not mean that it is obvious to your reader. If the reviewers have to guess your choices, they will comment on that. This increases the chances for your paper to be rejected, or needing corrections. When that happened you have lost your valuable time.
 
 
 
@@ -886,7 +885,7 @@ The density of equations in an article on ecology and evolutionary biology has a
 
 The lesson to learn from the above relation between the density of equations in a paper and its impact is to write less equations in the body of the paper. This can be achieved by removing unnecessary equations. If needed, some equations can be put in appendices.
 
-A paper in the field of computational sciences certainly contains some mathematical equations and/or expressions. To demonstrate how equations are written, we use the following one (taken from one of our papers)
+A paper in the field of computational sciences certainly contains some mathematical equations and/or expressions. To demonstrate how equations are written, we use the following one (taken from one of our papers)\footnote{Many \LaTeX\ editors have support to find \LaTeX\ symbols for those mathematical symbols. But, \texttt{Sublime Text} does not. You can then check out \texttt{detexify} at \url{http://detexify.kirelabs.org/classify.html}.  This web app lets you draw a symbol, and shows you the closest \LaTeX\ symbols.}
 
 \begin{equation}
   \mathscr{E} (\bfu, d) 
@@ -896,7 +895,7 @@ A paper in the field of computational sciences certainly contains some mathemati
     - \mathscr{P} (\bfu)   
 \label{eq:energy-functional}
 \end{equation}
-where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$\footnote{Any mathematical symbols appearing in the text must be typeset using a math font. In \latex this is achieved by putting the symbols in two dollar signs.}.  
+where the first term is the strain energy, the second term is the surface energy and the third term the external energy. Collectively, they define the energy of the mechanical system $\mathscr{E} (\bfu, d)$\footnote{Any mathematical symbols appearing in the text must be typeset using a math font. In \latex this is achieved by putting the symbols in two dollar signs. }.  
 
 Note that we have "voiced out" the above equation in "words" so that the reader will have one more way of understanding, and the equations will not look as blunt and intimidating, in particular when you have a lot of notation which does not appear in literature. Later on we refer to this equation using its number as: \textit{The energy functional in \cref{eq:energy-functional} is minimized to obtain ...}
 
@@ -923,8 +922,13 @@ The first sentence is unnecessary as it only directs the reader to the figure (F
  \begin{quote}
   \textit{The global responses are insensitive to the incorporated length scale (Fig. 10).}
  \end{quote}
-We say that this is a better version because it did not use the phrase `As can be seen'. It is clear that the use of too many such phrases should (and can be) be avoided. 
-Actually we already use this style when we cite published articles and books to support an argument. We can do the same thing with figures and tables.
+We say that this is a better version because it did not use the phrase `As can be seen'. It is clear that the use of too many such phrases should (and can be) be avoided. Another way to get rid of `as can be seen' is
+
+ \begin{quote}
+  \textit{Fig. 10 depicts the global responses. There we observe that the global responses are 
+  insensitive to the incorporated length scale.}
+ \end{quote}
+Actually we already use this style when we cite published articles and books to support an argument. We can do the same thing with figures and tables. We refer to the very readble textbook on nonlinear dynamics \citep{strogatz2018nonlinear} to see how Strogatz--an excellent writer--refers to figures in the text. For a more accessible source, we can refer to our own paper \textit{On a new high order phase field model for brittle and cohesive fracture: numerical efficiency, length scale convergence and crack kinking} in Computational Materials Science. This is probably the first paper in which we paid attention to how figures/tables are cited in the text.
 
 \subsection{Sentences}\label{sec:sentences}
 
@@ -1115,7 +1119,7 @@ To help people new to \LaTeX\ \cref{sec:latex-installation} presents its install
 
 
 To improve the writing experience, once in a while we update our \LaTeX\ skills by learning the best practices and best packages. \cref{snippet_latex_packages} provides an updated list of \LaTeX\ packages being used to write our papers.
-We do not plan to discuss all the packages. Instead, we want to discuss two packages: \texttt{hyperref} and \texttt{cleveref} which are useful.
+We do not plan to discuss all the packages. Instead, we want to discuss three packages: \texttt{hyperref}, \texttt{cleveref} and \texttt{tcolorbox}\footnote{This package was used to typset \cref{algo-static-FEM}.} which are useful.
 
 By setting the option \textit{backref=page} for the package \texttt{hyperref}, there appears `Cited on page \#' at the end of all references which are back-references  to the page(s)  in which a given reference was cited.
 
@@ -1243,7 +1247,7 @@ If you want to stack multiple pictures together with sub-captions using \LaTeX, 
 
 \subsubsection{Sketches}\label{sec:sketches}
 
-If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}. Note that, it works only for Mac OS.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is achieved by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. For example, if we want to get $\nabla \sigma$, we write the following text in  \texttt{Inkscape}:
+If you use \texttt{Illustrator} for some drawings and need to include mathematical symbols in them, then try the application called \texttt{LaTeXiT}\footnote{This software can be found at \url{https://www.chachatelier.fr/latexit/}. Note that, it works only for macOS.} to typeset whatever symbols and drag and drop them to \texttt{Illustrator} as embedded PDFs\footnote{Presentations can be created using \texttt{Keynotes} with equations created using \texttt{LaTeXiT} in exactly the same way.}.  \cref{fig:figures11a} presents an example. The same thing can be done using \texttt{Inkscape} with some \LaTeX\ extensions. This is achieved by writing all text or formula using \LaTeX\ syntax in \texttt{Inkscape}. For example, if we want to get $\nabla \sigma$, we write the following text in  \texttt{Inkscape}:
 
 \begin{verbatim}
 $\nabla \sigma$
@@ -1429,7 +1433,7 @@ With \latex it is possible to get nice mathematical symbols and equations, for e
     - \mathscr{P} (\bfu)   
 \label{eq:3}
 \end{equation}
-The \LaTeX\ code used to generate this equation is given in \cref{snippet_latex_eq}. To speed up the typing of commonly used long symbols, they have been redefined (\ie made short) and put in a .tex file (see pre\_commands.tex in \cref{snippet_template}). You can check this file at our github repository to know how to define a new command.
+The \LaTeX\ code used to generate this equation is given in \cref{snippet_latex_eq}. To speed up the typing of commonly used long symbols, they have been redefined (\ie made short) and put in a .tex file (see pre\_commands.tex in \cref{snippet_template}). You can check this file at \texttt{github} repository to know how to define a new command.
 
 For more details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{latex}. To be self-containing, \cref{sec:writing_equation} discusses how to write complex equations.
 
@@ -1455,7 +1459,7 @@ For more details on how to typeset formulas in \LaTeX\, see chapter 3 of \cite{l
 
 \subsection{Algorithm}\label{sec:algorithm}
 
-The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset algorithms. See  \cref{alg:alg10-a} for an example. These algorithms written as pseudo codes are easier to understand than flowcharts. Yet, they are also easier to generate, directly with \LaTeX. We refer to our github repository for the source.
+The packages \texttt{algorithm} and \texttt{algorithmicx} can be used to typeset algorithms. See  \cref{alg:alg10-a} for an example. These algorithms written as pseudo codes are easier to understand than flowcharts. Yet, they are also easier to generate, directly with \LaTeX. We refer to our \texttt{github} repository for the source.
 
 \begin{center}
 \setlength\fboxsep{0pt}
@@ -1560,7 +1564,9 @@ Now you have submitted our paper and gotten the reviews back, and the editor has
 Does this paper really need a conclusion section? Not really, but we are a bit conservative. So, here you are. Without claiming  originality of ideas presented in this short paper, we have presented a collection of  suggestions and recommendations that can streamline the writing process. Following them would result in readable scientific articles which in turn save time for the authors,  the editors, the reviewers and the readers.
 
 
-As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the github account of the first author (\url{https://github.com/vinhphunguyen/how-to-write-a-paper}).
+As \LaTeX\ and the tools we are relying on keep evolving, we will constantly update this article to reflect changes. The updated version of this paper and scripts can be obtained at the \texttt{github} account of the first author (\url{https://github.com/vinhphunguyen/how-to-write-a-paper}).
+
+The suggestions described in the paper can be equally used to prepare reports, theses and dissertations. For \LaTeX\ users, the above mentioned \texttt{github} repository contains a template for writing a thesis. And with a slight modification this template can be used to write a book.
 
 Our guidelines are rules not principles. Unlike principles, rules break all the time. Feel free to be creative as long as you write to inform not to impress. Happy writing.
 
@@ -1570,7 +1576,7 @@ Our guidelines are rules not principles. Unlike principles, rules break all the 
 
  The first author (V.P. Nguyen) thanks the funding support from the Australian Research Council via DECRA project DE160100577.  The third  author gratefully acknowledges the financial support of the Australian Research Council (ARC) Training Centre in Alloy Innovation for Mining Efficiency (IC160100036).
 
- The guidelines presented in this paper have been formed by reading many articles and books and learning from them. Our favorite author is Ted Belytschko. We have also learned a lot through interactions with our co-authors. In particular, we would like to thank L. J. Sluys and M. Stroeven (TU Delft, the Netherlands), and Chad W. Sinclair (UBC, Canada).
+ The guidelines presented in this paper have been formed by reading many articles and books and learning from them. Our favorite author is Ted Belytschko. We have also learned a lot through interactions with our co-authors. In particular, the first author (VPN) would like to thank L. J. Sluys and M. Stroeven (TU Delft, the Netherlands), and the third author (AV) acknowledges Chad W. Sinclair (UBC, Canada).
 
 
 
@@ -1596,17 +1602,16 @@ For macOS, just do one thing: install \texttt{macTeX} from \url{http://www.tug.o
 \end{enumerate}
 If you want to use \texttt{Sublime Text}, check \href{http://individual.utoronto.ca/dobronyi/latexsublime.html}{this blog}.
 
-And for Ubuntu,
+And for Ubuntu, do the following
 \begin{enumerate}
     \item Install \texttt{Tex Live}: sudo apt-get install texlive-full
 \item Install a Tex editor, for example, \texttt{TexMaker}: sudo apt-get install texmaker
-\item How to use \texttt{TexMaker}: \url{https://www.xm1math.net/texmaker/}.
-\item For \texttt{emacs}, check \href{https://www.wangzerui.com/2017/02/21/setting-up-a-nice-environment-for-latex-on-ubuntu/}{this blog}.
 \end{enumerate}
+For how to use \texttt{TexMaker}:, check out \url{https://www.xm1math.net/texmaker/}. And for \texttt{emacs}, check \href{https://www.wangzerui.com/2017/02/21/setting-up-a-nice-environment-for-latex-on-ubuntu/}{this blog}.
 
 \section{Python scripts for plotting data}\label{sec:scripts}
 
-This appendix present two \texttt{Python} scripts to produce high quality graphs which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in \LaTeX\ documents. The original source is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
+This appendix present two \texttt{Python} scripts to produce high quality graphs which have the same font used in the paper. One can use the script shown in \cref{snippet_matplotlib} to get PDFs or the one in \cref{snippet_matplotlib_pgf} to get PGF files. PGF pictures can be embedded as raw commands in \LaTeX\ documents. The original source of the material given herein is \url{https://jwalton.info/Embed-Publication-Matplotlib-Latex/}.
 
 The main idea is to get the correct figure size, and insert it in the paper without scaling. To determine the figure size, one first calculates the width of the paper, which can be done by inserting this command in the \LaTeX\ file:
 
@@ -1716,7 +1721,7 @@ If you are using \texttt{Matlab}, then try this script \texttt{matlab2tikz} for 
 %-------------------------------
 \section{Tables with footnotes}\label{sec:tab-foonote}
 
-Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:params-foot} is one example and we refer to the source (at our github account) to see how it was made. It is probably not an elegant solution but it is the best solution we have found.
+Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:params-foot} is one example and we refer to the source (at our \texttt{github} account) to see how it was made. It is probably not an elegant solution but it is the best solution we have found.
 
 \begin{table*}[!h]
       \centering
@@ -1761,7 +1766,7 @@ Making tables with footnotes in \LaTeX\ is not straightforward.  \cref{table:par
 
 This section presents some ideas on how we manage our library (bibliography entries plus the associated PDFs) using \texttt{BibDesk}. The original source is \url{https://atchieu.wordpress.com} (search for \texttt{BibDesk}). 
 
-We have a single \texttt{.bib} file for our library. This file is stored in a \texttt{Dropbox} folder so that it syncs to all devices. \texttt{BibDesk} is configured such that whenever a PDF is added to a 
+We have a single \texttt{.bib} file for our library. This file is stored in a \texttt{Dropbox} folder so that it syncs to all devices (\eg office PC and home PC). \texttt{BibDesk} is configured such that whenever a PDF is added to a 
 bibliography entry, the PDF will be automatically renamed and stored in a specified location (in \texttt{Dropbox}) with a specified file naming convention. You do not  care where they go: just go to \texttt{BibDesk} and search for the article and the PDF is there.
 
 \section{Writing equations} % (fold)
@@ -1830,7 +1835,18 @@ you can use \texttt{subequations} and \texttt{IEEEeqnarray} as shown in \cref{sn
 \end{figure*}
 %---------------------------------------------------------------------------  
 
+For fractions in the text it is better to use the \texttt{nicefrac} package that provides the command \texttt{nicefrac}; for example without using it we would get $\frac{\alpha E}{f_t^2}$ instead of $\nicefrac{\alpha E}{f_t^2}$ which blends in better with the surrounding text. Another small issue with inline math--symbols or short equations in the text--is that sometimes it is unwantedly broken at the end of a line, for example
+\begin{verbatim}
+A text with an inline equation which is broken into two parts but 
+is not wanted right here v_{initial} =
+1000m/s.
+\end{verbatim}
+The solution is to put the math expression into braces $\{...\}$, then it will be a math atom and not broken at the end of the line. The \LaTeX\ code is:
 
+\begin{verbatim}
+A text with an inline equation which is broken into two parts but 
+is not wanted right here ${v_{initial} = \SI{1000}{m/s}}$.
+\end{verbatim}
 
 % section writing_equation (end)
 
