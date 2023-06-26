@@ -444,13 +444,13 @@ Writing a good scientific paper is not easy for many graduate students. To help 
 %\showthe\textwidth % => width of the pdf, see in log file, is 468 pt. use it in plot.py for great plots.
 
 
-Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated for many reasons, indirectly and directly beneficial to the authors. Firstly, writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}. Secondly, a research paper is designed to create new knowledge and communicate it to the community \citep{gopen1990science}, but if you can't communicate that knowledge (because the paper is not well written) to the reader effectively, you have accomplished nothing: no new knowledge. Thirdly, well written papers likely get more citations \citep{freeling2019opinion}.
+Publishing original research in a peer-reviewed  journal is an important parameter to assess academic achievements. To get your paper published, not only its findings should be significant but it should also be well written such that these findings can be efficiently transmitted throughout the scientific community. The value of writing well should not be underestimated for many reasons, indirectly and directly beneficial to the authors. Firstly, writing well leverages your work since 60\% of reviewers criticisms pertain to the quality of the writing or tables and graphs with only about 40\% to the quality of the scientific work \citep{iles1997guidebook}. Secondly, a research paper is designed to create new knowledge and communicate it to the community \citep{gopen1990science}, but if you can't communicate that knowledge (because the paper is not well written) to the reader effectively, you have accomplished nothing: no new knowledge. Thirdly, well written papers likely get more citations \citep{RePEc:nas}.
 
 
 It should be clear now that writing skills are vital to the career of a researcher. Unfortunately, she/he does not usually get trained on writing. Furthermore, researchers most often do not pay attention to this because they have to focus on their research. And why they have to care if  (many of) their papers get published and cited? We used to be in the same situation.
 What they do not know (or do not care about?) is that there are probably many readers struggling to grasp their papers. The situation might be worse as Judy Swan -- the Associate Director for Writing in Science and Engineering at Princeton University -- saw it: `scientific writing is bad writing'. Or as a paper published in Nature Index concluded 'Science is getting harder to read'\footnote{\url{https://www.natureindex.com/news-blog/science-research-papers-getting-harder-to-read-acronyms-jargon}.}.
 
-To improve the scientific writing, books and articles giving advice on how to write clear papers have been written \citep{white1972elements,day1998write,ashby2000write,plaxco2010art}. Building on the advice found in these works and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text. The paper is centered around three parts. 
+To improve the scientific writing, books and articles giving advice on how to write clear papers have been written \citep{strunk2007elements,day1998write,ashby2000write,plaxco2010art}. Building on the advice found in these works and our total 20 years of experiences, this brief paper gives guidance in writing high quality research papers. By high quality papers, we mean those of which scientific findings are not buried under a poorly written text. The paper is centered around three parts. 
 The first part is a writing framework that helps us to have a nearly complete paper when the last analysis task has been finished.  The key ideas of this framework are: (1) writing should start early in the research project, (2) research and writing are carried out simultaneously, and (3) best tools for writing should be used.  The second part is about   how to  write the major components of a paper from title, abstract, introduction, results to conclusion and references. The writing is based on the writing style that writing is to inform not to impress and writing is for reader and not for authors. And  finally, the third part is technical:  we present \LaTeX\ centered writing tools--based on our personal preferences--and  \LaTeX\ techniques  to prepare high-quality images, tables, algorithms and source codes. Due to our background in computational mechanics -- a sub-branch of computational engineering and sciences-- we have used, as a model, a typical computational mechanics project: one develops a new model, implements it in a code, and carries out simulations using that code to demonstrate the performance of the model. 
 
 
@@ -558,7 +558,7 @@ The following general guidelines for a high quality scientific paper are nothing
 \item The purpose of a paper is to inform not to impress;
 \item The writers should aim for clarity and readability and  reproducibility;
 \item Contributions must be clearly stated;
-\item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science,McCarthy}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
+\item Every unit of discourse (a sentence, a section, an article \etc), no matter the size conveys only a single idea or message \citep{gopen1990science,savage2019novelist}\footnote{Watch also the interesting talk of Judy Swan at \url{https://www.youtube.com/watch?v=1pzjxYCwb08}.};
 \item Avoid jargon and abbreviations;%  Writing a paper is not a race for complexity. You should make it as simple as possible for a neophyte reader to understand;
 \item Figures should be of high quality (\eg at least the font is legible);
 %\item Minimize chances for reviewers to raise issues.
@@ -649,12 +649,12 @@ can be modified to make it better
 
 The abstract of a paper is the most important section of your paper. This is so because it is the second section that is read by journal editors (they read your cover letter first). Furthermore, once your paper has been published, its abstract is the first section that is clearly examined by readers. And in many cases, it is the only section of the manuscript that will be ever read. Sadly, many authors write the abstract in a great rush, almost as an afterthought (probably too eager to let the paper go?).
 
-The abstract should be a concise standalone summary of your paper. It must include the background, gaps, methodology and results. In other words, it answers these questions: Why did you do the study? What did you do?  What did you find? What did you conclude? \cref{fig:abstract} presents an example of a good abstract. We label it a good abstract because it answers the above questions and it does not contain abbreviations.
+The abstract should be a concise standalone summary of your paper. It must include the background, gaps, methodology and results. In other words, it answers these questions: Why did you do the study? What did you do?  What did you find? What did you conclude? \cref{fig:abstract} presents an example of a good abstract. We label it a good abstract because it answers the above questions.
 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.86\textwidth]{abstract}
-\caption{Example of a good abstract, taken from \cite{Ambati:CMAME2016a}.}
+\caption{Example of a good abstract, taken from \cite{de2021modelling}.}
 \label{fig:abstract}
 \end{figure}
 
@@ -812,7 +812,7 @@ It is appropriate to include appendices when
 the incorporation of material in the body of the paper would make it poorly structured or it would be too long and detailed and to ensure inclusion of supporting material that would otherwise clutter or break up the narrative flow of the paper.
 As discussed later in \cref{sec:equation}, it is better to move some equations to an appendix.
 
-There are opposite ideas about footnotes. Some authors use them scarcely and some use them extensively. The argument of the former is that footnotes \textit{break the flow of thoughts and send your eyes darting back and forth while your hands are turning pages or clicking on links} according to Pulitzer prizewinner novelist Cormac McCarthy \citep{McCarthy}. The argument of the latter is probably to reduce the paper's length. But, we find one wrong thing about footnotes: too lengthy footnotes. Some papers contain footnotes that are half a page long and with a smaller font than the main text. These are not readable.
+There are opposite ideas about footnotes. Some authors use them scarcely and some use them extensively. The argument of the former is that footnotes \textit{break the flow of thoughts and send your eyes darting back and forth while your hands are turning pages or clicking on links} according to Pulitzer prizewinner novelist Cormac McCarthy \citep{savage2019novelist}. The argument of the latter is probably to reduce the paper's length. But, we find one wrong thing about footnotes: too lengthy footnotes. Some papers contain footnotes that are half a page long and with a smaller font than the main text. These are not readable.
 
 We use footnotes sparingly and they are most often short. If you find a long footnote, consider using a remark as we have done in \cref{rm:a}.
 
@@ -932,12 +932,12 @@ Actually we already use this style when we cite published articles and books to 
 
 \subsection{Sentences}\label{sec:sentences}
 
-We recommend the advice of Cormac McCarthy \citep{McCarthy}
+We recommend the advice of Cormac McCarthy \citep{savage2019novelist}
 
 \begin{quote}
 Keep sentences short, simply constructed and direct. Concise, clear sentences work well for scientific explanations. Minimize clauses, compound sentences and transition words — such as ‘however’ or ‘thus’ — so that the reader can focus on the main message.
 \end{quote}
-Don't worry too much about grammatically perfect sentences. It is more important to be understood \citep{McCarthy}. 
+Don't worry too much about grammatically perfect sentences. It is more important to be understood \citep{savage2019novelist}. 
 
 
 \noindent\textbf{Passive vs active voice}.     Sentences can be written using either an active voice  or passive voice. The active voice focuses on the agent: "David measured the temperature." (Here, the agent--David--is the subject of the sentence). In contrast, the passive voice focuses on the object that is acted upon: "The temperature was measured by David". 
@@ -981,10 +981,7 @@ Another example is, from S.P. Jones (yes, the same Jones who has written the int
 \end{quote} 
 We refer to the old article of \cite{gopen1990science} for more examples of writing readable paragraphs.
 
-Try to revise your writing to keep only the words/figures/tables that are necessary: The main message of \textit{The Elements of Style} is to omit unnecessary words \citep{white1972elements}. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).\\
-
-
-
+Try to revise your writing to keep only the words/figures/tables that are necessary: The main message of \textit{The Elements of Style} is to omit unnecessary words \citep{strunk2007elements}. For example, using `because' is more advisable than the wordy `due to the fact that' (see \cref{tab:mistakes} for a list of unnecessary words/phrases).
 
 
 % 

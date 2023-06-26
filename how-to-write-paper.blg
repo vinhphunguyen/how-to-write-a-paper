@@ -1,0 +1,52 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: how-to-write-paper.aux
+The style file: abbrvnat.bst
+Database file #1: writing.bib
+Repeated entry---line 112 of file writing.bib
+ : @article{paiva2012articles
+ :                           ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "strogatz2018nonlinear"
+You've used 23 entries,
+            2773 wiz_defined-function locations,
+            754 strings with 8387 characters,
+and the built_in function-call counts, 9565 in all, are:
+= -- 833
+> -- 512
+< -- 14
++ -- 176
+- -- 153
+* -- 759
+:= -- 1494
+add.period$ -- 72
+call.type$ -- 23
+change.case$ -- 116
+chr.to.int$ -- 23
+cite$ -- 46
+duplicate$ -- 447
+empty$ -- 835
+format.name$ -- 188
+if$ -- 1988
+int.to.chr$ -- 1
+int.to.str$ -- 1
+missing$ -- 23
+newline$ -- 126
+num.names$ -- 92
+pop$ -- 239
+preamble$ -- 1
+purify$ -- 97
+quote$ -- 0
+skip$ -- 341
+stack$ -- 0
+substring$ -- 316
+swap$ -- 24
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 233
+warning$ -- 0
+while$ -- 88
+width$ -- 0
+write$ -- 304
+(There was 1 error message)

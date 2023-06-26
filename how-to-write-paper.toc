@@ -1,0 +1,40 @@
+\babel@toc {english}{}\relax 
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}%
+\contentsline {section}{\numberline {2}Tools}{3}{section.2}%
+\contentsline {section}{\numberline {3}Writing tips}{5}{section.3}%
+\contentsline {subsection}{\numberline {3.1}General guidelines}{5}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}How to structure your paper}{6}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Title}{6}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Abstract}{7}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Global paragraph for long sections}{7}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Introduction section}{8}{subsubsection.3.2.4}%
+\contentsline {subsubsection}{\numberline {3.2.5}Results section}{9}{subsubsection.3.2.5}%
+\contentsline {subsubsection}{\numberline {3.2.6}Conclusion section}{10}{subsubsection.3.2.6}%
+\contentsline {subsubsection}{\numberline {3.2.7}Appendix and footnotes}{10}{subsubsection.3.2.7}%
+\contentsline {subsubsection}{\numberline {3.2.8}References}{11}{subsubsection.3.2.8}%
+\contentsline {subsection}{\numberline {3.3}Notations and equations}{11}{subsection.3.3}%
+\contentsline {subsection}{\numberline {3.4}Figures}{12}{subsection.3.4}%
+\contentsline {subsection}{\numberline {3.5}Sentences}{12}{subsection.3.5}%
+\contentsline {subsection}{\numberline {3.6}Paragraphs}{13}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Some common mistakes}{14}{subsection.3.7}%
+\contentsline {subsection}{\numberline {3.8}Writing process: an iterative process}{14}{subsection.3.8}%
+\contentsline {section}{\numberline {4}\LaTeX \ tips}{15}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Packages}{15}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Figures}{16}{subsection.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.1}Graphs}{16}{subsubsection.4.2.1}%
+\contentsline {subsubsection}{\numberline {4.2.2}Sketches}{16}{subsubsection.4.2.2}%
+\contentsline {subsubsection}{\numberline {4.2.3}Contour plots}{19}{subsubsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.3}Tables}{20}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Equations}{21}{subsection.4.4}%
+\contentsline {subsection}{\numberline {4.5}Algorithm}{21}{subsection.4.5}%
+\contentsline {subsection}{\numberline {4.6}Source code}{23}{subsection.4.6}%
+\contentsline {subsection}{\numberline {4.7}Two-column format}{23}{subsection.4.7}%
+\contentsline {section}{\numberline {5}Submission}{23}{section.5}%
+\contentsline {section}{\numberline {6}Conclusions}{24}{section.6}%
+\contentsline {section}{Appendices}{24}{section*.69}%
+\contentsline {section}{Appendix \numberline {A}Installing \LaTeX }{24}{appendix.1.A}%
+\contentsline {section}{Appendix \numberline {B}Python scripts for plotting data}{25}{appendix.1.B}%
+\contentsline {section}{Appendix \numberline {C}Tables with footnotes}{26}{appendix.1.C}%
+\contentsline {section}{Appendix \numberline {D}Reference management with \texttt {BibDesk}}{26}{appendix.1.D}%
+\contentsline {section}{Appendix \numberline {E}Writing equations}{27}{appendix.1.E}%
+\contentsfinish 

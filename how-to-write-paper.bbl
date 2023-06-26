@@ -1,0 +1,147 @@
+\begin{thebibliography}{23}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Ashby(2000)]{ashby2000write}
+M.~Ashby.
+\newblock How to write a paper.
+\newblock \emph{Engineering Department, University of Cambridge, Version},
+  5:\penalty0 38, 2000.
+
+\bibitem[Day(1998)]{day1998write}
+R.~A. Day.
+\newblock How to write and publish scientific papers, 1998.
+
+\bibitem[de~Vaucorbeil and Nguyen(2021)]{de2021modelling}
+A.~de~Vaucorbeil and V.~P. Nguyen.
+\newblock Modelling contacts with a total lagrangian material point method.
+\newblock \emph{Computer Methods in Applied Mechanics and Engineering},
+  373:\penalty0 113503, 2021.
+
+\bibitem[de~Vaucorbeil et~al.(2020)de~Vaucorbeil, Nguyen, Sinaie, and
+  Wu]{Vaucorbeil:AAM2019}
+A.~de~Vaucorbeil, V.~P. Nguyen, S.~Sinaie, and J.~Y. Wu.
+\newblock Material point method after 25 years: Theory, implementation, and
+  applications.
+\newblock \emph{Advances in applied mechanics}, 53:\penalty0 185--398, 2020.
+
+\bibitem[Engelen(2010)]{inkscape}
+J.~B.~C. Engelen.
+\newblock How to include an {SVG} image in {\LaTeX}, 2010.
+\newblock URL
+  \url{http://mirrors.ibiblio.org/CTAN/info/svg-inkscape/InkscapePDFLaTeX.pdf}.
+
+\bibitem[Fawcett and Higginson(2012)]{Fawcett11735}
+T.~W. Fawcett and A.~D. Higginson.
+\newblock Heavy use of equations impedes communication among biologists.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 109\penalty0
+  (29):\penalty0 11735--11739, 2012.
+\newblock ISSN 0027-8424.
+\newblock \doi{10.1073/pnas.1205259109}.
+\newblock URL \url{https://www.pnas.org/content/109/29/11735}.
+
+\bibitem[Freeling et~al.(2019)Freeling, Doubleday, and Connell]{RePEc:nas}
+B.~Freeling, Z.~A. Doubleday, and S.~D. Connell.
+\newblock Opinion: How can we boost the impact of publications? try better
+  writing.
+\newblock \emph{Proceedings of the National Academy of Sciences}, 116\penalty0
+  (2):\penalty0 341--343, 2019.
+\newblock URL
+  \url{https://EconPapers.repec.org/RePEc:nas:journl:v:116:y:2019:p:341-343}.
+
+\bibitem[Gopen and Swan(1990)]{gopen1990science}
+G.~D. Gopen and J.~A. Swan.
+\newblock The science of scientific writing.
+\newblock \emph{American Scientist}, 78\penalty0 (6):\penalty0 550--558, 1990.
+
+\bibitem[Gray(2005)]{Gray:2005a}
+T.~Gray.
+\newblock \emph{Publish and flourish: become a prolific scholar.}
+\newblock Teaching Academy, 2005.
+
+\bibitem[Higginson and Fawcett(2016)]{Higginson_2016}
+A.~D. Higginson and T.~W. Fawcett.
+\newblock Comment on `are physicists afraid of mathematics?'.
+\newblock \emph{New Journal of Physics}, 18\penalty0 (11):\penalty0 118003, nov
+  2016.
+
+\bibitem[Huang et~al.(2003)Huang, Sukumar, and Pr{\'e}vost]{huang2003modeling}
+R.~Huang, N.~Sukumar, and J.-H. Pr{\'e}vost.
+\newblock Modeling quasi-static crack growth with the extended finite element
+  method part ii: Numerical applications.
+\newblock \emph{International Journal of Solids and Structures}, 40\penalty0
+  (26):\penalty0 7539--7552, 2003.
+
+\bibitem[Iles(1997)]{iles1997guidebook}
+R.~L. Iles.
+\newblock \emph{Guidebook to better medical writing}.
+\newblock Iles publications, 1997.
+
+\bibitem[Jones(2016)]{Jones}
+S.~P. Jones.
+\newblock How to write a great research paper, 2016.
+\newblock URL
+  \url{https://www.microsoft.com/en-us/research/academic-program/write-great-research-paper/}.
+
+\bibitem[Mandal et~al.(2019)Mandal, Nguyen, and Wu]{Mandal:EFM2019}
+T.~K. Mandal, V.~P. Nguyen, and J.-Y. Wu.
+\newblock Length scale and mesh bias sensitivity of phase-field models for
+  brittle and cohesive fracture.
+\newblock \emph{Engineering Fracture Mechanics}, 217\penalty0 (106532), 2019.
+
+\bibitem[Noble(2017)]{noble2017ten}
+W.~S. Noble.
+\newblock Ten simple rules for writing a response to reviewers.
+\newblock \emph{PLoS computational biology}, 13\penalty0 (10), 2017.
+
+\bibitem[Oakley et~al.(2018)Oakley, Sejnowski, and McConville]{Oakley:2018a}
+B.~Oakley, T.~Sejnowski, and A.~McConville.
+\newblock \emph{Learning How to Learn: How to Succeed in School Without
+  Spending All Your Time Studying; A Guide for Kids and Teens}.
+\newblock TarcherPerigee, 2018.
+
+\bibitem[Oetiker et~al.(2018)Oetiker, Partl, Hyna, and Schlegl]{latex}
+T.~Oetiker, H.~Partl, I.~Hyna, and E.~Schlegl.
+\newblock The not so short introduction to {\LaTeX}, 2018.
+\newblock URL \url{http://tug.ctan.org/info/lshort/english/lshort.pdf}.
+
+\bibitem[Paiva et~al.(2012)Paiva, Lima, and Paiva]{paiva2012articles}
+C.~E. Paiva, J.~P. d. S.~N. Lima, and B.~S.~R. Paiva.
+\newblock Articles with short titles describing the results are cited more
+  often.
+\newblock \emph{Clinics}, 67:\penalty0 509--513, 2012.
+
+\bibitem[Plaxco(2010)]{plaxco2010art}
+K.~W. Plaxco.
+\newblock The art of writing science.
+\newblock \emph{Protein science: a publication of the Protein Society},
+  19\penalty0 (12):\penalty0 2261, 2010.
+
+\bibitem[Rougier et~al.(2014)Rougier, Droettboom, and Bourne]{rougier2014ten}
+N.~P. Rougier, M.~Droettboom, and P.~E. Bourne.
+\newblock Ten simple rules for better figures.
+\newblock \emph{PLoS computational biology}, 10\penalty0 (9):\penalty0
+  e1003833, 2014.
+
+\bibitem[Savage and Yeh(2019)]{savage2019novelist}
+V.~Savage and P.~Yeh.
+\newblock Novelist {Cormac McCarthy}'s tips on how to write a great science
+  paper.
+\newblock \emph{Nature}, 574\penalty0 (7777):\penalty0 441--443, 2019.
+
+\bibitem[Stomakhin et~al.(2013)Stomakhin, Schroeder, Chai, Teran, and
+  Selle]{Stomakhin:TG2013a}
+A.~Stomakhin, C.~Schroeder, L.~Chai, J.~Teran, and A.~Selle.
+\newblock {A material point method for snow simulation}.
+\newblock \emph{ACM Transactions on Graphics}, 32\penalty0 (4):\penalty0 1,
+  2013.
+
+\bibitem[Strunk~Jr and White(2007)]{strunk2007elements}
+W.~Strunk~Jr and E.~B. White.
+\newblock \emph{The Elements of Style Illustrated}.
+\newblock Penguin, 2007.
+
+\end{thebibliography}
