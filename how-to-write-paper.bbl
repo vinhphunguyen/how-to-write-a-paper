@@ -1,4 +1,4 @@
-\begin{thebibliography}{23}
+\begin{thebibliography}{24}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -51,6 +51,11 @@ B.~Freeling, Z.~A. Doubleday, and S.~D. Connell.
   (2):\penalty0 341--343, 2019.
 \newblock URL
   \url{https://EconPapers.repec.org/RePEc:nas:journl:v:116:y:2019:p:341-343}.
+
+\bibitem[Gewin(2018)]{gewin2018write}
+V.~Gewin.
+\newblock How to write a first-class paper.
+\newblock \emph{Nature}, 555\penalty0 (7694), 2018.
 
 \bibitem[Gopen and Swan(1990)]{gopen1990science}
 G.~D. Gopen and J.~A. Swan.

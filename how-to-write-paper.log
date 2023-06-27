@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.9)  27 JUN 2023 06:47
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2023.6.9)  27 JUN 2023 09:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1783,7 +1783,7 @@ Underfull \hbox (badness 10000) in alignment at lines 514--514
 [][] 
  []
 
-<sublime-text.png, id=300, 1381.16pt x 362.35374pt>
+<sublime-text.png, id=304, 1381.16pt x 362.35374pt>
 File: sublime-text.png Graphic file (type png)
 <use sublime-text.png>
 Package pdftex.def Info: sublime-text.png  used on input line 531.
@@ -1792,12 +1792,12 @@ Package pdftex.def Info: sublime-text.png  used on input line 531.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [4] [5 <./sublime-text.png>] [6]
-<abstract.png, id=364, 1253.68375pt x 553.06625pt>
+<abstract.png, id=368, 1253.68375pt x 553.06625pt>
 File: abstract.png Graphic file (type png)
 <use abstract.png>
 Package pdftex.def Info: abstract.png  used on input line 656.
 (pdftex.def)             Requested size: 403.98956pt x 178.21692pt.
-<section.png, id=370, 1656.1875pt x 460.72125pt>
+<section.png, id=374, 1656.1875pt x 460.72125pt>
 File: section.png Graphic file (type png)
 <use section.png>
 Package pdftex.def Info: section.png  used on input line 669.
@@ -1820,7 +1820,7 @@ Underfull \hbox (badness 10000) in alignment at lines 742--742
 [][][][][][][] 
  []
 
-<mpm-all-results.pdf, id=397, 46.46028pt x 32.88326pt>
+<mpm-all-results.pdf, id=401, 46.46028pt x 32.88326pt>
 File: mpm-all-results.pdf Graphic file (type pdf)
 <use mpm-all-results.pdf>
 Package pdftex.def Info: mpm-all-results.pdf  used on input line 750.
@@ -1829,7 +1829,7 @@ Package pdftex.def Info: mpm-all-results.pdf  used on input line 750.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [8]
-<examples.png, id=429, 1556.81625pt x 687.56876pt>
+<examples.png, id=433, 1556.81625pt x 687.56876pt>
 File: examples.png Graphic file (type png)
 <use examples.png>
 Package pdftex.def Info: examples.png  used on input line 763.
@@ -1844,7 +1844,7 @@ Underfull \hbox (badness 10000) in alignment at lines 1032--1032
 [][] 
  []
 
-<writing.pdf, id=598, 157.02965pt x 136.29921pt>
+<writing.pdf, id=602, 157.02965pt x 136.29921pt>
 File: writing.pdf Graphic file (type pdf)
 <use writing.pdf>
 Package pdftex.def Info: writing.pdf  used on input line 1049.
@@ -1892,7 +1892,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<cold-spray-plots.pdf, id=678, 337.2835pt x 122.1363pt>
+<cold-spray-plots.pdf, id=682, 337.2835pt x 122.1363pt>
 File: cold-spray-plots.pdf Graphic file (type pdf)
 <use cold-spray-plots.pdf>
 Package pdftex.def Info: cold-spray-plots.pdf  used on input line 1187.
@@ -1907,7 +1907,7 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figures1.png, id=683, 1902.10625pt x 566.115pt>
+<figures1.png, id=687, 1902.10625pt x 566.115pt>
 File: figures1.png Graphic file (type png)
 <use figures1.png>
 Package pdftex.def Info: figures1.png  used on input line 1224.
@@ -1947,19 +1947,19 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [17 <./cold-spray-plots.pdf>]
-<Taylor-bar-setup.pdf, id=795, 153.2385pt x 134.2917pt>
+<Taylor-bar-setup.pdf, id=799, 153.2385pt x 134.2917pt>
 File: Taylor-bar-setup.pdf Graphic file (type pdf)
 <use Taylor-bar-setup.pdf>
 Package pdftex.def Info: Taylor-bar-setup.pdf  used on input line 1269.
 (pdftex.def)             Requested size: 153.23811pt x 134.29137pt.
  (./Taylor-bar-setup_pdf_tex.pdf_tex
-<Taylor-bar-setup_pdf_tex.pdf, id=796, page=1, 153.2385pt x 134.29172pt>
+<Taylor-bar-setup_pdf_tex.pdf, id=800, page=1, 153.2385pt x 134.29172pt>
 File: Taylor-bar-setup_pdf_tex.pdf Graphic file (type pdf)
 <use Taylor-bar-setup_pdf_tex.pdf, page 1>
 Package pdftex.def Info: Taylor-bar-setup_pdf_tex.pdf , page1 used on input lin
 e 56.
 (pdftex.def)             Requested size: 153.2385pt x 134.29343pt.
-<Taylor-bar-setup_pdf_tex.pdf, id=797, page=2, 153.2385pt x 134.29172pt>
+<Taylor-bar-setup_pdf_tex.pdf, id=801, page=2, 153.2385pt x 134.29172pt>
 File: Taylor-bar-setup_pdf_tex.pdf Graphic file (type pdf)
 <use Taylor-bar-setup_pdf_tex.pdf, page 2>
 Package pdftex.def Info: Taylor-bar-setup_pdf_tex.pdf , page2 used on input lin
@@ -1979,7 +1979,7 @@ multiple pdfs with page group included in a single page
 pdfTeX warning: pdflatex (file ./Taylor-bar-setup_pdf_tex.pdf): PDF inclusion: 
 multiple pdfs with page group included in a single page
 >]
-<complex-fig.png, id=861, 852.18375pt x 826.08624pt>
+<complex-fig.png, id=865, 852.18375pt x 826.08624pt>
 File: complex-fig.png Graphic file (type png)
 <use complex-fig.png>
 Package pdftex.def Info: complex-fig.png  used on input line 1344.
@@ -2046,15 +2046,15 @@ l.1838 is not wanted right here v_{initial} =
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `how-to-write-paper.out' has not changed.
-(rerunfilecheck)             Checksum: 2BAB7C6FF54727F02C93AFC10BE6C7BC;5338.
+(rerunfilecheck)             Checksum: 849177E43FF3E78F833DB2F34A927A66;5338.
 Package rerunfilecheck Info: File `how-to-write-paper.brf' has not changed.
-(rerunfilecheck)             Checksum: D4763F401070C9FD7FA0D8AC9240D0B6;1955.
+(rerunfilecheck)             Checksum: 85E69BDF275DFF7883C793C149854B53;2002.
  ) 
 Here is how much of TeX's memory you used:
- 63288 strings out of 475980
- 1410862 string characters out of 5789004
- 2164979 words of memory out of 5000000
- 81861 multiletter control sequences out of 15000+600000
+ 63299 strings out of 475980
+ 1411067 string characters out of 5789004
+ 2165008 words of memory out of 5000000
+ 81870 multiletter control sequences out of 15000+600000
  833394 words of font info for 414 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,21n,146p,2247b,2649s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2117,10 +2117,10 @@ ts/type1/public/rsfs/rsfs10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1
 /utmbi8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmr8a.p
 fb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/
 local/texlive/2023/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on how-to-write-paper.pdf (29 pages, 7403028 bytes).
+Output written on how-to-write-paper.pdf (29 pages, 7403327 bytes).
 PDF statistics:
- 1430 PDF objects out of 1440 (max. 8388607)
- 1204 compressed objects within 13 object streams
- 496 named destinations out of 1000 (max. 500000)
+ 1435 PDF objects out of 1440 (max. 8388607)
+ 1209 compressed objects within 13 object streams
+ 498 named destinations out of 1000 (max. 500000)
  129545 words of extra memory for PDF output out of 154059 (max. 10000000)
 

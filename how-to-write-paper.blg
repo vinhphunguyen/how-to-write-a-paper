@@ -8,45 +8,45 @@ Repeated entry---line 112 of file writing.bib
  :                           ,
 I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "strogatz2018nonlinear"
-You've used 23 entries,
+You've used 24 entries,
             2773 wiz_defined-function locations,
-            754 strings with 8387 characters,
-and the built_in function-call counts, 9565 in all, are:
-= -- 833
-> -- 512
-< -- 14
-+ -- 176
-- -- 153
-* -- 759
-:= -- 1494
-add.period$ -- 72
-call.type$ -- 23
-change.case$ -- 116
-chr.to.int$ -- 23
-cite$ -- 46
-duplicate$ -- 447
-empty$ -- 835
-format.name$ -- 188
-if$ -- 1988
+            759 strings with 8455 characters,
+and the built_in function-call counts, 9872 in all, are:
+= -- 860
+> -- 522
+< -- 15
++ -- 180
+- -- 156
+* -- 778
+:= -- 1544
+add.period$ -- 75
+call.type$ -- 24
+change.case$ -- 120
+chr.to.int$ -- 24
+cite$ -- 48
+duplicate$ -- 466
+empty$ -- 866
+format.name$ -- 192
+if$ -- 2052
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 23
-newline$ -- 126
-num.names$ -- 92
-pop$ -- 239
+missing$ -- 24
+newline$ -- 131
+num.names$ -- 96
+pop$ -- 246
 preamble$ -- 1
-purify$ -- 97
+purify$ -- 100
 quote$ -- 0
-skip$ -- 341
+skip$ -- 355
 stack$ -- 0
-substring$ -- 316
-swap$ -- 24
+substring$ -- 318
+swap$ -- 25
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 233
+type$ -- 244
 warning$ -- 0
-while$ -- 88
+while$ -- 91
 width$ -- 0
-write$ -- 304
+write$ -- 317
 (There was 1 error message)

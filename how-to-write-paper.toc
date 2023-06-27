@@ -31,7 +31,7 @@
 \contentsline {subsection}{\numberline {4.7}Two-column format}{23}{subsection.4.7}%
 \contentsline {section}{\numberline {5}Submission}{23}{section.5}%
 \contentsline {section}{\numberline {6}Conclusions}{24}{section.6}%
-\contentsline {section}{Appendices}{24}{section*.69}%
+\contentsline {section}{Appendices}{24}{section*.70}%
 \contentsline {section}{Appendix \numberline {A}Installing \LaTeX }{24}{appendix.1.A}%
 \contentsline {section}{Appendix \numberline {B}Python scripts for plotting data}{25}{appendix.1.B}%
 \contentsline {section}{Appendix \numberline {C}Tables with footnotes}{26}{appendix.1.C}%

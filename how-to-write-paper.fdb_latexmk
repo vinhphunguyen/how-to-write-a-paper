@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex how-to-write-paper"] 1687823270 "how-to-write-paper.aux" "how-to-write-paper.bbl" "how-to-write-paper" 1687823288 2
-  "./writing.bib" 1687823067 10241 65ac3c25a17d3b457fa76e58bc405d8e ""
+["bibtex how-to-write-paper"] 1687832956 "how-to-write-paper.aux" "how-to-write-paper.bbl" "how-to-write-paper" 1687832968 2
+  "./writing.bib" 1687832691 10447 0cea3b5ab2fe81370dbca6af94c7ec75 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/natbib/abbrvnat.bst" 1233624470 26532 66bed5cc59495faaa3f9ae9af9fa5e42 ""
-  "how-to-write-paper.aux" 1687823283 34841 cb56b4140e300d97cd058cbfba7eb7c1 "pdflatex"
+  "how-to-write-paper.aux" 1687832966 34972 044fbb513eb55d9aa669a220ca48f3d0 "pdflatex"
   (generated)
   "how-to-write-paper.bbl"
   "how-to-write-paper.blg"
   (rewritten before read)
-["pdflatex"] 1687823271 "how-to-write-paper.tex" "how-to-write-paper.pdf" "how-to-write-paper" 1687823288 0
+["pdflatex"] 1687832956 "how-to-write-paper.tex" "how-to-write-paper.pdf" "how-to-write-paper" 1687832968 0
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/times/ptmb8r.tfm" 1136768653 4524 6bce29db5bc272ba5f332261583fee9c ""
@@ -413,12 +413,12 @@
   "complex-fig.png" 1687821844 461067 e9e33214ad18ac0f6a31d1908855ff20 ""
   "examples.png" 1687821844 387717 37f9fbc47c0cea997ae5899476c8af07 ""
   "figures1.png" 1687821844 472053 9b4a20e69f8b8e63cdde8b755198010a ""
-  "how-to-write-paper.aux" 1687823283 34841 cb56b4140e300d97cd058cbfba7eb7c1 "pdflatex"
-  "how-to-write-paper.bbl" 1687823271 5919 603560a91c22a6df99f7fa1f6982753c "bibtex how-to-write-paper"
-  "how-to-write-paper.brf" 1687823283 1955 d4763f401070c9fd7fa0d8ac9240d0b6 "pdflatex"
-  "how-to-write-paper.out" 1687823283 5338 2bab7c6ff54727f02c93afc10be6c7bc "pdflatex"
-  "how-to-write-paper.tex" 1687823259 117713 9526ae9c1a29ff11f5d14818e1946200 ""
-  "how-to-write-paper.toc" 1687823283 3201 91af6318146a1524b63858c59b973ad1 "pdflatex"
+  "how-to-write-paper.aux" 1687832966 34972 044fbb513eb55d9aa669a220ca48f3d0 "pdflatex"
+  "how-to-write-paper.bbl" 1687832956 6064 8dadcef37f044c1b1299b3148ab9c7b5 "bibtex how-to-write-paper"
+  "how-to-write-paper.brf" 1687832966 2002 85e69bdf275dff7883c793c149854b53 "pdflatex"
+  "how-to-write-paper.out" 1687832966 5338 849177e43ff3e78f833db2f34a927a66 "pdflatex"
+  "how-to-write-paper.tex" 1687832912 117806 45f9cb10077d8f87ecce522757416fbc ""
+  "how-to-write-paper.toc" 1687832966 3201 db1caaa9de3e82f52dbaeb60b7a6c015 "pdflatex"
   "mpm-all-results.pdf" 1687821844 5638299 59c74c4399b64f65ad1ef4b29b02231a ""
   "section.png" 1687821844 322308 78f31c54f9a23a476e9d90df604150fa ""
   "sublime-text.png" 1687821844 232764 67e4b3d49a2f936aab521c8e2c0bee89 ""
