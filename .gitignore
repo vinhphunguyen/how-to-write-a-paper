@@ -20,5 +20,8 @@
 /*.mtc
 /*.mtc1
 /*.out
+/*.fls
+/*.log
+/*.fdb_latexmk
 /*.synctex.gz
-/writing.pdf
+/how-to-write-paper.pdf
